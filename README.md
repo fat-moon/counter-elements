@@ -1,2 +1,2 @@
-# counter-elements
+# COUNTER ELEMENTS
 COUNTER ELEMENTS
