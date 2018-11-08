@@ -56,6 +56,10 @@ body {
 	font-family: sans-serif;
 	background: #000;
     
+	background-image: url('../images/background.jpg');
+	background-position: center;
+	background-size: 640px 320px;
+
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -118,10 +122,10 @@ body {
 
 		&:nth-child(1).new-element{
 			animation-duration: $time;
- 			animation-name: slidein;
+ 			animation-name: newElement;
 		}
 
-		@keyframes slidein {
+		@keyframes newElement {
 		  	from {
 		    	top: -1*($margin-enemy+$size-enemy);
 		  	}
@@ -151,7 +155,7 @@ body {
 
 .remove-element {
 	opacity: 0;
-	margin-top: $size-enemy+$margin-enemy;
+	margin-left: $size-enemy+$margin-enemy;
 }
 
 

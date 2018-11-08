@@ -28,6 +28,9 @@
 body {
   font-family: sans-serif;
   background: #000;
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-size: 640px 320px;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,9 +75,9 @@ body {
       top: 1.25rem; }
     .enemy-elements li:nth-child(1).new-element {
       animation-duration: 0.15s;
-      animation-name: slidein; }
+      animation-name: newElement; }
 
-@keyframes slidein {
+@keyframes newElement {
   from {
     top: -5.625rem; }
   to {
@@ -92,7 +95,7 @@ body {
 
 .remove-element {
   opacity: 0;
-  margin-top: 5.625rem; }
+  margin-left: 5.625rem; }
 
 .buttons {
   width: 100%;
