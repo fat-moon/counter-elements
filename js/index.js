@@ -9,7 +9,7 @@ var valueCurrentEnemyElement;
 var fireButton = document.getElementById("fire-btn");
 var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
-
+var activeButton = false;
 
 //Star enemy elements
 /******************************************/
@@ -22,7 +22,7 @@ assignIdElement();
 
 //Create new element
 /******************************************/
-function createNewElement(){
+function createNewElement(playing){
 	var randomEnemyElement = Math.floor(Math.random() * numberEnemyElements);
 	var chosenEnemyElement = enemyElementsArray[randomEnemyElement];
 
@@ -34,6 +34,10 @@ function createNewElement(){
 
 	enemyElementsList.prepend(newEnemyElement);
 	newEnemyElement.appendChild(newIconEnemyElement);
+
+	if(playing){
+		newEnemyElement.classList.add("new-element");
+	}
 }
 
 
@@ -53,42 +57,47 @@ earthButton.addEventListener("mousedown", function(){chooseElement(this)}, false
 waterButton.addEventListener("mousedown", function(){chooseElement(this)}, false);   
 
 function chooseElement (elementObject) {
-	var chosenElement = elementObject.getAttribute("aria-label");
-	console.log('Chosen element: '+ chosenElement);
-	console.log('Enemy element: '+ valueCurrentEnemyElement);
+	
+	if(!activeButton){
+		activeButton = true;
+		var chosenElement = elementObject.getAttribute("aria-label");
+		console.log('Chosen element: '+ chosenElement);
+		console.log('Enemy element: '+ valueCurrentEnemyElement);
 
-	if(chosenElement === "fire" && valueCurrentEnemyElement === "earth" ||
-	   chosenElement === "earth" && valueCurrentEnemyElement === "water" ||
-	   chosenElement === "water" && valueCurrentEnemyElement === "fire"){
-		
-		console.log('Result: win');
+		if(chosenElement === "fire" && valueCurrentEnemyElement === "earth" ||
+		   chosenElement === "earth" && valueCurrentEnemyElement === "water" ||
+		   chosenElement === "water" && valueCurrentEnemyElement === "fire"){
+			
+			console.log('Result: win');
 
-		currentEnemyElement.classList.add("remove-element");
+			currentEnemyElement.classList.add("remove-element");
 
-		setTimeout(function(){
-			//Remove the element
-			enemyElementsList.removeChild(currentEnemyElement);
+			setTimeout(function(){
+				//Remove the element
+				enemyElementsList.removeChild(currentEnemyElement);
 
-			//Assign ID to element
-			assignIdElement();
+				//Assign ID to element
+				assignIdElement();
 
-			//Create new element
-			createNewElement();
+				//Create new element
+				createNewElement(true);
 
-		}, 200);
-		
+			}, 150);
+			
 
-	}else if(chosenElement === valueCurrentEnemyElement){
-		
-		console.log('Result: draw');
+		}else if(chosenElement === valueCurrentEnemyElement){
+			
+			console.log('Result: draw');
 
-	}else{
+		}else{
 
-		console.log('result: lose');
+			console.log('result: lose');
 
+		}
+		console.log('---------------------------');
+
+		elementObject.classList.add("press-button");
+		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
+		setTimeout(function(){activeButton=false;}, 150);
 	}
-	console.log('---------------------------');
-
-	elementObject.classList.add("press-button");
-	setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
 }

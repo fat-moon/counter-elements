@@ -55,18 +55,34 @@ body {
   box-shadow: 0 0 10px 3px #2A9DDB; }
 
 .enemy-elements {
-  margin: auto;
-  display: block; }
+  position: relative; }
   .enemy-elements li {
     display: block;
-    margin: 25px auto 0 auto;
-    width: 5rem;
-    height: 5rem;
+    width: 4.375rem;
+    height: 4.375rem;
     border-radius: 50%;
     color: #fff;
     position: relative;
-    font-size: 2.5rem;
-    transition: 0.2s; }
+    font-size: 2.1875rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.15s; }
+    .enemy-elements li:nth-child(1) {
+      top: 1.25rem; }
+    .enemy-elements li:nth-child(1).new-element {
+      animation-duration: 0.15s;
+      animation-name: slidein; }
+
+@keyframes slidein {
+  from {
+    top: -5.625rem; }
+  to {
+    top: 1.25rem; } }
+    .enemy-elements li:nth-child(2) {
+      top: 6.875rem; }
+    .enemy-elements li:nth-child(3) {
+      top: 12.5rem; }
   .enemy-elements span {
     position: absolute;
     top: 50%;
@@ -76,7 +92,7 @@ body {
 
 .remove-element {
   opacity: 0;
-  top: 80px; }
+  margin-top: 105px; }
 
 .buttons {
   width: 100%;
@@ -98,7 +114,7 @@ button {
   cursor: pointer;
   font-size: 2.5rem;
   color: #fff;
-  transition: 0.1s;
+  transition: 0.15s;
   position: relative;
   text-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0.125rem 0.125rem rgba(0, 0, 0, 0.3); }
@@ -113,4 +129,5 @@ button:last-child {
 
 .press-button {
   background: #fff;
-  color: #000; }
+  color: #000;
+  box-shadow: 0 0 18.75rem 0.3125rem rgba(255, 255, 255, 0.5); }
