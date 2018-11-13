@@ -11,9 +11,13 @@ var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
 var activeButton = false;
 
+var time = 1000;
+var showTime;
+
+
 //Star enemy elements
 /******************************************/
-for (i = 0; i < numberEnemyElements; i++) { 
+for (i = 0; i < 4; i++) { 
 	createNewElement();
 }
 
@@ -101,3 +105,19 @@ function chooseElement (elementObject) {
 		setTimeout(function(){activeButton=false;}, 150);
 	}
 }
+
+
+//Countdown
+/******************************************/
+/*var countdownInterval = setInterval(countdown, 50);
+
+function countdown() {
+	time -= 50;
+	showTime = time/1000;
+
+	console.log(showTime);
+
+	if(time === 0){
+		clearInterval(countdownInterval)
+	}
+}*/

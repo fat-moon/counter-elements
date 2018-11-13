@@ -61,12 +61,12 @@ body {
   position: relative; }
   .enemy-elements li {
     display: block;
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 3.75rem;
+    height: 3.75rem;
     border-radius: 50%;
     color: #fff;
     position: relative;
-    font-size: 2.1875rem;
+    font-size: 1.875rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -79,13 +79,15 @@ body {
 
 @keyframes newElement {
   from {
-    top: -5.625rem; }
+    top: -5rem; }
   to {
     top: 1.25rem; } }
     .enemy-elements li:nth-child(2) {
-      top: 6.875rem; }
+      top: 6.25rem; }
     .enemy-elements li:nth-child(3) {
-      top: 12.5rem; }
+      top: 11.25rem; }
+    .enemy-elements li:nth-child(4) {
+      top: 16.25rem; }
   .enemy-elements span {
     position: absolute;
     top: 50%;
@@ -95,7 +97,7 @@ body {
 
 .remove-element {
   opacity: 0;
-  margin-left: 5.625rem; }
+  margin-left: 5rem; }
 
 .buttons {
   width: 100%;

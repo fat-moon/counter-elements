@@ -7,7 +7,7 @@ $fire: #E02125;
 $earth: #F6C82E;
 $water: #2A9DDB;
 
-$size-enemy: rem(70px);
+$size-enemy: rem(60px);
 $margin-enemy: rem(20px);
 
 $time: 0.15s;
@@ -141,6 +141,10 @@ body {
 
 		&:nth-child(3){
 			top: (3*$margin-enemy)+(2*$size-enemy);
+		}
+
+		&:nth-child(4){
+			top: (4*$margin-enemy)+(3*$size-enemy);
 		}
 	}
 
