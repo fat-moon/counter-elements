@@ -127,11 +127,16 @@ body {
 
 		@keyframes newElement {
 		  	from {
-		    	top: -1*($margin-enemy+$size-enemy);
+		    	width: 0;
+		    	height: 0;
+		    	font-size: rem(0px);
 		  	}
 
 		  	to {
+		  		width: $size-enemy;
+		    	height: $size-enemy;
 		    	top: $margin-enemy;
+		    	font-size: $size-enemy/2;
 			}
 		}
 
@@ -159,7 +164,7 @@ body {
 
 .remove-element {
 	opacity: 0;
-	margin-left: $size-enemy+$margin-enemy;
+	margin-top: $size-enemy+$margin-enemy;
 }
 
 

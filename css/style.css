@@ -79,9 +79,14 @@ body {
 
 @keyframes newElement {
   from {
-    top: -5rem; }
+    width: 0;
+    height: 0;
+    font-size: 0rem; }
   to {
-    top: 1.25rem; } }
+    width: 3.75rem;
+    height: 3.75rem;
+    top: 1.25rem;
+    font-size: 1.875rem; } }
     .enemy-elements li:nth-child(2) {
       top: 6.25rem; }
     .enemy-elements li:nth-child(3) {
@@ -97,7 +102,7 @@ body {
 
 .remove-element {
   opacity: 0;
-  margin-left: 5rem; }
+  margin-top: 5rem; }
 
 .buttons {
   width: 100%;

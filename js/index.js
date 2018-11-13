@@ -77,14 +77,14 @@ function chooseElement (elementObject) {
 			currentEnemyElement.classList.add("remove-element");
 
 			setTimeout(function(){
+				//Create new element
+				createNewElement(true);
+				
 				//Remove the element
 				enemyElementsList.removeChild(currentEnemyElement);
 
 				//Assign ID to element
 				assignIdElement();
-
-				//Create new element
-				createNewElement(true);
 
 			}, 150);
 			
