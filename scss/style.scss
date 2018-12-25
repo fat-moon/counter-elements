@@ -1,4 +1,4 @@
-// Function px to rem
+// Functions
 @import 'px-to-rem';
 
 
@@ -13,7 +13,7 @@ $margin-enemy: rem(20px);
 $time: 0.15s;
 
 
-//Icons
+// Icons
 @font-face {
     font-family: 'icomoon';
     src: url('../fonts/icomoon.eot') format('embedded-opentype'),
@@ -22,6 +22,7 @@ $time: 0.15s;
     url('../fonts/icomoon.svg') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -58,7 +59,7 @@ body {
     
 	background-image: url('../images/background.jpg');
 	background-position: center;
-	background-size: 640px 320px;
+	background-size: rem(640px) rem(320px);
 
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
@@ -71,7 +72,7 @@ body {
 }
 
 
-//Elements
+// Elements
 .fire {
 	background: $fire;
 }
@@ -85,21 +86,21 @@ body {
 }
 
 
-//Radiances
+// Radiances
 .fire-radiance {
-	box-shadow: 0 0 10px 3px $fire;
+	box-shadow: 0 0 rem(10px) rem(3px) $fire;
 }
 
 .earth-radiance {
-	box-shadow: 0 0 10px 3px $earth;
+	box-shadow: 0 0 rem(10px) rem(3px) $earth;
 }
 
 .water-radiance {
-	box-shadow: 0 0 10px 3px $water;
+	box-shadow: 0 0 rem(10px) rem(3px) $water;
 }
 
 
-//Enemy elements
+// Enemy elements
 .enemy-elements {
 	position: relative;
 
@@ -168,7 +169,7 @@ body {
 }
 
 
-//Buttons
+// Buttons
 .buttons {
 	width: 100%;
 	position: absolute;

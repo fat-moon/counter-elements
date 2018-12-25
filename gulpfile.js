@@ -1,9 +1,10 @@
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
-    rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
-var sass = require('gulp-sass');
+    rename = require('gulp-rename'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    sass = require('gulp-sass');
 
 
 gulp.task('styles', function(){
@@ -14,7 +15,7 @@ gulp.task('styles', function(){
         this.emit('end');
     }}))
     .pipe(sass())
-    .pipe(autoprefixer('last 2 versions'))
+    .pipe(postcss([ autoprefixer('last 2 versions') ]))
     .pipe(gulp.dest('css/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
@@ -23,5 +24,5 @@ gulp.task('styles', function(){
 
 
 gulp.task('default', function(){
-    gulp.watch("scss/**/*.scss", ['styles']);
+  gulp.watch("scss/**/*.scss", ['styles']);
 });
