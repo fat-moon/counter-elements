@@ -11,7 +11,8 @@ var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
 var activeButton = false;
 
-var time = 1000;
+var countdownTimer = document.getElementById("countdown-timer");
+var time = 60000;
 var showTime;
 
 
@@ -109,15 +110,20 @@ function chooseElement (elementObject) {
 
 //Countdown
 /******************************************/
-/*var countdownInterval = setInterval(countdown, 50);
+var countdownInterval = setInterval(countdown, 1000);
 
 function countdown() {
-	time -= 50;
+	time -= 1000;
 	showTime = time/1000;
 
 	console.log(showTime);
+	countdownTimer.innerHTML = "00:"+ showTime;
+
+	if(time <= 9000){
+		countdownTimer.innerHTML = "00:0"+ showTime;	
+	}
 
 	if(time === 0){
 		clearInterval(countdownInterval)
 	}
-}*/
+}

@@ -72,6 +72,19 @@ body {
 }
 
 
+// Header
+header {
+	width: 100%;
+	display: block;
+	min-height: 40px;
+	background-color: #000; 
+}
+
+.countdown-timer {
+	color: #fff;
+}
+
+
 // Elements
 .fire {
 	background: $fire;

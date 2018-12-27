@@ -40,6 +40,15 @@ body {
   -ms-user-select: none;
   user-select: none; }
 
+header {
+  width: 100%;
+  display: block;
+  min-height: 40px;
+  background-color: #000; }
+
+.countdown-timer {
+  color: #fff; }
+
 .fire {
   background: #E02125; }
 
