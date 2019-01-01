@@ -6,14 +6,52 @@ var numberEnemyElements = enemyElementsArray.length;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
+var gameActive = false;
+var playButton = document.getElementById("play-btn");
+
 var fireButton = document.getElementById("fire-btn");
 var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
 var activeButton = false;
+var pulsationCounter = 0;
+var winCounter = 0;
+var drawCounter = 0;
+var loseCounter = 0;
 
 var countdownTimer = document.getElementById("countdown-timer");
 var time = 60000;
 var showTime;
+
+
+//Start game
+/******************************************/
+playButton.addEventListener("mousedown", function(){
+	gameActive = true;
+
+	//Countdown
+	var countdownInterval = setInterval(countdown, 1000);
+
+	function countdown() {
+		time -= 1000;
+		showTime = time/1000;
+
+		countdownTimer.innerHTML = "00:"+ showTime;
+
+		if(time <= 9000){
+			countdownTimer.innerHTML = "00:0"+ showTime;	
+		}
+
+		if(time === 0){
+			clearInterval(countdownInterval);
+			gameActive = false;
+			console.log('Pulsations: '+pulsationCounter);
+			console.log('wins: '+winCounter);
+			console.log('draws: '+drawCounter);
+			console.log('loses: '+loseCounter);
+		}
+	}	
+
+}, false);
 
 
 //Star enemy elements
@@ -63,8 +101,9 @@ waterButton.addEventListener("mousedown", function(){chooseElement(this)}, false
 
 function chooseElement (elementObject) {
 	
-	if(!activeButton){
+	if(!activeButton && gameActive){
 		activeButton = true;
+		pulsationCounter++;
 		var chosenElement = elementObject.getAttribute("aria-label");
 		console.log('Chosen element: '+ chosenElement);
 		console.log('Enemy element: '+ valueCurrentEnemyElement);
@@ -74,6 +113,7 @@ function chooseElement (elementObject) {
 		   chosenElement === "water" && valueCurrentEnemyElement === "fire"){
 			
 			console.log('Result: win');
+			winCounter++;
 
 			currentEnemyElement.classList.add("remove-element");
 
@@ -91,12 +131,14 @@ function chooseElement (elementObject) {
 			
 
 		}else if(chosenElement === valueCurrentEnemyElement){
-			
-			console.log('Result: draw');
+	
+			console.log('Result: tie');
+			drawCounter++;
 
 		}else{
 
 			console.log('result: lose');
+			loseCounter++;
 
 		}
 		console.log('---------------------------');
@@ -104,26 +146,5 @@ function chooseElement (elementObject) {
 		elementObject.classList.add("press-button");
 		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
 		setTimeout(function(){activeButton=false;}, 150);
-	}
-}
-
-
-//Countdown
-/******************************************/
-var countdownInterval = setInterval(countdown, 1000);
-
-function countdown() {
-	time -= 1000;
-	showTime = time/1000;
-
-	console.log(showTime);
-	countdownTimer.innerHTML = "00:"+ showTime;
-
-	if(time <= 9000){
-		countdownTimer.innerHTML = "00:0"+ showTime;	
-	}
-
-	if(time === 0){
-		clearInterval(countdownInterval)
 	}
 }

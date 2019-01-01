@@ -72,16 +72,13 @@ body {
 }
 
 
-// Header
-header {
-	width: 100%;
-	display: block;
-	min-height: 40px;
-	background-color: #000; 
-}
-
+// Countdown timer
 .countdown-timer {
+	font-family: sans-serif;
 	color: #fff;
+	position: absolute;
+	right: 15px;
+	top: 15px;
 }
 
 
