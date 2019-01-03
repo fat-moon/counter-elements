@@ -1,5 +1,8 @@
 //Variables
 /******************************************/
+var gameContent = document.getElementById("game-content");
+var startContent = document.getElementById("start-content");
+
 var enemyElementsList = document.getElementById("enemy-elements");
 var enemyElementsArray = ["fire","earth","water"];
 var numberEnemyElements = enemyElementsArray.length;
@@ -27,6 +30,8 @@ var showTime;
 /******************************************/
 playButton.addEventListener("mousedown", function(){
 	gameActive = true;
+	gameContent.classList.remove("hidden");
+	startContent.classList.add("hidden");
 
 	//Countdown
 	var countdownInterval = setInterval(countdown, 1000);

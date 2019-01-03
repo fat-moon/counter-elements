@@ -7,6 +7,9 @@ $fire: #E02125;
 $earth: #F6C82E;
 $water: #2A9DDB;
 
+$white: #fff;
+$black: #000;
+
 $size-enemy: rem(60px);
 $margin-enemy: rem(20px);
 
@@ -72,10 +75,16 @@ body {
 }
 
 
+// Hide content
+.hidden {
+	display: none;
+}
+
+
 // Countdown timer
 .countdown-timer {
 	font-family: sans-serif;
-	color: #fff;
+	color: $white;
 	position: absolute;
 	right: 15px;
 	top: 15px;
@@ -119,7 +128,7 @@ body {
 		width: $size-enemy;
 		height: $size-enemy;
 		border-radius: 50%;
-		color: #fff;
+		color: $white;
 		position: relative;
 		font-size: $size-enemy/2;
 		position: absolute;
@@ -180,7 +189,12 @@ body {
 
 
 // Buttons
-.buttons {
+button {
+	outline: 0;
+	cursor: pointer;
+}
+
+.game-buttons {
 	width: 100%;
 	position: absolute;
 	left: 50%;
@@ -188,23 +202,25 @@ body {
 	bottom: rem(35px);
 	display: block;
 	text-align: center;
-}
 
-button {
+	button {
 	border: rem(3px) solid rgba(255,255,255,1);
-	outline: 0;
 	width: rem(80px);
 	height: rem(80px);
 	border-radius: 50%;
 	display: inline-block;
 	margin-right: rem(25px); 
-	cursor: pointer;
 	font-size: rem(40px);
-	color: #fff;
+	color: $white;
 	transition: $time;
 	position: relative;
 	text-shadow: 0 rem(2px) rem(2px) rgba(0,0,0,0.3);
 	box-shadow: inset 0 rem(2px) rem(2px) rgba(0,0,0,0.3);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 
 	span {
 		position: absolute;
@@ -214,12 +230,8 @@ button {
 	}
 }
 
-button:last-child {
-	margin-right: 0;
-}
-
 .press-button {
-	background: #fff;
-	color: #000;
+	background: $white;
+	color: $black;
 	box-shadow: 0 0 rem(300px) rem(5px) rgba(256,256,256,0.5);
 }

@@ -8,25 +8,23 @@
 </head>
 
 <body>
-
-	<main>
-
-		<section class="">
+	<section id="start-content">
+		<div class="start-buttons">
 			<button id="play-btn" class="play">Play</button>
-		</section>
+		</div>
+	</section>
 
-		<section id="game-content">
-			<div id="countdown-timer" class="countdown-timer">01:00</div>
+	<section id="game-content" class="hidden">
+		<div id="countdown-timer" class="countdown-timer">01:00</div>
 
-			<ul id="enemy-elements" class="enemy-elements"></ul>
+		<ul id="enemy-elements" class="enemy-elements"></ul>
 
-			<div class="buttons">
-				<button id="fire-btn" class="fire" aria-label="fire"><span class="icon-fire"></span></button>
-				<button id="earth-btn" class="earth" aria-label="earth"><span class="icon-earth"></span></button>
-				<button id="water-btn" class="water" aria-label="water"><span class="icon-water"></span></button>	
-			</div>
-		</section>
-	</main>
+		<div class="game-buttons">
+			<button id="fire-btn" class="fire" aria-label="fire"><span class="icon-fire"></span></button>
+			<button id="earth-btn" class="earth" aria-label="earth"><span class="icon-earth"></span></button>
+			<button id="water-btn" class="water" aria-label="water"><span class="icon-water"></span></button>	
+		</div>
+	</section>
 
 	<script src="js/index.js"></script>
 </body>
