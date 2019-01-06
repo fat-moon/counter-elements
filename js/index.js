@@ -1,5 +1,6 @@
 //Variables
 /******************************************/
+var headerContent = document.getElementById("header-content");
 var gameContent = document.getElementById("game-content");
 var startContent = document.getElementById("start-content");
 
@@ -30,6 +31,7 @@ var showTime;
 /******************************************/
 playButton.addEventListener("mousedown", function(){
 	gameActive = true;
+	headerContent.classList.add("hide");
 	gameContent.classList.remove("hidden");
 	startContent.classList.add("hidden");
 
