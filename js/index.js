@@ -31,7 +31,7 @@ var showTime;
 /******************************************/
 playButton.addEventListener("mousedown", function(){
 	gameActive = true;
-	headerContent.classList.add("hide");
+	headerContent.classList.add("hidden");
 	gameContent.classList.remove("hidden");
 	startContent.classList.add("hidden");
 

@@ -9,19 +9,20 @@
 
 <body>
 
-	<header id="header-content">
-		<h1>COUNTER ELEMENTS</h1>
-	</header>
+	<div class="container">
 
-	<main>
-		<section id="start-content">
+		<header id="header-content">
+			<h1>COUNTER ELEMENTS</h1>
+		</header>
+
+		<div id="start-content">
 			<div class="start-buttons">
-				<button id="play-btn" aria-label="">NEW GAME</button>
+				<button id="play-btn">NEW GAME</button>
 				<button id="instructions-btn">HOW TO PLAY</button>
 			</div>
-		</section>
+		</div>
 
-		<section id="game-content" class="hidden">
+		<div id="game-content" class="hidden">
 			<div id="countdown-timer" class="countdown-timer">01:00</div>
 
 			<ul id="enemy-elements" class="enemy-elements"></ul>
@@ -31,11 +32,11 @@
 				<button id="earth-btn" class="earth" aria-label="earth"><span class="icon-earth"></span></button>
 				<button id="water-btn" class="water" aria-label="water"><span class="icon-water"></span></button>	
 			</div>
-		</section>
+		</div>
 
-		<section id="results-content" class="hidden">
-		</section>
-	</main>
+		<div id="results-content" class="hidden">
+		</div>
+	</div>
 
 	<script src="js/index.js"></script>
 </body>
