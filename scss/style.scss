@@ -62,13 +62,6 @@ body {
     width: 100%;
     height: 100vh;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-  	background-image: radial-gradient($light, $dark);
-
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -78,18 +71,21 @@ body {
     -ms-user-select: none;
     user-select: none;
 
+	background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%,rgba(0,0,0,1) 100%);
+
     &::before {
     	content: "";
-    	background-image: url('../images/spiration-dark.png');
+    	background-image: url('../images/background.jpg');
     	background-position: center;
-		opacity: .85;
+    	background-size: 640px 320px;
+    	opacity: 0.8;
 		top: 0;
         left: 0;
         position: fixed;
         z-index: -1;
         width: 100%;
         height: 100vh;
-    }
+    } 
 }
 
 
@@ -99,11 +95,13 @@ body {
 	overflow: hidden;
 	width: rem(360px);
 	height: rem(520px);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 	border: solid $grey rem(3px); 
 	box-shadow: 0 0 rem(30px) rem(1px) rgba(0, 0, 0, .9);
 	border-radius: rem(10px);
-	background-image: url('../images/spiration-dark.png');
-    background-position: center;
+	background-color: rgba(0,0,0,0.5);
 }
 
 // Header
@@ -282,11 +280,18 @@ button {
 
 // Media Queries
 @media only screen and (max-width: rem(400px)) {
+
+	body {
+		background: radial-gradient(ellipse at center, 0%,rgba(0,0,0,1), rgba(255,255,255,0.1) 100%);
+	}
+
 	.container {
         width: 100%;
-        height: 100vh;
+        height: calc(100% - #{rem(40px)});
         border: none;
         border-radius: 0;
         box-shadow: 0 0 0 0 rgba(0,0,0,0);
+        overflow: visible;
+        background-color: transparent;
 	}
 }
