@@ -214,9 +214,9 @@ button {
 
 @media only screen and (max-width: 25rem) {
   body {
-    background: transparent; }
-    body::before {
-      opacity: 1; }
+    background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%); }
+    body:before {
+      opacity: .9; }
   .container {
     width: 100%;
     height: calc(100% - 2.5rem);
@@ -225,4 +225,6 @@ button {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     overflow: visible;
-    background-color: transparent; } }
+    background-color: transparent; }
+  .game-buttons {
+    bottom: 0.625rem; } }
