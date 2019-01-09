@@ -14,7 +14,7 @@ $grey: #535353;
 $size-enemy: rem(60px);
 $margin-enemy: rem(20px);
 
-$time: 0.15s;
+$time: 0.1s;
 
 
 // Icons
@@ -109,7 +109,7 @@ header {
     color: $light;
     left: 50%;
     z-index: 1;
-    transition: 0.15s;
+    transition: $time;
 }
 
 

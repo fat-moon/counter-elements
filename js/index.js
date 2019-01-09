@@ -134,7 +134,7 @@ function chooseElement (elementObject) {
 				//Assign ID to element
 				assignIdElement();
 
-			}, 150);
+			}, 100);
 			
 
 		}else if(chosenElement === valueCurrentEnemyElement){
@@ -152,6 +152,6 @@ function chooseElement (elementObject) {
 
 		elementObject.classList.add("press-button");
 		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
-		setTimeout(function(){activeButton=false;}, 150);
+		setTimeout(function(){activeButton=false;}, 100);
 	}
 }
