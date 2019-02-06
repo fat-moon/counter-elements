@@ -103,68 +103,20 @@ h1 {
     .intro-elements span.fire {
       top: 0;
       left: 0;
-      -webkit-animation: moveFire 2s infinite;
-              animation: moveFire 2s infinite; }
+      -webkit-box-shadow: 0 0 1.875rem 0.375rem #E02125;
+              box-shadow: 0 0 1.875rem 0.375rem #E02125; }
     .intro-elements span.earth {
       top: 0;
       left: calc(100% - 1.25rem);
-      -webkit-animation: moveEarth 2s infinite;
-              animation: moveEarth 2s infinite; }
+      -webkit-box-shadow: 0 0 1.875rem 0.375rem #F6C82E;
+              box-shadow: 0 0 1.875rem 0.375rem #F6C82E; }
     .intro-elements span.water {
       top: calc(100% - 1.25rem);
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
-      -webkit-animation: moveWater 2s infinite;
-              animation: moveWater 2s infinite; }
-
-@-webkit-keyframes moveFire {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #E02125;
-            box-shadow: 0 0 0.625rem 0.1875rem #E02125; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #E02125;
-            box-shadow: 0 0 1.875rem 0.375rem #E02125; } }
-
-@keyframes moveFire {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #E02125;
-            box-shadow: 0 0 0.625rem 0.1875rem #E02125; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #E02125;
-            box-shadow: 0 0 1.875rem 0.375rem #E02125; } }
-
-@-webkit-keyframes moveEarth {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #F6C82E;
-            box-shadow: 0 0 0.625rem 0.1875rem #F6C82E; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #F6C82E;
-            box-shadow: 0 0 1.875rem 0.375rem #F6C82E; } }
-
-@keyframes moveEarth {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #F6C82E;
-            box-shadow: 0 0 0.625rem 0.1875rem #F6C82E; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #F6C82E;
-            box-shadow: 0 0 1.875rem 0.375rem #F6C82E; } }
-
-@-webkit-keyframes moveWater {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #2A9DDB;
-            box-shadow: 0 0 0.625rem 0.1875rem #2A9DDB; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #2A9DDB;
-            box-shadow: 0 0 1.875rem 0.375rem #2A9DDB; } }
-
-@keyframes moveWater {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 0.625rem 0.1875rem #2A9DDB;
-            box-shadow: 0 0 0.625rem 0.1875rem #2A9DDB; }
-  50% {
-    -webkit-box-shadow: 0 0 1.875rem 0.375rem #2A9DDB;
-            box-shadow: 0 0 1.875rem 0.375rem #2A9DDB; } }
+      -webkit-box-shadow: 0 0 1.875rem 0.375rem #2A9DDB;
+              box-shadow: 0 0 1.875rem 0.375rem #2A9DDB; }
 
 .start-buttons button {
   width: 250px;

@@ -143,47 +143,30 @@ h1 {
 		transition: $time-intro;
 		transition-timing-function: ease-in-out;
 
+		@mixin introElement($element) {
+		  box-shadow: 0 0 rem(30px) rem(6px) $element;
+		}
+
 		&.fire{
 			top: 0;
 			left: 0;
-			animation: moveFire $time-intro infinite;
+			@include introElement($fire);
 		}
 
 		&.earth{
 			top: 0;
 			left: calc(100% - #{$size-element-intro});
-			animation: moveEarth $time-intro infinite;
+			@include introElement($earth);
 		}
 
 		&.water {
 			top: calc(100% - #{$size-element-intro});
 			left: 50%;
 			transform: translateX(-50%);
-			animation: moveWater $time-intro infinite;
+			@include introElement($water);
 		}
 	}
 
-	@mixin animateElement($element) {
-	  	0%,100% {
-			box-shadow: 0 0 rem(10px) rem(3px) $element;
-	  	}
-
-		50% {
-			box-shadow: 0 0 rem(30px) rem(6px) $element;
-		}
-	}
-
-	@keyframes moveFire {
-		@include animateElement($fire);
-	}
-
-	@keyframes moveEarth {
-		@include animateElement($earth);
-	}
-
-	@keyframes moveWater {
-		@include animateElement($water);
-	}
 }
 
 
