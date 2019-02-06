@@ -5,7 +5,8 @@
   font-style: normal;
   font-display: swap; }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -95,11 +96,7 @@ h1 {
     height: 1.25rem;
     display: block;
     border-radius: 100%;
-    position: absolute;
-    -webkit-transition: 2s;
-    transition: 2s;
-    -webkit-transition-timing-function: ease-in-out;
-            transition-timing-function: ease-in-out; }
+    position: absolute; }
     .intro-elements span.fire {
       top: 0;
       left: 0;
@@ -131,7 +128,33 @@ h1 {
           box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
   border-radius: 1.875rem;
   background-color: rgba(0, 0, 0, 0.5);
-  letter-spacing: 2px; }
+  letter-spacing: 3px; }
+
+.play-btn {
+  -webkit-animation: fontbulger 3s infinite;
+          animation: fontbulger 3s infinite; }
+
+@-webkit-keyframes fontbulger {
+  0%,
+  100% {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+    -webkit-box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
+  50% {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
+
+@keyframes fontbulger {
+  0%,
+  100% {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+    -webkit-box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
+  50% {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
 
 .hidden {
   display: none; }
