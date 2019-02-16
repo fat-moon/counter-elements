@@ -131,30 +131,30 @@ h1 {
   letter-spacing: 0.1875rem; }
 
 .play-btn {
-  -webkit-animation: fontbulger 3s infinite;
-          animation: fontbulger 3s infinite; }
+  -webkit-animation: buttonRadiance 3s infinite;
+          animation: buttonRadiance 3s infinite; }
 
-@-webkit-keyframes fontbulger {
+@-webkit-keyframes buttonRadiance {
   0%,
   100% {
     text-shadow: 0rem 0rem 0rem rgba(255, 255, 255, 0);
-    -webkit-box-shadow: 0 0 18.75rem 0.3125rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 18.75rem 0.3125rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
+    -webkit-box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
   50% {
     text-shadow: 0rem 0rem 0.3125rem rgba(255, 255, 255, 0.5);
-    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
+    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.5), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.5), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
 
-@keyframes fontbulger {
+@keyframes buttonRadiance {
   0%,
   100% {
     text-shadow: 0rem 0rem 0rem rgba(255, 255, 255, 0);
-    -webkit-box-shadow: 0 0 18.75rem 0.3125rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 18.75rem 0.3125rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
+    -webkit-box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.9), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); }
   50% {
     text-shadow: 0rem 0rem 0.3125rem rgba(255, 255, 255, 0.5);
-    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.2), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
+    -webkit-box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.5), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 1.875rem 0.1875rem rgba(255, 255, 255, 0.5), inset 0 0 3.75rem 0.0625rem rgba(0, 0, 0, 0.45); } }
 
 .hidden {
   display: none; }
