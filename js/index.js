@@ -108,7 +108,7 @@ waterButton.addEventListener("mousedown", function(){chooseElement(this)}, false
 
 function chooseElement (elementObject) {
 	
-	window.navigator.vibrate(50);
+	window.navigator.vibrate(25);
 
 	if(!activeButton && gameActive){
 		activeButton = true;
