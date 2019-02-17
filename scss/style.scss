@@ -15,9 +15,9 @@ $size-element-intro: rem(20px);
 $time-intro: 2s;
 
 $size-enemy: rem(60px);
-$margin-enemy: rem(20px);
+$margin-enemy: rem(25px);
 
-$time: 0.1s;
+$time: 0.2s;
 
 
 // Icons
@@ -257,56 +257,19 @@ h1 {
 
 // Enemy elements
 .enemy-elements {
-    position: relative;
+    margin-top: (($size-enemy+$margin-enemy)*(-96))+(-1*($margin-enemy));
+	transition: $time;
 
     li {
         display: block;
         width: $size-enemy;
         height: $size-enemy;
         border-radius: 50%;
-        color: $light;
         position: relative;
+        color: $light;
         font-size: $size-enemy/2;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         transition: $time;
-
-        &:nth-child(1) {
-            top: $margin-enemy;
-        }
-
-        &:nth-child(1).new-element {
-            animation-duration: $time;
-            animation-name: newElement;
-        }
-
-        @keyframes newElement {
-            from {
-                width: 0;
-                height: 0;
-                font-size: rem(0px);
-            }
-
-            to {
-                width: $size-enemy;
-                height: $size-enemy;
-                top: $margin-enemy;
-                font-size: $size-enemy/2;
-            }
-        }
-
-        &:nth-child(2) {
-            top: 2*$margin-enemy+$size-enemy;
-        }
-
-        &:nth-child(3) {
-            top: (3*$margin-enemy)+(2*$size-enemy);
-        }
-
-        &:nth-child(4) {
-            top: (4*$margin-enemy)+(3*$size-enemy);
-        }
+		margin: $margin-enemy auto 0 auto;
     }
 
     span {
@@ -320,7 +283,7 @@ h1 {
 
 .remove-element {
     opacity: 0;
-    margin-top: $size-enemy+$margin-enemy;
+    margin-top: $size-enemy+$margin-enemy !important;
 }
 
 

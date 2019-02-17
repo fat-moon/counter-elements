@@ -5,8 +5,10 @@ var gameContent = document.getElementById("game-content");
 var startContent = document.getElementById("start-content");
 
 var enemyElementsList = document.getElementById("enemy-elements");
+var marginTopEnemyElementsList = -8185;
 var enemyElementsArray = ["fire","earth","water"];
-var numberEnemyElements = enemyElementsArray.length;
+var numberKindsEnemyElements = enemyElementsArray.length;
+var numberEnemyElements = 99;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
@@ -16,7 +18,6 @@ var playButton = document.getElementById("play-btn");
 var fireButton = document.getElementById("fire-btn");
 var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
-var activeButton = false;
 var pulsationCounter = 0;
 var winCounter = 0;
 var drawCounter = 0;
@@ -63,17 +64,17 @@ playButton.addEventListener("mousedown", function(){
 
 //Star enemy elements
 /******************************************/
-for (i = 0; i < 4; i++) { 
+for (i = 0; i < 100; i++) { 
 	createNewElement();
 }
-
-assignIdElement();
+var enemyElement = enemyElementsList.querySelectorAll("li");
+assignIdElement(numberEnemyElements);
 
 
 //Create new element
 /******************************************/
-function createNewElement(playing){
-	var randomEnemyElement = Math.floor(Math.random() * numberEnemyElements);
+function createNewElement(){
+	var randomEnemyElement = Math.floor(Math.random() * numberKindsEnemyElements);
 	var chosenEnemyElement = enemyElementsArray[randomEnemyElement];
 
 	newEnemyElement = document.createElement("li");
@@ -84,19 +85,23 @@ function createNewElement(playing){
 
 	enemyElementsList.prepend(newEnemyElement);
 	newEnemyElement.appendChild(newIconEnemyElement);
-
-	if(playing){
-		newEnemyElement.classList.add("new-element");
-	}
 }
 
 
 //Assign ID to element
 /******************************************/
-function assignIdElement() {
-	enemyElementsList.lastElementChild.id = "current-enemy-element";
+function assignIdElement(number) {
+	enemyElement[number].id = "current-enemy-element";
 	currentEnemyElement = document.getElementById("current-enemy-element");
 	valueCurrentEnemyElement = currentEnemyElement.className.split(" ")[0];
+}
+
+
+//Move elements
+/******************************************/
+function moveElements()  {
+    marginTopEnemyElementsList += 85;
+    enemyElementsList.style.marginTop = marginTopEnemyElementsList + "px";
 }
 
 
@@ -110,8 +115,7 @@ function chooseElement (elementObject) {
 	
 	window.navigator.vibrate(25);
 
-	if(!activeButton && gameActive){
-		activeButton = true;
+	if(gameActive){
 		pulsationCounter++;
 		var chosenElement = elementObject.getAttribute("aria-label");
 		console.log('Chosen element: '+ chosenElement);
@@ -124,20 +128,17 @@ function chooseElement (elementObject) {
 			console.log('Result: win');
 			winCounter++;
 
+			//Remove the element
 			currentEnemyElement.classList.add("remove-element");
+			currentEnemyElement.removeAttribute("id");
+			numberEnemyElements--;
 
-			setTimeout(function(){
-				//Create new element
-				createNewElement(true);
-				
-				//Remove the element
-				enemyElementsList.removeChild(currentEnemyElement);
+			//Assign ID to element
+			assignIdElement(numberEnemyElements);
 
-				//Assign ID to element
-				assignIdElement();
+			//Move elements
+			moveElements();
 
-			}, 100);
-			
 
 		}else if(chosenElement === valueCurrentEnemyElement){
 	
@@ -154,6 +155,7 @@ function chooseElement (elementObject) {
 
 		elementObject.classList.add("press-button");
 		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
-		setTimeout(function(){activeButton=false;}, 100);
 	}
 }
+
+
