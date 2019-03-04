@@ -112,8 +112,6 @@ earthButton.addEventListener("mousedown", function(){chooseElement(this)}, false
 waterButton.addEventListener("mousedown", function(){chooseElement(this)}, false);   
 
 function chooseElement (elementObject) {
-	
-	window.navigator.vibrate(25);
 
 	if(gameActive){
 		pulsationCounter++;
