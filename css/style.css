@@ -271,7 +271,6 @@ button {
     border-radius: 0;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    overflow: visible;
     background-color: transparent; }
   .game-buttons {
     bottom: 0.625rem; } }
