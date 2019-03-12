@@ -162,6 +162,125 @@ h1 {
 .transparent {
   opacity: 0; }
 
+.countdown-start {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .countdown-start::after {
+    content: "3";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #fff;
+    font-size: 9.375rem;
+    -webkit-animation: countdown-start 3s forwards;
+            animation: countdown-start 3s forwards; }
+
+@-webkit-keyframes countdown-start {
+  0% {
+    content: "3";
+    opacity: 0;
+    font-size: 9.375rem; }
+  24.5% {
+    content: "3";
+    opacity: 1;
+    font-size: 5rem; }
+  25% {
+    content: "3";
+    opacity: 0;
+    font-size: 5rem; }
+  25.01% {
+    content: "2";
+    opacity: 0;
+    font-size: 9.375rem; }
+  49.5% {
+    content: "2";
+    opacity: 1;
+    font-size: 5rem; }
+  50% {
+    content: "2";
+    opacity: 0;
+    font-size: 5rem; }
+  50.01% {
+    content: "1";
+    opacity: 0;
+    font-size: 9.375rem; }
+  74.5% {
+    content: "1";
+    opacity: 1;
+    font-size: 5rem; }
+  75% {
+    content: "1";
+    opacity: 0;
+    font-size: 5rem; }
+  75.01% {
+    content: "GO!";
+    opacity: 0;
+    font-size: 9.375rem; }
+  99.5% {
+    content: "GO!";
+    opacity: 1;
+    font-size: 5rem; }
+  100% {
+    content: "GO!";
+    opacity: 0;
+    font-size: 5rem; } }
+
+@keyframes countdown-start {
+  0% {
+    content: "3";
+    opacity: 0;
+    font-size: 9.375rem; }
+  24.5% {
+    content: "3";
+    opacity: 1;
+    font-size: 5rem; }
+  25% {
+    content: "3";
+    opacity: 0;
+    font-size: 5rem; }
+  25.01% {
+    content: "2";
+    opacity: 0;
+    font-size: 9.375rem; }
+  49.5% {
+    content: "2";
+    opacity: 1;
+    font-size: 5rem; }
+  50% {
+    content: "2";
+    opacity: 0;
+    font-size: 5rem; }
+  50.01% {
+    content: "1";
+    opacity: 0;
+    font-size: 9.375rem; }
+  74.5% {
+    content: "1";
+    opacity: 1;
+    font-size: 5rem; }
+  75% {
+    content: "1";
+    opacity: 0;
+    font-size: 5rem; }
+  75.01% {
+    content: "GO!";
+    opacity: 0;
+    font-size: 9.375rem; }
+  99.5% {
+    content: "GO!";
+    opacity: 1;
+    font-size: 5rem; }
+  100% {
+    content: "GO!";
+    opacity: 0;
+    font-size: 5rem; } }
+
 .countdown-timer {
   font-family: sans-serif;
   color: #fff;

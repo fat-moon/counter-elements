@@ -24,14 +24,13 @@ var drawCounter = 0;
 var loseCounter = 0;
 
 var countdownTimer = document.getElementById("countdown-timer");
-var time = 60000;
+var time = 63000;
 var showTime;
 
 
 //Start game
 /******************************************/
 playButton.addEventListener("mousedown", function(){
-	gameActive = true;
 	headerContent.classList.add("hidden");
 	gameContent.classList.remove("hidden");
 	startContent.classList.add("hidden");
@@ -45,11 +44,13 @@ playButton.addEventListener("mousedown", function(){
 
 		countdownTimer.innerHTML = "00:"+ showTime;
 
-		if(time <= 9000){
+		if (time > 60000) {
+			countdownTimer.innerHTML = "01:00";
+		}else if( time === 60000){
+			gameActive = true;
+		} else if(time <= 9000) {
 			countdownTimer.innerHTML = "00:0"+ showTime;	
-		}
-
-		if(time === 0){
+		} else if(time === 0) {
 			clearInterval(countdownInterval);
 			gameActive = false;
 			console.log('Pulsations: '+pulsationCounter);
