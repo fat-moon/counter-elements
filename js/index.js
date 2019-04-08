@@ -24,7 +24,7 @@ var drawCounter = 0;
 var loseCounter = 0;
 
 var countdownTimer = document.getElementById("countdown-timer");
-var time = 63000;
+var time = 62000;
 var showTime;
 
 
@@ -44,13 +44,19 @@ playButton.addEventListener("mousedown", function(){
 
 		countdownTimer.innerHTML = "00:"+ showTime;
 
-		if (time > 60000) {
+		if (time > 59000) {
 			countdownTimer.innerHTML = "01:00";
-		}else if( time === 60000){
+		}
+		
+		if (time === 60000){
 			gameActive = true;
-		} else if(time <= 9000) {
+		}
+		
+		if (time <= 9000) {
 			countdownTimer.innerHTML = "00:0"+ showTime;	
-		} else if(time === 0) {
+		}
+
+		if (time === 0) {
 			clearInterval(countdownInterval);
 			gameActive = false;
 			console.log('Pulsations: '+pulsationCounter);
