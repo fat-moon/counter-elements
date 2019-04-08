@@ -257,7 +257,7 @@ h1 {
 .countdown-timer {
     font-family: sans-serif;
     color: $light;
-    position: absolute;
+    position: fixed;
     right: rem(20px);
     top: rem(20px);
 }
@@ -334,7 +334,7 @@ button {
 
 .game-buttons {
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     bottom: rem(20px);

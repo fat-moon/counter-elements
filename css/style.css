@@ -284,7 +284,7 @@ h1 {
 .countdown-timer {
   font-family: sans-serif;
   color: #fff;
-  position: absolute;
+  position: fixed;
   right: 1.25rem;
   top: 1.25rem; }
 
@@ -346,7 +346,7 @@ button {
 
 .game-buttons {
   width: 100%;
-  position: absolute;
+  position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
