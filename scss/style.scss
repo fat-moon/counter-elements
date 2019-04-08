@@ -217,6 +217,12 @@ h1 {
 }
 
 
+.game-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;;
+}
+
 // Countdown start
 .countdown-start {
     width: rem(360px);
