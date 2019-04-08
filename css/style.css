@@ -163,8 +163,8 @@ h1 {
   opacity: 0; }
 
 .countdown-start {
-  width: 100%;
-  height: 100vh;
+  width: 22.5rem;
+  height: 32.5rem;
   position: absolute;
   top: 0;
   left: 0; }
@@ -310,6 +310,8 @@ h1 {
           box-shadow: 0 0 0.625rem 0.1875rem #2A9DDB; }
 
 .enemy-elements {
+  position: relative;
+  top: 1.0625rem;
   margin-top: -511.5625rem;
   -webkit-transition: 0.2s;
   transition: 0.2s; }
@@ -334,7 +336,9 @@ h1 {
 
 .remove-element {
   opacity: 0;
-  margin-top: 5.3125rem !important; }
+  margin-top: 1.5625rem !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
 
 button {
   outline: 0;
@@ -385,11 +389,22 @@ button {
       opacity: .9; }
   .container {
     width: 100%;
-    height: calc(100% - 2.5rem);
+    height: 100vh;
     border: none;
     border-radius: 0;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     background-color: transparent; }
+  .countdown-start {
+    width: 100%;
+    height: 100vh; }
   .game-buttons {
-    bottom: 0.625rem; } }
+    bottom: 1.0625rem; } }
+
+@media only screen and (max-width: 21.25rem) {
+  h1 {
+    width: 17.5rem;
+    height: 3.75rem;
+    background-size: 17.5rem 3.75rem; }
+  .game-buttons button {
+    margin-right: 1.25rem; } }
