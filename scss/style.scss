@@ -396,6 +396,9 @@ button {
         top: inherit;
         bottom: 0;
         transform: translate(-50%, 0);
+        position: fixed;
+        overflow-y: scroll;
+        bottom: 0;
     }
 
     .enemy-elements {
