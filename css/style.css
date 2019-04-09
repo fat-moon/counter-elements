@@ -38,6 +38,8 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, black 100%); }
   body::before {
     content: "";
@@ -398,10 +400,7 @@ button {
     top: inherit;
     bottom: 0;
     -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    position: fixed;
-    overflow-y: scroll;
-    bottom: 0; }
+            transform: translate(-50%, 0); }
   .enemy-elements {
     top: 0.75rem; }
   .countdown-start {
