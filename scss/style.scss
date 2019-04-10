@@ -29,7 +29,6 @@ $time: 0.2s;
         url('../fonts/icomoon.svg') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 [class^="icon-"],
@@ -74,9 +73,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    overflow-x: hidden;
-    overflow-y: hidden;
 
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 1) 100%);
 
@@ -228,8 +224,7 @@ h1 {
     top: 0;
     left: 0;
 
-    &::after {
-        content: "3";
+    span {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -237,23 +232,27 @@ h1 {
         z-index: 1;
         color: $light;
         font-size: rem(150px);    
-        animation: countdown-start 3s forwards;
+        animation: countdown-start 1s forwards;
+        opacity: 0;
+
+        &:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        &:nth-child(4) {
+            animation-delay: 3s;
+        }
     }
 }
 
 @keyframes countdown-start {
-    0%          {content: "3"; opacity: 0; font-size: rem(150px);}
-    24.5%       {content: "3"; opacity: 1; font-size: rem(80px);}
-    25%         {content: "3"; opacity: 0; font-size: rem(80px);}
-    25.01%      {content: "2"; opacity: 0; font-size: rem(150px);}
-    49.5%       {content: "2"; opacity: 1; font-size: rem(80px);}
-    50%         {content: "2"; opacity: 0; font-size: rem(80px);}
-    50.01%      {content: "1"; opacity: 0; font-size: rem(150px);}
-    74.5%       {content: "1"; opacity: 1; font-size: rem(80px);}
-    75%         {content: "1"; opacity: 0; font-size: rem(80px);}
-    75.01%      {content: "GO!"; opacity: 0; font-size: rem(150px);}
-    99.5%       {content: "GO!"; opacity: 1; font-size: rem(80px);}
-    100%        {content: "GO!"; opacity: 0; font-size: rem(80px);}
+    0%      {opacity: 0; font-size: rem(150px);}
+    50%     {opacity: 1; font-size: rem(80px);}
+    100%    {opacity: 0; font-size: rem(80px);}
 }
 
 // Countdown timer

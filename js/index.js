@@ -24,7 +24,7 @@ var drawCounter = 0;
 var loseCounter = 0;
 
 var countdownTimer = document.getElementById("countdown-timer");
-var time = 62000;
+var time = 63000;
 var showTime;
 
 
