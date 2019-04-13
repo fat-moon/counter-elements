@@ -40,9 +40,14 @@ playButton.addEventListener("click", function(){
 
 		setTimeout(function(){
 			gameButtons.classList.add("active");
-			enemyElementsList.classList.add("active");
+			enemyElementsList.classList.add("active-transition");
 			countdownTimer.classList.add("active");
 		}, 300);
+
+		setTimeout(function(){
+			enemyElementsList.classList.remove("active-transition");
+			enemyElementsList.classList.add("active");
+		}, 800);
 
 		//Countdown
 		var countdownInterval = setInterval(countdown, 1000);

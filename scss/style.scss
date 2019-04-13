@@ -314,10 +314,15 @@ h1 {
     margin-top: (($size-enemy+$margin-enemy)*(-96))+(-1*($margin-enemy));
 	transition: $time;
     opacity: 0;
-    transition: 0.5s;
 
-    &.active {
+    &.active-transition {
         opacity: 1; 
+        transition: 0.5s;
+    }
+
+    &.active{
+        opacity: 1;
+        transition: $time;
     }
 
     li {

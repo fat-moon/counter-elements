@@ -254,11 +254,15 @@ h1 {
   margin-top: -511.5625rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s; }
+  opacity: 0; }
+  .enemy-elements.active-transition {
+    opacity: 1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
   .enemy-elements.active {
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s; }
   .enemy-elements li {
     display: block;
     width: 3.75rem;
