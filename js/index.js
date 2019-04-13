@@ -2,7 +2,7 @@
 /******************************************/
 var headerContent = document.getElementById("header-content");
 var gameContent = document.getElementById("game-content");
-var startContent = document.getElementById("start-content");
+var startButtons = document.getElementById("start-buttons");
 
 var enemyElementsList = document.getElementById("enemy-elements");
 var marginTopEnemyElementsList = -8185;
@@ -32,11 +32,13 @@ var showTime;
 //Start game
 /******************************************/
 playButton.addEventListener("click", function(){
+	
 	setTimeout(function(){
 		
+		//Transition
 		headerContent.classList.add("hidden");
+		startButtons.classList.add("hidden");
 		gameContent.classList.remove("hidden");
-		startContent.classList.add("hidden");
 
 		setTimeout(function(){
 			gameButtons.classList.add("active");
@@ -178,5 +180,3 @@ function chooseElement (elementObject) {
 		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
 	}
 }
-
-

@@ -11,13 +11,23 @@ $dark: #0a0a0a;
 $light: #fff;
 $grey: #535353;
 
-$size-element-intro: rem(20px);
+$size-element-intro: rem(36px);
 $time-intro: 2s;
 
 $size-enemy: rem(60px);
 $margin-enemy: rem(25px);
 
 $time: 0.2s;
+
+
+// Fonts
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
 
 
 // Icons
@@ -61,7 +71,7 @@ $time: 0.2s;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     height: 100vh;
 
@@ -108,73 +118,107 @@ body {
 }
 
 
-// Header
-header {
-    color: $light;
-    left: 50%;
-    z-index: 1;
-    transition: $time;
-}
-
-h1 {
-    text-indent: rem(-9999px);
-    width: rem(300px);
-    height: rem(80px);
-    display: block;
-    margin: rem(60px) auto;
-    background-image: url(../images/logo.svg);
-    background-size: rem(300px) rem(80px);
-    filter: drop-shadow(0 0 rem(30px) $dark);
-}
-
-
-// Start content
-.intro-elements {
-    width: $size-element-intro*3+$size-element-intro/2;
-    height: $size-element-intro*3;
-    display: block;
+// Header ontent
+.header-content {
+    width: rem(250px);
+    height: rem(100px);
     position: relative;
-    margin: 0 auto rem(60px) auto;
+    margin: rem(60px) auto;
+    text-align: center;
+    color: $light;
+    line-height: $size-element-intro;
+    font-size: $size-element-intro/2;
 
-    span {
+    div {
         width: $size-element-intro;
         height: $size-element-intro;
         display: block;
         border-radius: 100%;
         position: absolute;
+        top: 0;
 
         @mixin introElement($element) {
             box-shadow: 0 0 rem(30px) rem(6px) $element;
         }
 
         &.fire {
-            top: 0;
             left: 0;
             @include introElement($fire);
         }
 
         &.earth {
-            top: 0;
-            left: calc(100% - #{$size-element-intro});
+            left: 50%;
+            transform: translateX(-50%);
             @include introElement($earth);
         }
 
         &.water {
-            top: calc(100% - #{$size-element-intro});
-            left: 50%;
-            transform: translateX(-50%);
+            right: 0;
             @include introElement($water);
         }
+    }
+
+    span {
+        opacity: 0.5;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        width: rem(1px);
+        height: rem(70px);
+        background: $light;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: rem(5px);
+        height: rem(5px);
+        border-radius: 100%;
+        background: $light;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 70px);
+    }
+}
+
+h1 {
+    position: absolute;
+    color: $light;
+    letter-spacing: rem(3px);
+    font-size: rem(12px);
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    &:before{
+        content:"-- ";
+    }
+
+    &:after{
+        content:" --";
     }
 }
 
 
 // Start Buttons
 .start-buttons {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+
     button {
-        width: rem(250px);
-        height: rem(50px);
-        border-radius: 30px;
+        width: rem(200px);
+        height: rem(40px);
+        border-radius: rem(30px);
         border: solid $light rem(2px);
         background-color: transparent;
         margin: rem(25px) auto 0 auto;
@@ -186,9 +230,10 @@ h1 {
         letter-spacing: rem(3px);
         transition: 0.3s;
         text-shadow: rem(0px) rem(0px) rem(5px) rgba(255, 255, 255, 0.3);
+        font-size: rem(12px);
 
         &:focus {
-            font-size: rem(20px);
+            font-size: rem(16px);
         }
     }
 }
@@ -441,12 +486,6 @@ button {
 }
 
 @media only screen and (max-width: rem(340px)) {
-    h1 {
-        width: rem(280px);
-        height: rem(60px);
-        background-size: rem(280px) rem(60px);
-    }
-
     .game-buttons {
          button {
             margin-right: rem(20px);
