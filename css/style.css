@@ -132,7 +132,7 @@ h1 {
   transition: 0.3s;
   text-shadow: 0rem 0rem 0.3125rem rgba(255, 255, 255, 0.3); }
   .start-buttons button:focus {
-    font-size: 20px; }
+    font-size: 1.25rem; }
 
 .play-btn {
   -webkit-animation: buttonRadiance 3s infinite;
@@ -220,7 +220,12 @@ h1 {
   color: #fff;
   position: absolute;
   right: 1.25rem;
-  top: 1.25rem; }
+  top: 1.25rem;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .countdown-timer.active {
+    opacity: 1; }
 
 .fire {
   background: #E02125; }
@@ -248,7 +253,12 @@ h1 {
   top: 1.0625rem;
   margin-top: -511.5625rem;
   -webkit-transition: 0.2s;
-  transition: 0.2s; }
+  transition: 0.2s;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .enemy-elements.active {
+    opacity: 1; }
   .enemy-elements li {
     display: block;
     width: 3.75rem;
@@ -284,9 +294,13 @@ button {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 1.25rem;
+  bottom: -6.25rem;
   display: block;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .game-buttons.active {
+    bottom: 1.25rem; }
   .game-buttons button {
     border: 0.1875rem solid white;
     width: 5rem;

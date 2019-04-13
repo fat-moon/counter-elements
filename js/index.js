@@ -15,6 +15,7 @@ var valueCurrentEnemyElement;
 var gameActive = false;
 var playButton = document.getElementById("play-btn");
 
+var gameButtons = document.getElementById('game-buttons');
 var fireButton = document.getElementById("fire-btn");
 var earthButton = document.getElementById("earth-btn");
 var waterButton = document.getElementById("water-btn");
@@ -36,6 +37,12 @@ playButton.addEventListener("click", function(){
 		headerContent.classList.add("hidden");
 		gameContent.classList.remove("hidden");
 		startContent.classList.add("hidden");
+
+		setTimeout(function(){
+			gameButtons.classList.add("active");
+			enemyElementsList.classList.add("active");
+			countdownTimer.classList.add("active");
+		}, 300);
 
 		//Countdown
 		var countdownInterval = setInterval(countdown, 1000);
