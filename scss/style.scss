@@ -1,7 +1,3 @@
-// Functions
-@import 'px-to-rem';
-
-
 // Variables
 $fire: #E02125;
 $earth: #F6C82E;
@@ -11,11 +7,11 @@ $dark: #0a0a0a;
 $light: #fff;
 $grey: #535353;
 
-$size-element-intro: rem(36px);
+$size-element-intro: 36px;
 $time-intro: 2s;
 
-$size-enemy: rem(50px);
-$margin-enemy: rem(25px);
+$size-enemy: 50px;
+$margin-enemy: 25px;
 
 $time: 0.2s;
 
@@ -25,7 +21,7 @@ $time: 0.2s;
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-light.ttf') format('truetype');
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-display: swap;
 }
 
@@ -71,7 +67,7 @@ $time: 0.2s;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
     width: 100%;
     height: 100vh;
 
@@ -90,7 +86,7 @@ body {
         content: "";
         background-image: url('../images/background.jpg');
         background-position: center;
-        background-size: rem(640px) rem(320px);
+        background-size: 640px 320px;
         opacity: 0.8;
         top: 0;
         left: 0;
@@ -106,24 +102,24 @@ body {
 .container {
     position: absolute;
     overflow: hidden;
-    width: rem(360px);
-    height: rem(520px);
+    width: 360px;
+    height: 520px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: solid $grey rem(3px);
-    box-shadow: 0 0 rem(30px) rem(1px) rgba(0, 0, 0, .9), inset 0 0 rem(60px) rem(1px) rgba(0, 0, 0, .45);
-    border-radius: rem(10px);
+    border: solid $grey 3px;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 
 // Header ontent
 .header-content {
-    width: rem(250px);
-    height: rem(100px);
+    width: 250px;
+    height: 100px;
     position: relative;
-    margin: rem(60px) auto;
+    margin: 60px auto;
     text-align: center;
     color: $light;
     line-height: $size-element-intro;
@@ -138,7 +134,7 @@ body {
         top: 0;
 
         @mixin introElement($element) {
-            box-shadow: 0 0 rem(30px) rem(6px) $element;
+            box-shadow: 0 0 30px 6px $element;
         }
 
         &.fire {
@@ -165,8 +161,8 @@ body {
     &:before {
         content: "";
         display: block;
-        width: rem(1px);
-        height: rem(70px);
+        width: 1px;
+        height: 70px;
         background: $light;
         position: absolute;
         left: 50%;
@@ -177,8 +173,8 @@ body {
     &:after {
         content: "";
         display: block;
-        width: rem(5px);
-        height: rem(5px);
+        width: 5px;
+        height: 5px;
         border-radius: 100%;
         background: $light;
         position: absolute;
@@ -189,10 +185,11 @@ body {
 }
 
 h1 {
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
     color: $light;
-    letter-spacing: rem(3px);
-    font-size: rem(12px);
+    letter-spacing: 3px;
+    font-size: 12px;
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
@@ -216,24 +213,24 @@ h1 {
     transform: translateX(-50%);
 
     button {
-        width: rem(200px);
-        height: rem(40px);
-        border-radius: rem(30px);
-        border: solid $light rem(2px);
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: solid $light 2px;
         background-color: transparent;
-        margin: rem(25px) auto 0 auto;
+        margin: 25px auto 0 auto;
         display: block;
         color: $light;
-        box-shadow: 0 0 rem(30px) rem(1px) rgba(0, 0, 0, .9), inset 0 0 rem(60px) rem(1px) rgba(0, 0, 0, .45);
-        border-radius: rem(30px);
+        box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
+        border-radius: 30px;
         background-color: rgba(0, 0, 0, 0.5);
-        letter-spacing: rem(3px);
+        letter-spacing: 3px;
         transition: 0.3s;
-        text-shadow: rem(0px) rem(0px) rem(5px) rgba(255, 255, 255, 0.3);
-        font-size: rem(12px);
+        text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+        font-size: 12px;
 
         &:focus {
-            font-size: rem(16px);
+            font-size: 16px;
         }
     }
 }
@@ -245,11 +242,11 @@ h1 {
 
         0%,
         100% {
-            box-shadow: 0 0 rem(30px) rem(1px) rgba(0, 0, 0, .9), inset 0 0 rem(60px) rem(1px) rgba(0, 0, 0, .45);
+            box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
         }
 
         50% {
-            box-shadow: 0 0 rem(30px) rem(3px) rgba(255, 255, 255, .5), inset 0 0 rem(60px) rem(1px) rgba(0, 0, 0, .45);
+            box-shadow: 0 0 30px 3px rgba(255, 255, 255, .5), inset 0 0 60px 1px rgba(0, 0, 0, .45);
         }
     }
 }
@@ -267,8 +264,8 @@ h1 {
 
 // Countdown start
 .countdown-start {
-    width: rem(360px);
-    height: rem(520px);
+    width: 360px;
+    height: 520px;
     position: absolute;
     top: 0;
     left: 0;
@@ -281,7 +278,7 @@ h1 {
         transform: translate(-50%, -50%);
         z-index: 1;
         color: $light;
-        font-size: rem(150px);    
+        font-size: 150px;    
         animation: countdown-start 1s forwards;
         opacity: 0;
 
@@ -304,9 +301,9 @@ h1 {
 }
 
 @keyframes countdown-start {
-    0%      {opacity: 0; font-size: rem(150px);}
-    50%     {opacity: 1; font-size: rem(80px);}
-    100%    {opacity: 0; font-size: rem(80px);}
+    0%      {opacity: 0; font-size: 150px;}
+    50%     {opacity: 1; font-size: 80px;}
+    100%    {opacity: 0; font-size: 80px;}
 }
 
 // Countdown timer
@@ -314,8 +311,8 @@ h1 {
     font-family: sans-serif;
     color: $light;
     position: absolute;
-    right: rem(20px);
-    top: rem(15px);
+    right: 20px;
+    top: 15px;
     opacity: 0;
     transition: 0.5s;
     font-size: 14px;
@@ -342,22 +339,22 @@ h1 {
 
 // Radiances
 .fire-radiance {
-    box-shadow: 0 0 rem(10px) rem(3px) $fire;
+    box-shadow: 0 0 10px 3px $fire;
 }
 
 .earth-radiance {
-    box-shadow: 0 0 rem(10px) rem(3px) $earth;
+    box-shadow: 0 0 10px 3px $earth;
 }
 
 .water-radiance {
-    box-shadow: 0 0 rem(10px) rem(3px) $water;
+    box-shadow: 0 0 10px 3px $water;
 }
 
 
 // Enemy elements
 .enemy-elements {
     position: relative;
-    top: rem(17px);
+    top: 17px;
     margin-top: (($size-enemy+$margin-enemy)*(-96))+(-1*($margin-enemy));
 	transition: $time;
     opacity: 0;
@@ -411,28 +408,28 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: rem(-100px);
+    bottom: -100px;
     display: block;
     text-align: center;
     transition: 0.5s;
 
     &.active {
-        bottom: rem(20px);
+        bottom: 17px;
     }
 
     button {
-        border: rem(3px) solid rgba(255, 255, 255, 1);
-        width: rem(70px);
-        height: rem(70px);
+        border: 3px solid rgba(255, 255, 255, 1);
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         display: inline-block;
-        margin-right: rem(35px);
-        font-size: rem(35px);
+        margin-right: 35px;
+        font-size: 35px;
         color: $light;
         transition: $time;
         position: relative;
-        text-shadow: 0 rem(2px) rem(2px) rgba(0, 0, 0, 0.3);
-        box-shadow: inset 0 rem(2px) rem(2px) rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
 
         &:last-child {
             margin-right: 0;
@@ -449,13 +446,13 @@ button {
     .press-button {
         background: $light;
         color: $dark;
-        box-shadow: 0 0 rem(300px) rem(5px) rgba(256, 256, 256, 0.5);
+        box-shadow: 0 0 300px 5px rgba(256, 256, 256, 0.5);
     }
 }
 
 
 // Media Queries
-@media only screen and (max-width: rem(400px)) {
+@media only screen and (max-width: 400px) {
 
     body {
         background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%);
@@ -478,7 +475,7 @@ button {
     }
 
     .enemy-elements {
-        top: rem(12px);
+        top: 12px;
     }
 
     .countdown-start {
@@ -487,10 +484,10 @@ button {
     }
 }
 
-@media only screen and (max-width: rem(340px)) {
+@media only screen and (max-width: 340px) {
     .game-buttons {
          button {
-            margin-right: rem(20px);
+            margin-right: 20px;
         }
     }
 }
