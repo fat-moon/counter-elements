@@ -14,7 +14,7 @@ $grey: #535353;
 $size-element-intro: rem(36px);
 $time-intro: 2s;
 
-$size-enemy: rem(60px);
+$size-enemy: rem(50px);
 $margin-enemy: rem(25px);
 
 $time: 0.2s;
@@ -272,6 +272,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
+    text-shadow: 0 0 10px #000000;
 
     span {
         position: absolute;
@@ -314,9 +315,10 @@ h1 {
     color: $light;
     position: absolute;
     right: rem(20px);
-    top: rem(20px);
+    top: rem(15px);
     opacity: 0;
     transition: 0.5s;
+    font-size: 14px;
 
     &.active {
         opacity: 1;
@@ -420,12 +422,12 @@ button {
 
     button {
         border: rem(3px) solid rgba(255, 255, 255, 1);
-        width: rem(80px);
-        height: rem(80px);
+        width: rem(70px);
+        height: rem(70px);
         border-radius: 50%;
         display: inline-block;
         margin-right: rem(35px);
-        font-size: rem(40px);
+        font-size: rem(35px);
         color: $light;
         transition: $time;
         position: relative;

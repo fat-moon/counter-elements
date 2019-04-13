@@ -5,7 +5,7 @@ var gameContent = document.getElementById("game-content");
 var startButtons = document.getElementById("start-buttons");
 
 var enemyElementsList = document.getElementById("enemy-elements");
-var marginTopEnemyElementsList = -8185;
+var marginTopEnemyElementsList = -7224;
 var enemyElementsArray = ["fire","earth","water"];
 var numberKindsEnemyElements = enemyElementsArray.length;
 var numberEnemyElements = 99;
@@ -125,7 +125,7 @@ function assignIdElement(number) {
 //Move elements
 /******************************************/
 function moveElements()  {
-    marginTopEnemyElementsList += 85;
+    marginTopEnemyElementsList += 75;
     enemyElementsList.style.marginTop = marginTopEnemyElementsList + "px";
 }
 

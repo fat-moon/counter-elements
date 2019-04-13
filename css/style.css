@@ -204,7 +204,8 @@ h1 {
   height: 32.5rem;
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  text-shadow: 0 0 10px #000000; }
   .countdown-start span {
     position: absolute;
     top: 50%;
@@ -257,10 +258,11 @@ h1 {
   color: #fff;
   position: absolute;
   right: 1.25rem;
-  top: 1.25rem;
+  top: 0.9375rem;
   opacity: 0;
   -webkit-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+  font-size: 14px; }
   .countdown-timer.active {
     opacity: 1; }
 
@@ -288,7 +290,7 @@ h1 {
 .enemy-elements {
   position: relative;
   top: 1.0625rem;
-  margin-top: -511.5625rem;
+  margin-top: -451.5625rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   opacity: 0; }
@@ -302,12 +304,12 @@ h1 {
     transition: 0.2s; }
   .enemy-elements li {
     display: block;
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 3.125rem;
+    height: 3.125rem;
     border-radius: 50%;
     position: relative;
     color: #fff;
-    font-size: 1.875rem;
+    font-size: 1.5625rem;
     -webkit-transition: 0.2s;
     transition: 0.2s;
     margin: 1.5625rem auto 0 auto; }
@@ -344,12 +346,12 @@ button {
     bottom: 1.25rem; }
   .game-buttons button {
     border: 0.1875rem solid white;
-    width: 5rem;
-    height: 5rem;
+    width: 4.375rem;
+    height: 4.375rem;
     border-radius: 50%;
     display: inline-block;
     margin-right: 2.1875rem;
-    font-size: 2.5rem;
+    font-size: 2.1875rem;
     color: #fff;
     -webkit-transition: 0.2s;
     transition: 0.2s;
