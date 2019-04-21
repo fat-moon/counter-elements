@@ -390,13 +390,14 @@ h1 {
 }
 
 .remove-element {
-    animation: removeElement 0.5s forwards;
+    animation: removeElement 0.3s forwards;
 
     @keyframes removeElement {
-        50% {
+        75% {
             background: $light;
             box-shadow: 0 0 30px 6px $light;
             margin-top: $margin-enemy !important;
+            opacity: 0;
         }
 
         100% {
