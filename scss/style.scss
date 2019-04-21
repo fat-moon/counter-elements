@@ -239,7 +239,6 @@ h1 {
     animation: buttonRadiance 3s infinite;
 
     @keyframes buttonRadiance {
-
         0%,
         100% {
             box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
@@ -391,9 +390,45 @@ h1 {
 }
 
 .remove-element {
-    opacity: 0;
-    margin-top: $margin-enemy !important;
-    transition: 0.5s;
+    animation: removeElement 0.5s forwards;
+
+    @keyframes removeElement {
+        50% {
+            background: $light;
+            box-shadow: 0 0 30px 6px $light;
+            margin-top: $margin-enemy !important;
+        }
+
+        100% {
+            width: 0px;
+            height: 0px;
+            font-size: 0px;
+            box-shadow: 0 0 30px 6px rgba(0,0,0,0);
+        }
+    }
+}
+
+.mistake-element {
+    animation: mistakeElement 0.1s forwards;
+
+    @keyframes mistakeElement {
+        0%,
+        100% {
+            top: 0px;
+        }
+
+        25% {
+            top: 15px;
+        }
+
+        50% {
+            top: 0px;
+        }
+
+        75% {
+            top: -15px;
+        }
+    }
 }
 
 

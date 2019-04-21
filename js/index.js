@@ -166,6 +166,11 @@ function chooseElement (elementObject) {
 
 			//Move elements
 			moveElements();
+		
+		} else {
+			//Animation mistake
+			currentEnemyElement.classList.add("mistake-element");
+			setTimeout(function(){currentEnemyElement.classList.remove("mistake-element");}, 100);
 		}
 
 		elementObject.classList.add("press-button");
