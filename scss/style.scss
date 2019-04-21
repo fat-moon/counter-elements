@@ -390,23 +390,9 @@ h1 {
 }
 
 .remove-element {
-    animation: removeElement 0.3s forwards;
-
-    @keyframes removeElement {
-        75% {
-            background: $light;
-            box-shadow: 0 0 30px 6px $light;
-            margin-top: $margin-enemy !important;
-            opacity: 0;
-        }
-
-        100% {
-            width: 0px;
-            height: 0px;
-            font-size: 0px;
-            box-shadow: 0 0 30px 6px rgba(0,0,0,0);
-        }
-    }
+    transition: 0.5s;
+    opacity: 0;
+    margin-top: $margin-enemy !important;
 }
 
 .mistake-element {

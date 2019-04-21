@@ -157,6 +157,7 @@ function chooseElement (elementObject) {
 			winCounter++;
 
 			//Remove the element
+			currentEnemyElement.classList.remove("mistake-element");
 			currentEnemyElement.classList.add("remove-element");
 			currentEnemyElement.removeAttribute("id");
 			numberEnemyElements--;
