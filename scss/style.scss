@@ -401,19 +401,23 @@ h1 {
     @keyframes mistakeElement {
         0%,
         100% {
-            top: 0px;
+            left: 0px;
+            opacity: 1;
         }
 
         25% {
-            top: 15px;
+            left: 15px;
+            opacity: 0.5;
         }
 
         50% {
-            top: 0px;
+            left: 0px;
+            opacity: 1;
         }
 
         75% {
-            top: -15px;
+            left: -15px;
+            opacity: 0.5;
         }
     }
 }
