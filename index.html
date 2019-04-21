@@ -9,7 +9,7 @@
 
 <body>
 
-	<div class="container">
+	<section class="container">
 
 		<header id="header-content" class="header-content">
 			<h1>COUNTER ELEMENTS</h1>
@@ -24,7 +24,6 @@
 		</div>
 
 		<div id="game-content" class="hidden">
-			
 			<div class="countdown-start">
 				<span>3</span>
 				<span>2</span>
@@ -43,9 +42,13 @@
 			</div>
 		</div>
 
-		<div id="results-content" class="hidden">
+		<div id="results-content" class="results-content hidden">
+			<h3>RESULTS</h3>
+			<p>Nº of pulsations: <span id="number-pulsations"></span></p>
+			<p>Nº of counteracted elements: <span id="counteracted-elements"></span></p>
+			<p>Hit percentage: <span id="hit-percentage"></span></p>
 		</div>
-	</div>
+	</section>
 
 	<script src="js/index.js"></script>
 </body>

@@ -374,6 +374,15 @@ button {
     -webkit-box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
             box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5); }
 
+.results-content {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  padding: 35px; }
+
 @media only screen and (max-width: 400px) {
   body {
     background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%); }
