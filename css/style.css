@@ -323,44 +323,35 @@ h1 {
     opacity: 0.5; }
 
 .remove-element {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  opacity: 0;
-  margin-top: 25px !important; }
+  -webkit-animation: removeElement 0.3s forwards;
+          animation: removeElement 0.3s forwards; }
+
+@-webkit-keyframes removeElement {
+  50% {
+    background: transparent; }
+  80% {
+    -webkit-box-shadow: 0 0 300px 5px white;
+            box-shadow: 0 0 300px 5px white;
+    margin-top: 50px !important; }
+  100% {
+    opacity: 0;
+    background: transparent; } }
+
+@keyframes removeElement {
+  50% {
+    background: transparent; }
+  80% {
+    -webkit-box-shadow: 0 0 300px 5px white;
+            box-shadow: 0 0 300px 5px white;
+    margin-top: 50px !important; }
+  100% {
+    opacity: 0;
+    background: transparent; } }
 
 .mistake-element {
-  -webkit-animation: mistakeElement 0.1s forwards;
-          animation: mistakeElement 0.1s forwards; }
-
-@-webkit-keyframes mistakeElement {
-  0%,
-  100% {
-    left: 0px;
-    opacity: 1; }
-  25% {
-    left: 15px;
-    opacity: 0.5; }
-  50% {
-    left: 0px;
-    opacity: 1; }
-  75% {
-    left: -15px;
-    opacity: 0.5; } }
-
-@keyframes mistakeElement {
-  0%,
-  100% {
-    left: 0px;
-    opacity: 1; }
-  25% {
-    left: 15px;
-    opacity: 0.5; }
-  50% {
-    left: 0px;
-    opacity: 1; }
-  75% {
-    left: -15px;
-    opacity: 0.5; } }
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  background: #0a0a0a; }
 
 button {
   outline: 0;

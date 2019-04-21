@@ -390,36 +390,28 @@ h1 {
 }
 
 .remove-element {
-    transition: 0.5s;
-    opacity: 0;
-    margin-top: $margin-enemy !important;
+    animation: removeElement 0.3s forwards;
+
+    @keyframes removeElement {
+        50% {
+            background: transparent;
+        }
+
+        80%{
+            box-shadow: 0 0 300px 5px rgba(256, 256, 256, 1);
+            margin-top: $size-enemy !important;
+        }
+
+        100% {
+            opacity: 0;
+            background: transparent;
+        }
+    }
 }
 
 .mistake-element {
-    animation: mistakeElement 0.1s forwards;
-
-    @keyframes mistakeElement {
-        0%,
-        100% {
-            left: 0px;
-            opacity: 1;
-        }
-
-        25% {
-            left: 15px;
-            opacity: 0.5;
-        }
-
-        50% {
-            left: 0px;
-            opacity: 1;
-        }
-
-        75% {
-            left: -15px;
-            opacity: 0.5;
-        }
-    }
+    transition: 0.1s;
+    background: $dark;
 }
 
 
