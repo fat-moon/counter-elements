@@ -390,11 +390,12 @@ h1 {
 }
 
 .remove-element {
-    animation: removeElement 0.3s forwards;
+    animation: removeElement 0.4s forwards;
 
     @keyframes removeElement {
         50% {
             background: transparent;
+            color: transparent;
         }
 
         80%{
@@ -409,9 +410,16 @@ h1 {
     }
 }
 
-.mistake-element {
-    transition: 0.1s;
-    background: $dark;
+.fire-radiance.mistake-element {
+    box-shadow: 0 0 20px 6px $fire;
+}
+
+.earth-radiance.mistake-element {
+    box-shadow: 0 0 20px 6px $earth;
+}
+
+.water-radiance.mistake-element {
+    box-shadow: 0 0 20px 6px $water;
 }
 
 
