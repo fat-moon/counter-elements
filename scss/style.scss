@@ -390,23 +390,9 @@ h1 {
 }
 
 .remove-element {
-    animation: removeElement 0.3s forwards;
-
-    @keyframes removeElement {
-        50% {
-            background: transparent;
-        }
-
-        80%{
-            box-shadow: 0 0 300px 5px rgba(256, 256, 256, 1);
-            margin-top: $size-enemy !important;
-        }
-
-        100% {
-            opacity: 0;
-            background: transparent;
-        }
-    }
+    transition: 0.5s;
+    margin-top: $size-enemy !important;
+    opacity: 0;
 }
 
 .fire-radiance.mistake-element {
