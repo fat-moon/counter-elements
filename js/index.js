@@ -14,12 +14,12 @@ var currentEnemyElement;
 var valueCurrentEnemyElement;
 
 var gameActive = false;
-var playButton = document.getElementById("play-btn");
+var playButton = document.getElementById("play-button");
 
 var gameButtons = document.getElementById('game-buttons');
-var fireButton = document.getElementById("fire-btn");
-var earthButton = document.getElementById("earth-btn");
-var waterButton = document.getElementById("water-btn");
+var fireButton = document.getElementById("fire-button");
+var earthButton = document.getElementById("earth-button");
+var waterButton = document.getElementById("water-button");
 
 var countdownTimer = document.getElementById("countdown-timer");
 var time = 64000;

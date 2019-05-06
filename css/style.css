@@ -151,28 +151,29 @@ h1 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%); }
-  .start-buttons button {
-    width: 200px;
-    height: 40px;
-    border-radius: 30px;
-    border: solid #fff 2px;
-    background-color: transparent;
-    margin: 25px auto 0 auto;
-    display: block;
-    color: #fff;
-    -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    letter-spacing: 3px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-    font-size: 12px; }
-    .start-buttons button:focus {
-      font-size: 16px; }
 
-.play-btn {
+.standard-button {
+  width: 200px;
+  height: 40px;
+  border-radius: 30px;
+  border: solid #fff 2px;
+  background-color: transparent;
+  margin: 25px auto 0 auto;
+  display: block;
+  color: #fff;
+  -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  font-size: 12px; }
+  .standard-button:focus {
+    font-size: 16px; }
+
+.play-button {
   -webkit-animation: buttonRadiance 3s infinite;
           animation: buttonRadiance 3s infinite; }
 
@@ -391,8 +392,8 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: calc(100% - 70px);
+  width: calc(100% - 70px);
   padding: 35px; }
 
 @media only screen and (max-width: 400px) {
