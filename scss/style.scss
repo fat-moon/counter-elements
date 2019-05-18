@@ -354,7 +354,7 @@ h1 {
 .enemy-elements {
     position: relative;
     top: 17px;
-    margin-top: (($size-enemy+$margin-enemy)*(-96))+(-1*($margin-enemy));
+    margin-top: (($size-enemy+$margin-enemy)*(-296))+(-1*($margin-enemy));
 	transition: $time;
     opacity: 0;
 

@@ -6,10 +6,10 @@ var startButtons = document.getElementById("start-buttons");
 var resultsContent = document.getElementById("results-content")
 
 var enemyElementsList = document.getElementById("enemy-elements");
-var marginTopEnemyElementsList = -7224;
+var marginTopEnemyElementsList = -22225;
 var enemyElementsArray = ["fire","earth","water"];
 var numberKindsEnemyElements = enemyElementsArray.length;
-var numberEnemyElements = 99;
+var numberEnemyElements = 299;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
@@ -30,6 +30,8 @@ var winCounter = 0;
 var numberPulsations = document.getElementById("number-pulsations");
 var counteractedElements = document.getElementById("counteracted-elements");
 var hitPercentage = document.getElementById("hit-percentage");
+
+var returnButton = document.getElementById("return-button");
 
 
 //Start game
@@ -89,9 +91,13 @@ playButton.addEventListener("click", function(){
 
 //Star enemy elements
 /******************************************/
-for (i = 0; i < 100; i++) { 
+startEnemyElements();
 
-	createNewElement();
+function startEnemyElements() {
+	
+	for (i = 0; i < 300; i++) { 
+		createNewElement();
+	}
 
 }
 var enemyElement = enemyElementsList.querySelectorAll("li");
@@ -194,5 +200,28 @@ function results() {
 	numberPulsations.innerHTML = pulsationCounter;
 	counteractedElements.innerHTML = winCounter;
 	hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
+
+}
+
+
+//Reset
+/******************************************/
+returnButton.addEventListener("click", reset);
+
+function reset(){
+
+	resultsContent.classList.add("hidden");
+	headerContent.classList.remove("hidden");
+	startButtons.classList.remove("hidden");
+	gameContent.classList.add("hidden");
+
+	enemyElementsList.innerHTML = "";
+	startEnemyElements();
+	marginTopEnemyElementsList = -22225;
+	enemyElement = enemyElementsList.querySelectorAll("li");
+	assignIdElement(numberEnemyElements);
+
+	time = 64000;
+	countdownTimer.innerHTML = "01:00";
 
 }
