@@ -199,8 +199,12 @@ function results() {
 
 	numberPulsations.innerHTML = pulsationCounter;
 	counteractedElements.innerHTML = winCounter;
-	hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
 
+	if(pulsationCounter > 0){
+		hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
+	} else {
+		hitPercentage.innerHTML = "0.00%";
+	}
 }
 
 

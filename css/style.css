@@ -315,6 +315,14 @@ h1 {
     -webkit-transition: 0.2s;
     transition: 0.2s;
     margin: 25px auto 0 auto; }
+    .enemy-elements li.remove-element {
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      margin-top: 50px;
+      opacity: 0;
+      font-size: 0px;
+      width: 0;
+      height: 0; }
   .enemy-elements span {
     position: absolute;
     top: 50%;
@@ -322,12 +330,6 @@ h1 {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     opacity: 0.5; }
-
-.remove-element {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  margin-top: 50px !important;
-  opacity: 0; }
 
 .fire-radiance.mistake-element {
   -webkit-box-shadow: 0 0 20px 6px #E02125;

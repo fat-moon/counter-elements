@@ -379,6 +379,15 @@ h1 {
         font-size: $size-enemy/2;
         transition: $time;
 		margin: $margin-enemy auto 0 auto;
+
+        &.remove-element {
+            transition: 0.5s;
+            margin-top: $size-enemy;
+            opacity: 0;
+            font-size: 0px;
+            width: 0;
+            height: 0;
+        }
     }
 
     span {
@@ -388,12 +397,6 @@ h1 {
         transform: translate(-50%, -50%);
         opacity: 0.5;
     }
-}
-
-.remove-element {
-    transition: 0.5s;
-    margin-top: $size-enemy !important;
-    opacity: 0;
 }
 
 .fire-radiance.mistake-element {
