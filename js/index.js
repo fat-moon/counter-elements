@@ -216,7 +216,8 @@ function reset(){
 	gameContent.classList.add("hidden");
 
 	enemyElementsList.innerHTML = "";
-	enemyElementsList.style.marginTop = "-14725px"
+	enemyElementsList.style.marginTop = "-14725px";
+	marginTopEnemyElementsList = -14725;
 	startEnemyElements();
 	numberEnemyElements = 199;
 	enemyElement = enemyElementsList.querySelectorAll("li");
@@ -224,5 +225,8 @@ function reset(){
 
 	time = 64000;
 	countdownTimer.innerHTML = "01:00";
+
+	pulsationCounter = 0;
+	winCounter = 0;
 
 }
