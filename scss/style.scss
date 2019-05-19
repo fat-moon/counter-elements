@@ -12,6 +12,7 @@ $time-intro: 2s;
 
 $size-enemy: 50px;
 $margin-enemy: 25px;
+$number-enemies: 196;
 
 $time: 0.2s;
 
@@ -354,7 +355,7 @@ h1 {
 .enemy-elements {
     position: relative;
     top: 17px;
-    margin-top: (($size-enemy+$margin-enemy)*(-296))+(-1*($margin-enemy));
+    margin-top: (($size-enemy+$margin-enemy)*(-$number-enemies))+(-1*($margin-enemy));
 	transition: $time;
     opacity: 0;
 

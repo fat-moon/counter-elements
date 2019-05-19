@@ -6,10 +6,10 @@ var startButtons = document.getElementById("start-buttons");
 var resultsContent = document.getElementById("results-content")
 
 var enemyElementsList = document.getElementById("enemy-elements");
-var marginTopEnemyElementsList = -22225;
+var marginTopEnemyElementsList = -14725;
 var enemyElementsArray = ["fire","earth","water"];
 var numberKindsEnemyElements = enemyElementsArray.length;
-var numberEnemyElements = 299;
+var numberEnemyElements = 199;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
@@ -95,7 +95,7 @@ startEnemyElements();
 
 function startEnemyElements() {
 	
-	for (i = 0; i < 300; i++) { 
+	for (i = 0; i < 200; i++) { 
 		createNewElement();
 	}
 
@@ -216,8 +216,9 @@ function reset(){
 	gameContent.classList.add("hidden");
 
 	enemyElementsList.innerHTML = "";
+	enemyElementsList.style.marginTop = "-14725px"
 	startEnemyElements();
-	marginTopEnemyElementsList = -22225;
+	numberEnemyElements = 199;
 	enemyElement = enemyElementsList.querySelectorAll("li");
 	assignIdElement(numberEnemyElements);
 
