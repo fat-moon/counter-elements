@@ -16,11 +16,14 @@ var valueCurrentEnemyElement;
 var gameActive = false;
 var playButton = document.getElementById("play-button");
 
+var backButton = document.getElementById("back-button");
+
 var gameButtons = document.getElementById('game-buttons');
 var fireButton = document.getElementById("fire-button");
 var earthButton = document.getElementById("earth-button");
 var waterButton = document.getElementById("water-button");
 
+var containerCountdownTimer = document.getElementById("container-countdown-timer");
 var countdownTimer = document.getElementById("countdown-timer");
 var time = 64000;
 var showTime;
@@ -48,7 +51,8 @@ playButton.addEventListener("click", function(){
 		setTimeout(function(){
 			gameButtons.classList.add("active");
 			enemyElementsList.classList.add("active-transition");
-			countdownTimer.classList.add("active");
+			containerCountdownTimer.classList.add("active");
+			backButton.classList.add("active");
 		}, 300);
 
 		setTimeout(function(){
@@ -193,7 +197,8 @@ function results() {
 
 	gameButtons.classList.remove("active");
 	enemyElementsList.classList.remove("active");
-	countdownTimer.classList.remove("active");
+	containerCountdownTimer.classList.remove("active");
+	backButton.classList.remove("active");
 
 	resultsContent.classList.remove("hidden");
 
@@ -211,8 +216,11 @@ function results() {
 //Reset
 /******************************************/
 returnButton.addEventListener("click", reset);
+backButton.addEventListener("click", reset);
 
 function reset(){
+
+	gameActive = false;
 
 	resultsContent.classList.add("hidden");
 	headerContent.classList.remove("hidden");
