@@ -27,6 +27,7 @@ var containerCountdownTimer = document.getElementById("container-countdown-timer
 var countdownTimer = document.getElementById("countdown-timer");
 var time = 64000;
 var showTime;
+var countdownInterval;
 
 var pulsationCounter = 0;
 var winCounter = 0;
@@ -60,37 +61,41 @@ playButton.addEventListener("click", function(){
 			enemyElementsList.classList.add("active");
 		}, 800);
 
-		//Countdown
-		var countdownInterval = setInterval(countdown, 1000);
-
-		function countdown() {
-			time -= 1000;
-			showTime = time/1000;
-
-			countdownTimer.innerHTML = "00:"+ showTime;
-
-			if (time > 59000) {
-				countdownTimer.innerHTML = "01:00";
-			}
-			
-			if (time === 60000){
-				gameActive = true;
-			}
-			
-			if (time <= 9000) {
-				countdownTimer.innerHTML = "00:0"+ showTime;	
-			}
-
-			if (time === 0) {
-				clearInterval(countdownInterval);
-				gameActive = false;
-				results();
-			}
-		}	
+		countdownInterval = setInterval(countdown, 1000);
 
 	}, 300);
 
 }, false);
+
+
+//Countdown
+/******************************************/
+function countdown() {
+
+	time -= 1000;
+	showTime = time/1000;
+
+	countdownTimer.innerHTML = "00:"+ showTime;
+
+	if (time > 59000) {
+		countdownTimer.innerHTML = "01:00";
+	}
+	
+	if (time === 60000){
+		gameActive = true;
+	}
+	
+	if (time <= 9000) {
+		countdownTimer.innerHTML = "00:0"+ showTime;	
+	}
+
+	if (time === 0) {
+		clearInterval(countdownInterval);
+		gameActive = false;
+		results();
+	}
+
+}
 
 
 //Star enemy elements
@@ -220,12 +225,18 @@ backButton.addEventListener("click", reset);
 
 function reset(){
 
+	clearInterval(countdownInterval);
 	gameActive = false;
 
-	resultsContent.classList.add("hidden");
 	headerContent.classList.remove("hidden");
 	startButtons.classList.remove("hidden");
+	resultsContent.classList.add("hidden");
 	gameContent.classList.add("hidden");
+
+	gameButtons.classList.remove("active");
+	enemyElementsList.classList.remove("active","active-transition");
+	containerCountdownTimer.classList.remove("active");
+	backButton.classList.remove("active");
 
 	enemyElementsList.innerHTML = "";
 	enemyElementsList.style.marginTop = "-14725px";
