@@ -499,34 +499,39 @@ button {
 // Results
 .results-content {
     color: $light;
-    position: relative;
+    position: absolute;
+    top: 0;
     height: calc(100% - 70px);
     width: calc(100% - 70px);
     padding: 35px;
     
     h3 {
         bottom: inherit;
-        top: 35px;
+        top: 60px;
         width: auto;
     }
 
     button {
         position: absolute;
-        bottom: 35px;
+        bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .info-results {
         position: absolute;
-        top: 100px;
+        top: 120px;
         font-size: 14px;
     }    
 
     p {
-        margin-bottom: 10px;
-    }
+        margin-bottom: 12px;
 
+        &:before{
+            content: "-- ";
+            letter-spacing: 3px;
+        }
+    }
 }
 
 
