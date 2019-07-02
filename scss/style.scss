@@ -504,6 +504,12 @@ button {
     height: calc(100% - 70px);
     width: calc(100% - 70px);
     padding: 35px;
+    opacity: 0;
+    transition: 0.5s;
+
+    &.active {
+        opacity: 1;
+    }
     
     h3 {
         bottom: inherit;
@@ -528,7 +534,7 @@ button {
         margin-bottom: 12px;
 
         &:before{
-            content: "-- ";
+            content: "- ";
             letter-spacing: 3px;
         }
     }

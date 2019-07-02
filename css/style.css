@@ -421,7 +421,12 @@ button {
   top: 0;
   height: calc(100% - 70px);
   width: calc(100% - 70px);
-  padding: 35px; }
+  padding: 35px;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .results-content.active {
+    opacity: 1; }
   .results-content h3 {
     bottom: inherit;
     top: 60px;
@@ -439,7 +444,7 @@ button {
   .results-content p {
     margin-bottom: 12px; }
     .results-content p:before {
-      content: "-- ";
+      content: "- ";
       letter-spacing: 3px; }
 
 @media only screen and (max-width: 400px) {

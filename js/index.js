@@ -199,22 +199,25 @@ function chooseElement (elementObject) {
 //Results
 /******************************************/
 function results() {
-
 	gameButtons.classList.remove("active");
 	enemyElementsList.classList.remove("active");
 	containerCountdownTimer.classList.remove("active");
 	backButton.classList.remove("active");
 
-	resultsContent.classList.remove("hidden");
+	setTimeout(function(){
+		numberPulsations.innerHTML = pulsationCounter;
+		counteractedElements.innerHTML = winCounter;
 
-	numberPulsations.innerHTML = pulsationCounter;
-	counteractedElements.innerHTML = winCounter;
+		if(pulsationCounter > 0){
+			hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
+		} else {
+			hitPercentage.innerHTML = "0.00%";
+		}
 
-	if(pulsationCounter > 0){
-		hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
-	} else {
-		hitPercentage.innerHTML = "0.00%";
-	}
+		resultsContent.classList.remove("hidden");
+		resultsContent.classList.add("active");
+
+	},500);
 }
 
 
@@ -252,4 +255,6 @@ function reset(){
 	pulsationCounter = 0;
 	winCounter = 0;
 
+	resultsContent.classList.add("hidden");
+	resultsContent.classList.remove("active");
 }
