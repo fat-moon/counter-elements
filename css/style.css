@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat Light';
   src: url("../fonts/Montserrat-light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
@@ -132,8 +132,8 @@ body {
             transform: translateX(-50%);
     top: calc(100% + 70px); }
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
+h1, h3 {
+  font-family: 'Montserrat Light', sans-serif;
   position: absolute;
   color: #fff;
   letter-spacing: 3px;
@@ -143,9 +143,9 @@ h1 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%; }
-  h1:before {
+  h1:before, h3:before {
     content: "-- "; }
-  h1:after {
+  h1:after, h3:after {
     content: " --"; }
 
 .start-buttons {
@@ -417,12 +417,26 @@ button {
 
 .results-content {
   color: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   height: calc(100% - 70px);
   width: calc(100% - 70px);
   padding: 35px; }
+  .results-content h3 {
+    bottom: inherit;
+    top: 35px;
+    width: auto; }
+  .results-content button {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  .results-content .info-results {
+    position: absolute;
+    top: 100px;
+    font-size: 14px; }
+  .results-content p {
+    margin-bottom: 10px; }
 
 @media only screen and (max-width: 400px) {
   body {
