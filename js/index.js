@@ -43,27 +43,27 @@ var returnButton = document.getElementById("return-button");
 playButton.addEventListener("click", function(){
 	
 	setTimeout(function(){
-		
-		//Transition
-		headerContent.classList.add("hidden");
-		startButtons.classList.add("hidden");
+		headerContent.classList.remove("active");
+		startButtons.classList.remove("active");
 		gameContent.classList.remove("hidden");
+		gameContent.classList.add("active");
 
 		setTimeout(function(){
+			headerContent.classList.add("hidden");
+			startButtons.classList.add("hidden");
 			gameButtons.classList.add("active");
 			enemyElementsList.classList.add("active-transition");
 			containerCountdownTimer.classList.add("active");
 			backButton.classList.add("active");
-		}, 300);
+		}, 400);
 
 		setTimeout(function(){
 			enemyElementsList.classList.remove("active-transition");
 			enemyElementsList.classList.add("active");
-		}, 800);
+		}, 900);
 
 		countdownInterval = setInterval(countdown, 1000);
-
-	}, 300);
+	}, 400);
 
 }, false);
 
@@ -199,10 +199,8 @@ function chooseElement (elementObject) {
 //Results
 /******************************************/
 function results() {
-	gameButtons.classList.remove("active");
-	enemyElementsList.classList.remove("active");
-	containerCountdownTimer.classList.remove("active");
-	backButton.classList.remove("active");
+
+	gameContent.classList.remove("active");
 
 	setTimeout(function(){
 		numberPulsations.innerHTML = pulsationCounter;
@@ -216,8 +214,8 @@ function results() {
 
 		resultsContent.classList.remove("hidden");
 		resultsContent.classList.add("active");
+	},400);
 
-	},500);
 }
 
 
@@ -231,30 +229,39 @@ function reset(){
 	clearInterval(countdownInterval);
 	gameActive = false;
 
-	headerContent.classList.remove("hidden");
-	startButtons.classList.remove("hidden");
-	resultsContent.classList.add("hidden");
-	gameContent.classList.add("hidden");
-
-	gameButtons.classList.remove("active");
-	enemyElementsList.classList.remove("active","active-transition");
-	containerCountdownTimer.classList.remove("active");
-	backButton.classList.remove("active");
-
-	enemyElementsList.innerHTML = "";
-	enemyElementsList.style.marginTop = "-14725px";
-	marginTopEnemyElementsList = -14725;
-	startEnemyElements();
-	numberEnemyElements = 199;
-	enemyElement = enemyElementsList.querySelectorAll("li");
-	assignIdElement(numberEnemyElements);
-
-	time = 64000;
-	countdownTimer.innerHTML = "01:00";
-
-	pulsationCounter = 0;
-	winCounter = 0;
-
-	resultsContent.classList.add("hidden");
+	gameContent.classList.remove("active");
 	resultsContent.classList.remove("active");
+
+	setTimeout(function(){
+		gameContent.classList.add("hidden");
+		resultsContent.classList.add("hidden");
+
+		headerContent.classList.remove("hidden");
+		startButtons.classList.remove("hidden");
+
+		gameButtons.classList.remove("active");
+		enemyElementsList.classList.remove("active","active-transition");
+		containerCountdownTimer.classList.remove("active");
+		backButton.classList.remove("active");
+
+		enemyElementsList.innerHTML = "";
+		enemyElementsList.style.marginTop = "-14725px";
+		marginTopEnemyElementsList = -14725;
+		startEnemyElements();
+		numberEnemyElements = 199;
+		enemyElement = enemyElementsList.querySelectorAll("li");
+		assignIdElement(numberEnemyElements);
+
+		time = 64000;
+		countdownTimer.innerHTML = "01:00";
+
+		pulsationCounter = 0;
+		winCounter = 0;
+	},300);
+
+	setTimeout(function(){
+		headerContent.classList.add("active");
+		startButtons.classList.add("active");
+	},400);
+
 }

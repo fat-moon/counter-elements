@@ -15,6 +15,8 @@ $margin-enemy: 25px;
 $number-enemies: 196;
 
 $time: 0.2s;
+$time-transition: 0.5s;
+$quick-time-transition: 0.3s;
 
 
 // Fonts
@@ -130,6 +132,12 @@ body {
     color: $light;
     line-height: $size-element-intro;
     font-size: $size-element-intro/2;
+    opacity: 0;
+    transition: $quick-time-transition;
+
+    &.active {
+        opacity: 1;
+    }
 
     div {
         width: $size-element-intro;
@@ -217,6 +225,12 @@ h1,h3 {
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0;
+    transition: $quick-time-transition;
+
+    &.active {
+        opacity: 1;
+    }
 }
 
 .standard-button {
@@ -232,7 +246,7 @@ h1,h3 {
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     letter-spacing: 3px;
-    transition: 0.3s;
+    transition: $quick-time-transition;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
     font-size: 12px;
 
@@ -277,8 +291,19 @@ h1,h3 {
     left: 20px;
     font-size: 13px;  
     opacity: 0;
-    transition: 0.5s;
+    transition: $time-transition;
     z-index: 1;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+
+// Game content
+.game-content {
+    opacity: 0;
+    transition: $quick-time-transition;
 
     &.active {
         opacity: 1;
@@ -330,6 +355,7 @@ h1,h3 {
     100%    {opacity: 0; font-size: 80px;}
 }
 
+
 // Countdown timer
 .container-countdown-timer {
     font-family: sans-serif;
@@ -338,7 +364,7 @@ h1,h3 {
     right: 20px;
     top: 20px;
     opacity: 0;
-    transition: 0.5s;
+    transition: $time-transition;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -391,7 +417,7 @@ h1,h3 {
 
     &.active-transition {
         opacity: 1; 
-        transition: 0.5s;
+        transition: $time-transition;
     }
 
     &.active {
@@ -411,7 +437,7 @@ h1,h3 {
 		margin: $margin-enemy auto 0 auto;
 
         &.remove-element {
-            transition: 0.5s;
+            transition: $time-transition;
             margin-top: $size-enemy;
             opacity: 0;
             font-size: 0px;
@@ -456,7 +482,7 @@ button {
     bottom: -100px;
     display: block;
     text-align: center;
-    transition: 0.5s;
+    transition: $time-transition;
 
     &.active {
         bottom: 20px;
@@ -505,7 +531,7 @@ button {
     width: calc(100% - 70px);
     padding: 35px;
     opacity: 0;
-    transition: 0.5s;
+    transition: $time-transition;
 
     &.active {
         opacity: 1;
