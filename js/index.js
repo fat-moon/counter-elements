@@ -13,12 +13,15 @@ var numberEnemyElements = 199;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
+var countdownStart = document.getElementById("countdown-start");
+
 var gameActive = false;
 var playButton = document.getElementById("play-button");
+var tutorialButton = document.getElementById("tutorial-button")
 
 var backButton = document.getElementById("back-button");
 
-var gameButtons = document.getElementById('game-buttons');
+var gameButtons = document.getElementById("game-buttons");
 var fireButton = document.getElementById("fire-button");
 var earthButton = document.getElementById("earth-button");
 var waterButton = document.getElementById("water-button");
@@ -37,12 +40,15 @@ var hitPercentage = document.getElementById("hit-percentage");
 
 var returnButton = document.getElementById("return-button");
 
+var tutorialActive = false;
+
 
 //Start game
 /******************************************/
 playButton.addEventListener("click", function(){
-	
+
 	setTimeout(function(){
+
 		headerContent.classList.remove("active");
 		startButtons.classList.remove("active");
 		gameContent.classList.remove("hidden");
@@ -62,7 +68,10 @@ playButton.addEventListener("click", function(){
 			enemyElementsList.classList.add("active");
 		}, 900);
 
-		countdownInterval = setInterval(countdown, 1000);
+		if (!tutorialActive) {
+			countdownInterval = setInterval(countdown, 1000);
+		}
+		
 	}, 400);
 
 }, false);
@@ -196,6 +205,29 @@ function chooseElement (elementObject) {
 }
 
 
+//Tutorial
+/******************************************/
+tutorialButton.addEventListener("click", function(){
+	
+	countdownStart.classList.add("hidden");
+	containerCountdownTimer.classList.add("tutorial");
+	enemyElementsList.classList.add("tutorial");
+	gameButtons.classList.add("tutorial");
+	fireButton.classList.add("tutorial");
+	earthButton.classList.add("tutorial");
+	waterButton.classList.add("tutorial");
+
+	tutorialActive = true;
+
+	setTimeout(function(){
+		gameButtons.classList.add("tutorial-active");
+	}, 800);
+	
+	playButton.click();
+
+})
+
+
 //Results
 /******************************************/
 function results() {
@@ -239,7 +271,10 @@ function reset(){
 		headerContent.classList.remove("hidden");
 		startButtons.classList.remove("hidden");
 
-		gameButtons.classList.remove("active");
+		gameButtons.classList.remove("active", "tutorial", "tutorial-active");
+		fireButton.classList.remove("tutorial");
+		earthButton.classList.remove("tutorial");
+		waterButton.classList.remove("tutorial");
 		enemyElementsList.classList.remove("active","active-transition");
 		containerCountdownTimer.classList.remove("active");
 		backButton.classList.remove("active");
@@ -257,6 +292,11 @@ function reset(){
 
 		pulsationCounter = 0;
 		winCounter = 0;
+
+		countdownStart.classList.remove("hidden");
+		containerCountdownTimer.classList.remove("tutorial");
+		enemyElementsList.classList.remove("tutorial");
+		tutorialActive = false;
 	},300);
 
 	setTimeout(function(){

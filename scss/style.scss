@@ -90,7 +90,7 @@ body {
 
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 1) 100%);
 
-    &::before {
+    &:before {
         content: "";
         background-image: url('../images/background.jpg');
         background-position: center;
@@ -376,22 +376,76 @@ h1,h3 {
     .icon-time {
         margin-right: 3px;
     }
+
+    &.tutorial:before {
+        content: '';
+        width: 1px;
+        height: 15px;
+        background: $light;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+    }
+
+    &.tutorial:after{
+        content: 'You have a minute to try to counteract as many elements as possible';
+        color: $light;
+        font-size: 10px;
+        position: absolute;
+        left: 0;
+        top: 40px;         
+    }
 }
 
 
 // Elements
 .fire {
     background: $fire;
+
+    &.tutorial:after {
+        content:'Fire button: counteracts the earth element, the yellow one';
+    }
 }
 
 .earth {
     background: $earth;
+
+    &.tutorial:after {
+        content:'Earth button: counteracts the water element, the blue one';
+    }
 }
 
 .water {
     background: $water;
+
+    &.tutorial:after {
+        content:'Water button: counteracts the fire element, the red one';
+    }
 }
 
+// Tutorial
+.fire.tutorial:after,
+.earth.tutorial:after,
+.water.tutorial:after {
+    width: 70px;
+    position: absolute;
+    top: -75px;
+    left: 0;
+    color: $light;
+    font-size: 10px;
+    text-align: left;
+}
+
+.fire.tutorial:before,
+.earth.tutorial:before,
+.water.tutorial:before {
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: $light;
+    position: absolute;
+    top: -25px;
+}
 
 // Radiances
 .fire-radiance {
@@ -423,6 +477,26 @@ h1,h3 {
     &.active {
         opacity: 1;
         transition: $time;
+    }
+
+    &.tutorial:before {
+        content: '';
+        width: 1px;
+        height: 15px;
+        background: #fff;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+    }
+
+    &.tutorial:after {
+        content: 'This is the current element to counter';
+        color: $light;
+        font-size: 10px;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -40px;
     }
 
     li {
@@ -486,6 +560,15 @@ button {
 
     &.active {
         bottom: 20px;
+    }
+
+    &.tutorial {
+        bottom: 20px;
+        opacity: 0;
+    }
+
+    &.tutorial-active {
+        opacity: 1;
     }
 
     button {
