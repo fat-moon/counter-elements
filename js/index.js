@@ -266,46 +266,44 @@ function reset(){
 	gameActive = false;
 
 	gameContent.classList.remove("active");
+	gameContent.classList.add("hidden");
+
 	resultsContent.classList.remove("active");
+	resultsContent.classList.add("hidden");
 
-	setTimeout(function(){
-		gameContent.classList.add("hidden");
-		resultsContent.classList.add("hidden");
+	headerContent.classList.remove("hidden");
+	startButtons.classList.remove("hidden");
 
-		headerContent.classList.remove("hidden");
-		startButtons.classList.remove("hidden");
+	gameButtons.classList.remove("active", "tutorial", "tutorial-active");
+	fireButton.classList.remove("tutorial");
+	earthButton.classList.remove("tutorial");
+	waterButton.classList.remove("tutorial");
+	enemyElementsList.classList.remove("active","active-transition");
+	containerCountdownTimer.classList.remove("active");
+	backButton.classList.remove("active");
 
-		gameButtons.classList.remove("active", "tutorial", "tutorial-active");
-		fireButton.classList.remove("tutorial");
-		earthButton.classList.remove("tutorial");
-		waterButton.classList.remove("tutorial");
-		enemyElementsList.classList.remove("active","active-transition");
-		containerCountdownTimer.classList.remove("active");
-		backButton.classList.remove("active");
+	enemyElementsList.innerHTML = "";
+	enemyElementsList.style.marginTop = "-14725px";
+	marginTopEnemyElementsList = -14725;
+	startEnemyElements();
+	numberEnemyElements = 199;
+	enemyElement = enemyElementsList.querySelectorAll("li");
+	assignIdElement(numberEnemyElements);
 
-		enemyElementsList.innerHTML = "";
-		enemyElementsList.style.marginTop = "-14725px";
-		marginTopEnemyElementsList = -14725;
-		startEnemyElements();
-		numberEnemyElements = 199;
-		enemyElement = enemyElementsList.querySelectorAll("li");
-		assignIdElement(numberEnemyElements);
+	time = 64000;
+	countdownTimer.innerHTML = "01:00";
 
-		time = 64000;
-		countdownTimer.innerHTML = "01:00";
+	pulsationCounter = 0;
+	winCounter = 0;
 
-		pulsationCounter = 0;
-		winCounter = 0;
-
-		countdownStart.classList.remove("hidden");
-		containerCountdownTimer.classList.remove("tutorial");
-		enemyElementsList.classList.remove("tutorial");
-		tutorialActive = false;
-	},300);
+	countdownStart.classList.remove("hidden");
+	containerCountdownTimer.classList.remove("tutorial");
+	enemyElementsList.classList.remove("tutorial");
+	tutorialActive = false;
 
 	setTimeout(function(){
 		headerContent.classList.add("active");
 		startButtons.classList.add("active");
-	},400);
+	},150);
 
 }
