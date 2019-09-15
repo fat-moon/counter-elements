@@ -222,7 +222,7 @@ tutorialButton.addEventListener("click", function(){
 	setTimeout(function(){
 		gameButtons.classList.add("tutorial-active");
 	}, 800);
-	
+
 	playButton.click();
 
 })
@@ -233,6 +233,10 @@ tutorialButton.addEventListener("click", function(){
 function results() {
 
 	gameContent.classList.remove("active");
+	backButton.classList.remove("active");
+	containerCountdownTimer.classList.remove("active");
+	enemyElementsList.classList.remove("active");
+	gameButtons.classList.remove("active");
 
 	setTimeout(function(){
 		numberPulsations.innerHTML = pulsationCounter;
