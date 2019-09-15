@@ -468,6 +468,8 @@ button {
   .game-buttons.tutorial {
     bottom: 20px;
     opacity: 0; }
+    .game-buttons.tutorial button {
+      cursor: inherit; }
   .game-buttons.tutorial-active {
     opacity: 1; }
   .game-buttons button {

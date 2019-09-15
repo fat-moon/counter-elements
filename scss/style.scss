@@ -565,6 +565,10 @@ button {
     &.tutorial {
         bottom: 20px;
         opacity: 0;
+
+        button {
+            cursor: inherit;
+        }
     }
 
     &.tutorial-active {
