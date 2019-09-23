@@ -3,11 +3,11 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "css/style.css",
-    "revision": "2fc38c79d463482ee7b5cfb0da2431b4"
+    "revision": "9330287ff4fe68c8c977587d69338a34"
   },
   {
     "url": "css/style.min.css",
-    "revision": "9eb17d74031af6f8004217426218635c"
+    "revision": "f79cdf62693f23399735a7259d0a8f17"
   },
   {
     "url": "fonts/icomoon.eot",
@@ -38,6 +38,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "831ba5a0dcfcf7c4658165faac1c108a"
   },
   {
+    "url": "images/screenshot.png",
+    "revision": "79edf76afea8ea8fde29dc3a233fda0a"
+  },
+  {
     "url": "images/touch/ce-144.png",
     "revision": "886732cb6a9751d6b92b3bd45e27d238"
   },
@@ -63,11 +67,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "01d461211827485ff9a2e857111dfd53"
+    "revision": "8aa09b957d215a418d76b8166ebc18e2"
   },
   {
     "url": "js/index.js",
-    "revision": "1237f6e8e4dc5db37d09ab0127c01634"
+    "revision": "a75c7c667c2ee63b87724848cd2847ce"
   },
   {
     "url": "manifest.json",
@@ -79,7 +83,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "README.md",
-    "revision": "15b58b90756abb7ea98fdf65ea4da810"
+    "revision": "05d1f694f3ea4fdf72d9a2b06bb0322b"
   },
   {
     "url": "resources/87CCDAD1.png",
@@ -99,7 +103,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "scss/style.scss",
-    "revision": "caa20114f86081b40ee60077155d0ded"
+    "revision": "dbd7ba20d8bc624039cb6388abdcaa0e"
   },
   {
     "url": "src-sw.js",
