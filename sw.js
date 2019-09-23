@@ -3,11 +3,11 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "css/style.css",
-    "revision": "9330287ff4fe68c8c977587d69338a34"
+    "revision": "5c44b2704ceb6b7bd539ad396d3c32f7"
   },
   {
     "url": "css/style.min.css",
-    "revision": "f79cdf62693f23399735a7259d0a8f17"
+    "revision": "1673c063fd853e4e5823897e87aba175"
   },
   {
     "url": "fonts/icomoon.eot",
@@ -71,7 +71,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/index.js",
-    "revision": "a75c7c667c2ee63b87724848cd2847ce"
+    "revision": "fa2ff0b360fac8c75b52c83305abebf1"
   },
   {
     "url": "manifest.json",
@@ -103,7 +103,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "scss/style.scss",
-    "revision": "dbd7ba20d8bc624039cb6388abdcaa0e"
+    "revision": "f1819c2044bc762399deb21ce2bd9311"
   },
   {
     "url": "src-sw.js",
