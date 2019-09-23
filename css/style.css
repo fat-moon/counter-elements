@@ -542,7 +542,7 @@ button {
       opacity: .9; }
   .container {
     width: 100%;
-    height: 100vh;
+    height: calc(100% - 1.25rem);
     border: none;
     border-radius: 0;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
@@ -555,7 +555,7 @@ button {
   .enemy-elements,
   .back-button,
   .container-countdown-timer {
-    top: 20px; }
+    top: 12px; }
   .countdown-start {
     width: 100%;
     height: 100vh; } }
