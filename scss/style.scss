@@ -546,6 +546,7 @@ h1,h3 {
 button {
     outline: 0;
     cursor: pointer;
+    touch-action: manipulation;
 }
 
 .game-buttons {
