@@ -668,7 +668,8 @@ button {
 
     .container {
         width: 100%;
-        height: calc(100% - 1.25rem);
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         border: none;
         border-radius: 0;
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
@@ -681,7 +682,7 @@ button {
     .enemy-elements,
     .back-button,
     .container-countdown-timer {
-        top: 12px;
+        top: 20px;
     }
 
     .countdown-start {
