@@ -219,11 +219,11 @@ tutorialButton.addEventListener("click", function(){
 
 	tutorialActive = true;
 
-	var tutorialElements = "<li class='water water-radiance'><span class='icon-water'></span></li>";
-	tutorialElements = "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-	tutorialElements += "<li class='fire fire-radiance'><span class='icon-fire'></span></li>";
-	tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-	tutorialElements += "<li class='water water-radiance'><span class='icon-water'></span></li>";
+	var tutorialElements = "<li class='water water-radiance'><span class='icon-water'></span></li>"
+    tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
+    tutorialElements += "<li class='fire fire-radiance'><span class='icon-fire'></span></li>";
+    tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
+    tutorialElements += "<li class='water water-radiance'><span class='icon-water'></span></li>";
 
 	enemyElementsList.innerHTML = tutorialElements;
 	enemyElementsList.style.marginTop = "-100px";
