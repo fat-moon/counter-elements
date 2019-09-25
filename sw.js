@@ -43,27 +43,27 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "images/touch/ce-144.png",
-    "revision": "886732cb6a9751d6b92b3bd45e27d238"
+    "revision": "d0039c4180e9095a986c03b9a333db63"
   },
   {
     "url": "images/touch/ce-192.png",
-    "revision": "65807e8508c3bc89534b1f44a2c87011"
+    "revision": "7592de00057b1a5ec9fb1f3b4f24af94"
   },
   {
     "url": "images/touch/ce-48.png",
-    "revision": "a5486536b294e08a2b7f59bb5c178bc9"
+    "revision": "1048d2d1b2d6b5cefdef8ea5e5e4ffc3"
   },
   {
     "url": "images/touch/ce-512.png",
-    "revision": "92b4859e3c68685b8ca7722068fe2e22"
+    "revision": "da1f4ae7a3ad96a5cdfed2e4cb4ddee7"
   },
   {
     "url": "images/touch/ce-72.png",
-    "revision": "039eaf56d49dd111afdc4a6d4b650ab0"
+    "revision": "c8d243c2b4bac012aa31a532076c2f22"
   },
   {
     "url": "images/touch/ce-96.png",
-    "revision": "da0a7b9eaa0d11e1e7f73aed64d37ed7"
+    "revision": "af02f5e58751ca14f121e107d2b28cd2"
   },
   {
     "url": "index.html",
@@ -86,20 +86,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "05d1f694f3ea4fdf72d9a2b06bb0322b"
   },
   {
-    "url": "resources/87CCDAD1.png",
-    "revision": "d954e4dce372cffe9b22cd3949ff9bfd"
-  },
-  {
-    "url": "resources/87CCDAD3.png",
-    "revision": "f544b623202bbd861a59394dd99f5979"
-  },
-  {
-    "url": "resources/87CCDAD6.png",
-    "revision": "13fb28b5261e849cba7007211ef12e25"
-  },
-  {
     "url": "resources/logo.svg",
-    "revision": "72a64a62ec76d2717a8eff7e6eedc645"
+    "revision": "2b83b8e62dfbc7da6c3a051e97b9c04e"
   },
   {
     "url": "scss/style.scss",
