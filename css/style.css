@@ -535,7 +535,7 @@ button {
       content: "- ";
       letter-spacing: 3px; }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   body {
     background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%); }
     body:before {

@@ -3,11 +3,11 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "css/style.css",
-    "revision": "e5e190209a35bcd56b773a8d46c9ece0"
+    "revision": "8e0668d7fd6cf0f230c3592c31c1099e"
   },
   {
     "url": "css/style.min.css",
-    "revision": "e3009182c7dee3b81eaa83e84d6f6e9e"
+    "revision": "aa0bb83c5485f51ea6286466bc0ba767"
   },
   {
     "url": "fonts/icomoon.eot",
@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "fonts/icomoon.svg",
-    "revision": "1aa6ceb3d7b56854008068d33bf59246"
+    "revision": "c56f0a61a9d231330cfa3e7bae976392"
   },
   {
     "url": "fonts/icomoon.ttf",
@@ -31,7 +31,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "gulpfile.js",
-    "revision": "48376000c3e644563804eda88b301452"
+    "revision": "ee1c994b3eede1b9cf255ea7f8cacd54"
   },
   {
     "url": "images/background.jpg",
@@ -79,7 +79,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "package.json",
-    "revision": "439005b5e4ca7dceb69f5dfc4af646ff"
+    "revision": "fa938413e4cedbc5aa306d3e76b4e543"
   },
   {
     "url": "README.md",
@@ -91,7 +91,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "scss/style.scss",
-    "revision": "aa0447aee512f86ce73bd94ccc4b9c14"
+    "revision": "606fc3191fe9b505cf84c1c78cdebf9b"
   },
   {
     "url": "src-sw.js",
