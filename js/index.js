@@ -1,11 +1,10 @@
-//Variables
-/******************************************/
-var headerContent = document.getElementById("header-content");
-var gameContent = document.getElementById("game-content");
-var startButtons = document.getElementById("start-buttons");
-var resultsContent = document.getElementById("results-content")
+// Variables
+const headerContent = document.getElementById("header-content");
+const gameContent = document.getElementById("game-content");
+const startButtons = document.getElementById("start-buttons");
+const resultsContent = document.getElementById("results-content")
 
-var enemyElementsList = document.getElementById("enemy-elements");
+const enemyElementsList = document.getElementById("enemy-elements");
 var marginTopEnemyElementsList = -14725;
 var enemyElementsArray = ["fire","earth","water"];
 var numberKindsEnemyElements = enemyElementsArray.length;
@@ -13,32 +12,32 @@ var numberEnemyElements = 199;
 var currentEnemyElement;
 var valueCurrentEnemyElement;
 
-var countdownStart = document.getElementById("countdown-start");
+const countdownStart = document.getElementById("countdown-start");
 
 var gameActive = false;
-var playButton = document.getElementById("play-button");
-var tutorialButton = document.getElementById("tutorial-button")
+const playButton = document.getElementById("play-button");
+const tutorialButton = document.getElementById("tutorial-button")
 
-var backButton = document.getElementById("back-button");
+const backButton = document.getElementById("back-button");
 
-var gameButtons = document.getElementById("game-buttons");
-var fireButton = document.getElementById("fire-button");
-var earthButton = document.getElementById("earth-button");
-var waterButton = document.getElementById("water-button");
+const gameButtons = document.getElementById("game-buttons");
+const fireButton = document.getElementById("fire-button");
+const earthButton = document.getElementById("earth-button");
+const waterButton = document.getElementById("water-button");
 
-var containerCountdownTimer = document.getElementById("container-countdown-timer");
-var countdownTimer = document.getElementById("countdown-timer");
+const containerCountdownTimer = document.getElementById("container-countdown-timer");
+const countdownTimer = document.getElementById("countdown-timer");
 var time = 64000;
 var showTime;
 var countdownInterval;
 
 var pulsationCounter = 0;
 var winCounter = 0;
-var numberPulsations = document.getElementById("number-pulsations");
-var counteractedElements = document.getElementById("counteracted-elements");
-var hitPercentage = document.getElementById("hit-percentage");
+const numberPulsations = document.getElementById("number-pulsations");
+const counteractedElements = document.getElementById("counteracted-elements");
+const hitPercentage = document.getElementById("hit-percentage");
 
-var returnButton = document.getElementById("return-button");
+const returnButton = document.getElementById("return-button");
 
 var tutorialActive = false;
 
