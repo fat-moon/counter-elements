@@ -79,13 +79,13 @@ const countdown = () => {
 	time -= 1000;
 	showTime = time / 1000;
 
-	countdownTimer.textContent = '00:' + showTime;
+	countdownTimer.textContent = `00:${showTime}`;
 
 	if (time > 59000) countdownTimer.textContent = '01:00';
 
 	if (time === 60000) gameActive = true;
 
-	if (time <= 9000) countdownTimer.textContent = '00:0' + showTime;
+	if (time <= 9000) countdownTimer.textContent = `00:0${showTime}`;
 
 	if (time === 0) {
 		clearInterval(countdownInterval);
@@ -103,10 +103,10 @@ const createNewElement = () => {
 	const chosenEnemyElement = enemyElementsArray[randomEnemyElement];
 
 	newEnemyElement = document.createElement('li');
-	newEnemyElement.className += chosenEnemyElement + ' ' + chosenEnemyElement + '-radiance';
+	newEnemyElement.className += `${chosenEnemyElement} ${chosenEnemyElement}-radiance`;
 
 	const newIconEnemyElement = document.createElement('span');
-	newIconEnemyElement.className += 'icon-' + chosenEnemyElement;
+	newIconEnemyElement.className += `icon-${chosenEnemyElement}`;
 
 	enemyElementsList.prepend(newEnemyElement);
 	newEnemyElement.appendChild(newIconEnemyElement);
@@ -141,7 +141,7 @@ assignIdElement(numberEnemyElements);
 const moveElements = () => {
 
 	marginTopEnemyElementsList += 75;
-	enemyElementsList.style.marginTop = marginTopEnemyElementsList + 'px';
+	enemyElementsList.style.marginTop = `${marginTopEnemyElementsList}px`;
 
 }
 
@@ -231,7 +231,7 @@ const results = () => {
 		counteractedElements.innerHTML = winCounter;
 
 		if (pulsationCounter > 0) {
-			hitPercentage.innerHTML = ((winCounter * 100) / pulsationCounter).toFixed(2) + '%';
+			hitPercentage.innerHTML = `${((winCounter * 100) / pulsationCounter).toFixed(2)}%`;
 		} else {
 			hitPercentage.innerHTML = '0.00%';
 		}
