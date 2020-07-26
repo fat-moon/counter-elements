@@ -5,16 +5,16 @@ const startButtons = document.getElementById("start-buttons");
 const resultsContent = document.getElementById("results-content")
 
 const enemyElementsList = document.getElementById("enemy-elements");
-var marginTopEnemyElementsList = -14725;
-var enemyElementsArray = ["fire", "earth", "water"];
-var numberKindsEnemyElements = enemyElementsArray.length;
-var numberEnemyElements = 199;
-var currentEnemyElement;
-var valueCurrentEnemyElement;
+let marginTopEnemyElementsList = -14725;
+const enemyElementsArray = ["fire", "earth", "water"];
+const numberKindsEnemyElements = enemyElementsArray.length;
+let numberEnemyElements = 199;
+let currentEnemyElement;
+let valueCurrentEnemyElement;
 
 const countdownStart = document.getElementById("countdown-start");
 
-var gameActive = false;
+let gameActive = false;
 const playButton = document.getElementById("play-button");
 const tutorialButton = document.getElementById("tutorial-button")
 
@@ -29,17 +29,17 @@ const containerCountdownTimer = document.getElementById("container-countdown-tim
 const countdownTimer = document.getElementById("countdown-timer");
 let time = 64000;
 let showTime;
-var countdownInterval;
+let countdownInterval;
 
-var pulsationCounter = 0;
-var winCounter = 0;
+let pulsationCounter = 0;
+let winCounter = 0;
 const numberPulsations = document.getElementById("number-pulsations");
 const counteractedElements = document.getElementById("counteracted-elements");
 const hitPercentage = document.getElementById("hit-percentage");
 
 const returnButton = document.getElementById("return-button");
 
-var tutorialActive = false;
+let tutorialActive = false;
 
 
 //Start game
@@ -99,13 +99,13 @@ const countdown = () => {
 // Create new element
 const createNewElement = () => {
 
-	var randomEnemyElement = Math.floor(Math.random() * numberKindsEnemyElements);
-	var chosenEnemyElement = enemyElementsArray[randomEnemyElement];
+	const randomEnemyElement = Math.floor(Math.random() * numberKindsEnemyElements);
+	const chosenEnemyElement = enemyElementsArray[randomEnemyElement];
 
 	newEnemyElement = document.createElement("li");
 	newEnemyElement.className += chosenEnemyElement + " " + chosenEnemyElement + "-radiance";
 
-	var newIconEnemyElement = document.createElement("span");
+	const newIconEnemyElement = document.createElement("span");
 	newIconEnemyElement.className += "icon-" + chosenEnemyElement;
 
 	enemyElementsList.prepend(newEnemyElement);
@@ -151,7 +151,7 @@ const chooseElement = elementObject => {
 
 	if (gameActive) {
 		pulsationCounter++;
-		var chosenElement = elementObject.getAttribute("aria-label");
+		const chosenElement = elementObject.getAttribute("aria-label");
 
 		if (chosenElement === "fire" && valueCurrentEnemyElement === "earth" ||
 			chosenElement === "earth" && valueCurrentEnemyElement === "water" ||
@@ -200,11 +200,12 @@ tutorialButton.addEventListener("click", () => {
 
 	tutorialActive = true;
 
-	var tutorialElements = "<li class='water water-radiance'><span class='icon-water'></span></li>"
-	tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-	tutorialElements += "<li class='fire fire-radiance'><span class='icon-fire'></span></li>";
-	tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-	tutorialElements += "<li class='water water-radiance'><span class='icon-water'></span></li>";
+	const tutorialElements = `
+	<li class="water water-radiance"><span class="icon-water"></span></li>
+	<li class="earth earth-radiance"><span class="icon-earth"></span></li>
+	<li class="fire fire-radiance"><span class="icon-fire"></span></li>
+	<li class="earth earth-radiance"><span class="icon-earth"></span></li>
+	<li class="water water-radiance"><span class="icon-water"></span></li>`;
 
 	enemyElementsList.innerHTML = tutorialElements;
 	enemyElementsList.style.marginTop = "-100px";
@@ -295,7 +296,7 @@ backButton.addEventListener("click", reset);
 
 
 // Correct Viewport height on Mobile
-var vh = window.innerHeight * 0.01;
+let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
