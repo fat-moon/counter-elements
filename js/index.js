@@ -6,7 +6,7 @@ const resultsContent = document.getElementById("results-content")
 
 const enemyElementsList = document.getElementById("enemy-elements");
 var marginTopEnemyElementsList = -14725;
-var enemyElementsArray = ["fire","earth","water"];
+var enemyElementsArray = ["fire", "earth", "water"];
 var numberKindsEnemyElements = enemyElementsArray.length;
 var numberEnemyElements = 199;
 var currentEnemyElement;
@@ -27,8 +27,8 @@ const waterButton = document.getElementById("water-button");
 
 const containerCountdownTimer = document.getElementById("container-countdown-timer");
 const countdownTimer = document.getElementById("countdown-timer");
-var time = 64000;
-var showTime;
+let time = 64000;
+let showTime;
 var countdownInterval;
 
 var pulsationCounter = 0;
@@ -43,17 +43,16 @@ var tutorialActive = false;
 
 
 //Start game
-/******************************************/
-playButton.addEventListener("click", function(){
+playButton.addEventListener("click", () => {
 
-	setTimeout(function(){
+	setTimeout(() => {
 
 		headerContent.classList.remove("active");
 		startButtons.classList.remove("active");
 		gameContent.classList.remove("hidden");
 		gameContent.classList.add("active");
 
-		setTimeout(function(){
+		setTimeout(() => {
 			headerContent.classList.add("hidden");
 			startButtons.classList.add("hidden");
 			gameButtons.classList.add("active");
@@ -62,40 +61,31 @@ playButton.addEventListener("click", function(){
 			backButton.classList.add("active");
 		}, 400);
 
-		setTimeout(function(){
+		setTimeout(() => {
 			enemyElementsList.classList.remove("active-transition");
 			enemyElementsList.classList.add("active");
 		}, 900);
 
-		if (!tutorialActive) {
-			countdownInterval = setInterval(countdown, 1000);
-		}
-		
+		if (!tutorialActive) countdownInterval = setInterval(countdown, 1000);
+
 	}, 400);
 
 }, false);
 
 
-//Countdown
-/******************************************/
-function countdown() {
+// Countdown
+const countdown = () => {
 
 	time -= 1000;
-	showTime = time/1000;
+	showTime = time / 1000;
 
-	countdownTimer.innerHTML = "00:"+ showTime;
+	countdownTimer.textContent = "00:" + showTime;
 
-	if (time > 59000) {
-		countdownTimer.innerHTML = "01:00";
-	}
-	
-	if (time === 60000){
-		gameActive = true;
-	}
-	
-	if (time <= 9000) {
-		countdownTimer.innerHTML = "00:0"+ showTime;	
-	}
+	if (time > 59000) countdownTimer.textContent = "01:00";
+
+	if (time === 60000) gameActive = true;
+
+	if (time <= 9000) countdownTimer.textContent = "00:0" + showTime;
 
 	if (time === 0) {
 		clearInterval(countdownInterval);
@@ -106,24 +96,8 @@ function countdown() {
 }
 
 
-//Star enemy elements
-/******************************************/
-startEnemyElements();
-
-function startEnemyElements() {
-	
-	for (i = 0; i < 200; i++) { 
-		createNewElement();
-	}
-
-}
-var enemyElement = enemyElementsList.querySelectorAll("li");
-assignIdElement(numberEnemyElements);
-
-
-//Create new element
-/******************************************/
-function createNewElement() {
+// Create new element
+const createNewElement = () => {
 
 	var randomEnemyElement = Math.floor(Math.random() * numberKindsEnemyElements);
 	var chosenEnemyElement = enemyElementsArray[randomEnemyElement];
@@ -140,9 +114,8 @@ function createNewElement() {
 }
 
 
-//Assign ID to element
-/******************************************/
-function assignIdElement(number) {
+// Assign ID to element
+const assignIdElement = number => {
 
 	enemyElement[number].id = "current-enemy-element";
 	currentEnemyElement = document.getElementById("current-enemy-element");
@@ -151,63 +124,72 @@ function assignIdElement(number) {
 }
 
 
-//Move elements
-/******************************************/
-function moveElements() {
+// Star enemy elements
+const startEnemyElements = () => {
 
-    marginTopEnemyElementsList += 75;
-    enemyElementsList.style.marginTop = marginTopEnemyElementsList + "px";
+	for (let i = 0; i < 200; i++) {
+		createNewElement();
+	}
+
+}
+startEnemyElements();
+let enemyElement = enemyElementsList.querySelectorAll("li");
+assignIdElement(numberEnemyElements);
+
+
+// Move elements
+const moveElements = () => {
+
+	marginTopEnemyElementsList += 75;
+	enemyElementsList.style.marginTop = marginTopEnemyElementsList + "px";
 
 }
 
 
-//Choose element
-/******************************************/
-fireButton.addEventListener("mousedown", function(){chooseElement(this)}, false);
-earthButton.addEventListener("mousedown", function(){chooseElement(this)}, false);   
-waterButton.addEventListener("mousedown", function(){chooseElement(this)}, false);   
+// Choose element
+const chooseElement = elementObject => {
 
-function chooseElement (elementObject) {
-
-	if(gameActive){
+	if (gameActive) {
 		pulsationCounter++;
 		var chosenElement = elementObject.getAttribute("aria-label");
 
-		if(chosenElement === "fire" && valueCurrentEnemyElement === "earth" ||
-		   chosenElement === "earth" && valueCurrentEnemyElement === "water" ||
-		   chosenElement === "water" && valueCurrentEnemyElement === "fire"){
-			
+		if (chosenElement === "fire" && valueCurrentEnemyElement === "earth" ||
+			chosenElement === "earth" && valueCurrentEnemyElement === "water" ||
+			chosenElement === "water" && valueCurrentEnemyElement === "fire") {
+
 			winCounter++;
 
-			//Remove the element
+			// Remove the element
 			currentEnemyElement.classList.remove("mistake-element");
 			currentEnemyElement.classList.add("remove-element");
 			currentEnemyElement.removeAttribute("id");
 			numberEnemyElements--;
 
-			//Assign ID to element
+			// Assign ID to element
 			assignIdElement(numberEnemyElements);
 
-			//Move elements
+			// Move elements
 			moveElements();
-		
+
 		} else {
-			//Animation mistake
+			// Animation mistake
 			currentEnemyElement.classList.add("mistake-element");
-			setTimeout(function(){currentEnemyElement.classList.remove("mistake-element");}, 100);
+			setTimeout(() => currentEnemyElement.classList.remove("mistake-element"), 100);
 		}
 
 		elementObject.classList.add("press-button");
-		setTimeout(function(){elementObject.classList.remove("press-button");}, 100);
+		setTimeout(() => elementObject.classList.remove("press-button"), 100);
 	}
 
 }
+fireButton.addEventListener("mousedown", () => chooseElement(fireButton), false);
+earthButton.addEventListener("mousedown", () => chooseElement(earthButton), false);
+waterButton.addEventListener("mousedown", () => chooseElement(waterButton), false);
 
 
-//Tutorial
-/******************************************/
-tutorialButton.addEventListener("click", function(){
-	
+// Tutorial
+tutorialButton.addEventListener("click", () => {
+
 	countdownStart.classList.add("hidden");
 	containerCountdownTimer.classList.add("tutorial");
 	enemyElementsList.classList.add("tutorial");
@@ -219,26 +201,23 @@ tutorialButton.addEventListener("click", function(){
 	tutorialActive = true;
 
 	var tutorialElements = "<li class='water water-radiance'><span class='icon-water'></span></li>"
-    tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-    tutorialElements += "<li class='fire fire-radiance'><span class='icon-fire'></span></li>";
-    tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
-    tutorialElements += "<li class='water water-radiance'><span class='icon-water'></span></li>";
+	tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
+	tutorialElements += "<li class='fire fire-radiance'><span class='icon-fire'></span></li>";
+	tutorialElements += "<li class='earth earth-radiance'><span class='icon-earth'></span></li>";
+	tutorialElements += "<li class='water water-radiance'><span class='icon-water'></span></li>";
 
 	enemyElementsList.innerHTML = tutorialElements;
 	enemyElementsList.style.marginTop = "-100px";
 
-	setTimeout(function(){
-		gameButtons.classList.add("tutorial-active");
-	}, 800);
+	setTimeout(() => gameButtons.classList.add("tutorial-active"), 800);
 
 	playButton.click();
 
 })
 
 
-//Results
-/******************************************/
-function results() {
+// Results
+const results = () => {
 
 	gameContent.classList.remove("active");
 	backButton.classList.remove("active");
@@ -246,29 +225,25 @@ function results() {
 	enemyElementsList.classList.remove("active");
 	gameButtons.classList.remove("active");
 
-	setTimeout(function(){
+	setTimeout(() => {
 		numberPulsations.innerHTML = pulsationCounter;
 		counteractedElements.innerHTML = winCounter;
 
-		if(pulsationCounter > 0){
-			hitPercentage.innerHTML = ((winCounter*100)/pulsationCounter).toFixed(2) + "%";
+		if (pulsationCounter > 0) {
+			hitPercentage.innerHTML = ((winCounter * 100) / pulsationCounter).toFixed(2) + "%";
 		} else {
 			hitPercentage.innerHTML = "0.00%";
 		}
 
 		resultsContent.classList.remove("hidden");
 		resultsContent.classList.add("active");
-	},400);
+	}, 400);
 
 }
 
 
-//Reset
-/******************************************/
-returnButton.addEventListener("click", reset);
-backButton.addEventListener("click", reset);
-
-function reset(){
+// Reset
+const reset = () => {
 
 	clearInterval(countdownInterval);
 	gameActive = false;
@@ -286,7 +261,7 @@ function reset(){
 	fireButton.classList.remove("tutorial");
 	earthButton.classList.remove("tutorial");
 	waterButton.classList.remove("tutorial");
-	enemyElementsList.classList.remove("active","active-transition");
+	enemyElementsList.classList.remove("active", "active-transition");
 	containerCountdownTimer.classList.remove("active");
 	backButton.classList.remove("active");
 
@@ -309,30 +284,30 @@ function reset(){
 	enemyElementsList.classList.remove("tutorial");
 	tutorialActive = false;
 
-	setTimeout(function(){
+	setTimeout(() => {
 		headerContent.classList.add("active");
 		startButtons.classList.add("active");
-	},150);
+	}, 150);
 
 }
+returnButton.addEventListener("click", reset);
+backButton.addEventListener("click", reset);
 
 
-//Correct Viewport height on Mobile
-/******************************************/
+// Correct Viewport height on Mobile
 var vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
-//ServiceWorker
-/******************************************/
+// ServiceWorker
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('https://juan-antonio-ledesma.github.io/counter-elements/sw.js').then(function(registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('https://juan-antonio-ledesma.github.io/counter-elements/sw.js').then( registration => {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}, err => {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		});
+	});
 }
