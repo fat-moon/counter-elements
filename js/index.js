@@ -227,13 +227,13 @@ const results = () => {
 	gameButtons.classList.remove('active');
 
 	setTimeout(() => {
-		numberPulsations.innerHTML = pulsationCounter;
-		counteractedElements.innerHTML = winCounter;
+		numberPulsations.textContent = pulsationCounter;
+		counteractedElements.textContent = winCounter;
 
 		if (pulsationCounter > 0) {
-			hitPercentage.innerHTML = `${((winCounter * 100) / pulsationCounter).toFixed(2)}%`;
+			hitPercentage.textContent = `${((winCounter * 100) / pulsationCounter).toFixed(2)}%`;
 		} else {
-			hitPercentage.innerHTML = '0.00%';
+			hitPercentage.textContent = '0.00%';
 		}
 
 		resultsContent.classList.remove('hidden');
@@ -275,7 +275,7 @@ const reset = () => {
 	assignIdElement(numberEnemyElements);
 
 	time = 64000;
-	countdownTimer.innerHTML = '01:00';
+	countdownTimer.textContent = '01:00';
 
 	pulsationCounter = 0;
 	winCounter = 0;
