@@ -81,7 +81,7 @@ body:before {
   height: 100vh;
 }
 
-main {
+.wrapper {
   position: relative;
   overflow: hidden;
   width: 360px;
@@ -93,86 +93,120 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.header-content {
-  width: 250px;
-  height: 100px;
+.element {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   position: relative;
-  margin: 60px auto;
-  text-align: center;
   color: #fff;
-  line-height: 36px;
+  font-size: 25px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin: 25px auto 0 auto;
+}
+
+.element__symbol {
+  font-family: "icomoon";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.element__symbol--header {
   font-size: 18px;
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
-.header-content.active {
-  opacity: 1;
+.element__symbol--fire:before {
+  content: "\e902";
 }
 
-.header-content div {
+.element__symbol--earth:before {
+  content: "\e901";
+}
+
+.element__symbol--water:before {
+  content: "\e900";
+}
+
+.element--header {
   width: 36px;
   height: 36px;
-  display: block;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
+  margin: 0;
 }
 
-.header-content div.fire {
+.element--tutorial:after {
+  width: 70px;
+  position: absolute;
+  top: -75px;
   left: 0;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+}
+
+.element--tutorial:after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: -25px;
+}
+
+.element--fire {
+  background-color: #e02125;
+  -webkit-box-shadow: 0 0 7px 3px #e02125;
+  box-shadow: 0 0 7px 3px #e02125;
+}
+
+.element--fire.element--header {
   -webkit-box-shadow: 0 0 30px 6px #e02125;
   box-shadow: 0 0 30px 6px #e02125;
 }
 
-.header-content div.earth {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+.element--fire.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #e02125;
+  box-shadow: 0 0 20px 6px #e02125;
+}
+
+.element--earth {
+  background-color: #f6c82e;
+  -webkit-box-shadow: 0 0 7px 3px #f6c82e;
+  box-shadow: 0 0 7px 3px #f6c82e;
+}
+
+.element--earth.element--header {
   -webkit-box-shadow: 0 0 30px 6px #f6c82e;
   box-shadow: 0 0 30px 6px #f6c82e;
 }
 
-.header-content div.water {
+.element--earth.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #f6c82e;
+  box-shadow: 0 0 20px 6px #f6c82e;
+}
+
+.element--water {
+  background-color: #2a9ddb;
+  -webkit-box-shadow: 0 0 7px 3px #2a9ddb;
+  box-shadow: 0 0 7px 3px #2a9ddb;
+}
+
+.element--water.element--header {
   right: 0;
   -webkit-box-shadow: 0 0 30px 6px #2a9ddb;
   box-shadow: 0 0 30px 6px #2a9ddb;
 }
 
-.header-content span {
-  opacity: 0.5;
+.element--water.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #2a9ddb;
+  box-shadow: 0 0 20px 6px #2a9ddb;
 }
 
-.header-content:before {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 70px;
-  background: #fff;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 100%;
-}
-
-.header-content:after {
-  content: "";
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 100%;
-  background: #fff;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: calc(100% + 70px);
-}
-
-h1,
-h3 {
+.title {
   font-family: 'Montserrat Light', sans-serif;
   position: absolute;
   color: #fff;
@@ -185,14 +219,90 @@ h3 {
   width: 100%;
 }
 
-h1:before,
-h3:before {
+.title:before {
   content: "-- ";
 }
 
-h1:after,
-h3:after {
+.title:after {
   content: " --";
+}
+
+.header {
+  width: 250px;
+  height: 90px;
+  position: relative;
+  margin: 60px auto 0 auto;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header__decoration-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-family: "Montserrat Light", sans-serif;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.header__title:before {
+  content: "-- ";
+}
+
+.header__title:after {
+  content: " --";
+}
+
+.header:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 70px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: calc(100% + 10px);
+}
+
+.header:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: calc(100% + 80px);
+}
+
+.header--active {
+  opacity: 1;
 }
 
 .start-buttons {
@@ -403,7 +513,7 @@ h3:after {
 }
 
 .container-countdown-timer.tutorial:before {
-  content: '';
+  content: "";
   width: 1px;
   height: 15px;
   background: #fff;
@@ -413,7 +523,7 @@ h3:after {
 }
 
 .container-countdown-timer.tutorial:after {
-  content: 'You have a minute to try to counteract as many elements as possible';
+  content: "You have a minute to try to counteract as many elements as possible";
   color: #fff;
   font-size: 10px;
   position: absolute;
@@ -426,8 +536,8 @@ h3:after {
 }
 
 .fire.tutorial:after {
-  content: 'Fire button: counteracts the earth -moz-element, the yellow one';
-  content: 'Fire button: counteracts the earth element, the yellow one';
+  content: "Fire button: counteracts the earth -moz-element, the yellow one";
+  content: "Fire button: counteracts the earth element, the yellow one";
 }
 
 .earth {
@@ -435,8 +545,8 @@ h3:after {
 }
 
 .earth.tutorial:after {
-  content: 'Earth button: counteracts the water -moz-element, the blue one';
-  content: 'Earth button: counteracts the water element, the blue one';
+  content: "Earth button: counteracts the water -moz-element, the blue one";
+  content: "Earth button: counteracts the water element, the blue one";
 }
 
 .water {
@@ -444,8 +554,8 @@ h3:after {
 }
 
 .water.tutorial:after {
-  content: 'Water button: counteracts the fire -moz-element, the red one';
-  content: 'Water button: counteracts the fire element, the red one';
+  content: "Water button: counteracts the fire -moz-element, the red one";
+  content: "Water button: counteracts the fire element, the red one";
 }
 
 .fire.tutorial:after,
@@ -463,7 +573,7 @@ h3:after {
 .fire.tutorial:before,
 .earth.tutorial:before,
 .water.tutorial:before {
-  content: '';
+  content: "";
   width: 1px;
   height: 15px;
   background: #fff;
@@ -508,7 +618,7 @@ h3:after {
 }
 
 .enemy-elements.tutorial:before {
-  content: '';
+  content: "";
   width: 1px;
   height: 15px;
   background: #fff;
@@ -518,8 +628,8 @@ h3:after {
 }
 
 .enemy-elements.tutorial:after {
-  content: 'This is the current -moz-element to counter';
-  content: 'This is the current element to counter';
+  content: "This is the current -moz-element to counter";
+  content: "This is the current element to counter";
   color: #fff;
   font-size: 10px;
   position: absolute;
@@ -664,7 +774,7 @@ button {
   opacity: 1;
 }
 
-.results-content h3 {
+.results-content h2 {
   bottom: inherit;
   top: 60px;
   width: auto;
@@ -702,7 +812,7 @@ button {
     opacity: 0.9;
   }
 
-  main {
+  .wrapper {
     width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);

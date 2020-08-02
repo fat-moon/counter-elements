@@ -44,13 +44,22 @@
 
 <body>
 
-	<main class="container">
+	<section class="wrapper">
 
-		<header id="header-content" class="header-content active">
-			<h1>COUNTER ELEMENTS</h1>
-			<div class="fire fire-radiance"><span class="icon-fire"></span></div>
-			<div class="earth earth-radiance"><span class="icon-earth"></span></div>
-			<div class="water water-radiance"><span class="icon-water"></span></div>
+		<header id="header" class="header header--active">
+			<div class="header__decoration-elements" aria-hidden="true">
+				<div class="element element--header element--fire">
+					<span class="element__symbol element__symbol--header element__symbol--fire"></span>
+				</div>
+				<div class="element element--header element--earth">
+					<span class="element__symbol element__symbol--header element__symbol--earth"></span>
+				</div>
+				<div class="element element--header element--water">
+					<span class="element__symbol element__symbol--header element__symbol--water"></span>
+				</div>
+			</div>
+
+			<h1 class="header__title">COUNTER ELEMENTS</h1>
 		</header>
 
 		<div id="start-buttons" class="start-buttons active">
@@ -82,7 +91,7 @@
 		</div>
 
 		<div id="results-content" class="results-content hidden">
-			<h3>RESULTS</h3>
+			<h2 class="title">RESULTS</h2>
 			<div class="info-results">
 				<p>Nº of pulsations: <strong id="number-pulsations">0</strong></p>
 				<p>Nº of counteracted elements: <strong id="counteracted-elements">0</strong></p>

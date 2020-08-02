@@ -1,5 +1,5 @@
 // Variables
-const headerContent = document.getElementById('header-content');
+const header = document.getElementById('header');
 const gameContent = document.getElementById('game-content');
 const startButtons = document.getElementById('start-buttons');
 const resultsContent = document.getElementById('results-content')
@@ -47,13 +47,13 @@ playButton.addEventListener('click', () => {
 
 	setTimeout(() => {
 
-		headerContent.classList.remove('active');
+		header.classList.remove('header--active');
 		startButtons.classList.remove('active');
 		gameContent.classList.remove('hidden');
 		gameContent.classList.add('active');
 
 		setTimeout(() => {
-			headerContent.classList.add('hidden');
+			header.classList.add('hidden');
 			startButtons.classList.add('hidden');
 			gameButtons.classList.add('active');
 			enemyElementsList.classList.add('active-transition');
@@ -255,7 +255,7 @@ const reset = () => {
 	resultsContent.classList.remove('active');
 	resultsContent.classList.add('hidden');
 
-	headerContent.classList.remove('hidden');
+	header.classList.remove('hidden');
 	startButtons.classList.remove('hidden');
 
 	gameButtons.classList.remove('active', 'tutorial', 'tutorial-active');
@@ -286,7 +286,7 @@ const reset = () => {
 	tutorialActive = false;
 
 	setTimeout(() => {
-		headerContent.classList.add('active');
+		header.classList.add('header--active');
 		startButtons.classList.add('active');
 	}, 150);
 

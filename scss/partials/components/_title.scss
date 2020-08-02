@@ -1,0 +1,19 @@
+.title {
+    font-family: 'Montserrat Light', sans-serif;
+    position: absolute;
+    color: $light;
+    letter-spacing: 3px;
+    font-size: 12px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    &:before{
+        content:"-- ";
+    }
+
+    &:after{
+        content:" --";
+    }
+}

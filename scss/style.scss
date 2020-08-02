@@ -1,108 +1,15 @@
 @charset "utf-8";
 
-@import "partials/variables";
+@import "./partials/variables";
 
-@import "partials/commons/fonts";
-@import "partials/commons/icons";
-@import "partials/commons/common";
+@import "./partials/commons/fonts";
+@import "./partials/commons/icons";
+@import "./partials/commons/common";
 
-
-// Header ontent
-.header-content {
-    width: 250px;
-    height: 100px;
-    position: relative;
-    margin: 60px auto;
-    text-align: center;
-    color: $light;
-    line-height: $size-element-intro;
-    font-size: $size-element-intro/2;
-    opacity: 0;
-    transition: $quick-time-transition;
-
-    &.active {
-        opacity: 1;
-    }
-
-    div {
-        width: $size-element-intro;
-        height: $size-element-intro;
-        display: block;
-        border-radius: 100%;
-        position: absolute;
-        top: 0;
-
-        @mixin introElement($element) {
-            box-shadow: 0 0 30px 6px $element;
-        }
-
-        &.fire {
-            left: 0;
-            @include introElement($fire);
-        }
-
-        &.earth {
-            left: 50%;
-            transform: translateX(-50%);
-            @include introElement($earth);
-        }
-
-        &.water {
-            right: 0;
-            @include introElement($water);
-        }
-    }
-
-    span {
-        opacity: 0.5;
-    }
-
-    &:before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 70px;
-        background: $light;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 100%;
-    }
-
-    &:after {
-        content: "";
-        display: block;
-        width: 5px;
-        height: 5px;
-        border-radius: 100%;
-        background: $light;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: calc(100% + 70px);
-    }
-}
-
-h1,h3 {
-    font-family: 'Montserrat Light', sans-serif;
-    position: absolute;
-    color: $light;
-    letter-spacing: 3px;
-    font-size: 12px;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-
-    &:before{
-        content:"-- ";
-    }
-
-    &:after{
-        content:" --";
-    }
-}
-
+@import "./partials/components/wrapper";
+@import "./partials/components/element";
+@import "./partials/components/title";
+@import "./partials/components/header";
 
 // Start Buttons
 .start-buttons {
@@ -127,7 +34,7 @@ h1,h3 {
     margin: 25px auto 0 auto;
     display: block;
     color: $light;
-    box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     letter-spacing: 3px;
@@ -146,15 +53,14 @@ h1,h3 {
     @keyframes buttonRadiance {
         0%,
         100% {
-            box-shadow: 0 0 30px 1px rgba(0, 0, 0, .9), inset 0 0 60px 1px rgba(0, 0, 0, .45);
+            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
         }
 
         50% {
-            box-shadow: 0 0 30px 3px rgba(255, 255, 255, .5), inset 0 0 60px 1px rgba(0, 0, 0, .45);
+            box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
         }
     }
 }
-
 
 // Hide content
 .hidden {
@@ -165,7 +71,6 @@ h1,h3 {
     opacity: 0;
 }
 
-
 // Back button
 .back-button {
     background: transparent;
@@ -174,7 +79,7 @@ h1,h3 {
     position: absolute;
     top: 23px;
     left: 20px;
-    font-size: 13px;  
+    font-size: 13px;
     opacity: 0;
     transition: $time-transition;
     z-index: 1;
@@ -183,7 +88,6 @@ h1,h3 {
         opacity: 1;
     }
 }
-
 
 // Game content
 .game-content {
@@ -194,7 +98,6 @@ h1,h3 {
         opacity: 1;
     }
 }
-
 
 // Countdown start
 .countdown-start {
@@ -212,7 +115,7 @@ h1,h3 {
         transform: translate(-50%, -50%);
         z-index: 1;
         color: $light;
-        font-size: 150px;    
+        font-size: 150px;
         animation: countdown-start 1s forwards;
         opacity: 0;
 
@@ -235,11 +138,19 @@ h1,h3 {
 }
 
 @keyframes countdown-start {
-    0%      {opacity: 0; font-size: 150px;}
-    50%     {opacity: 1; font-size: 80px;}
-    100%    {opacity: 0; font-size: 80px;}
+    0% {
+        opacity: 0;
+        font-size: 150px;
+    }
+    50% {
+        opacity: 1;
+        font-size: 80px;
+    }
+    100% {
+        opacity: 0;
+        font-size: 80px;
+    }
 }
-
 
 // Countdown timer
 .container-countdown-timer {
@@ -263,7 +174,7 @@ h1,h3 {
     }
 
     &.tutorial:before {
-        content: '';
+        content: "";
         width: 1px;
         height: 15px;
         background: $light;
@@ -272,23 +183,22 @@ h1,h3 {
         left: 50%;
     }
 
-    &.tutorial:after{
-        content: 'You have a minute to try to counteract as many elements as possible';
+    &.tutorial:after {
+        content: "You have a minute to try to counteract as many elements as possible";
         color: $light;
         font-size: 10px;
         position: absolute;
         left: 0;
-        top: 40px;         
+        top: 40px;
     }
 }
-
 
 // Elements
 .fire {
     background: $fire;
 
     &.tutorial:after {
-        content:'Fire button: counteracts the earth element, the yellow one';
+        content: "Fire button: counteracts the earth element, the yellow one";
     }
 }
 
@@ -296,7 +206,7 @@ h1,h3 {
     background: $earth;
 
     &.tutorial:after {
-        content:'Earth button: counteracts the water element, the blue one';
+        content: "Earth button: counteracts the water element, the blue one";
     }
 }
 
@@ -304,7 +214,7 @@ h1,h3 {
     background: $water;
 
     &.tutorial:after {
-        content:'Water button: counteracts the fire element, the red one';
+        content: "Water button: counteracts the fire element, the red one";
     }
 }
 
@@ -324,7 +234,7 @@ h1,h3 {
 .fire.tutorial:before,
 .earth.tutorial:before,
 .water.tutorial:before {
-    content: '';
+    content: "";
     width: 1px;
     height: 15px;
     background: $light;
@@ -345,17 +255,16 @@ h1,h3 {
     box-shadow: 0 0 7px 3px $water;
 }
 
-
 // Enemy elements
 .enemy-elements {
     position: relative;
     top: 20px;
-    margin-top: (($size-enemy+$margin-enemy)*(-$number-enemies))+(-1*($margin-enemy));
-	transition: $time;
+    margin-top: (($size-element + $margin-element) * (-$number-elements))+ (-1 * ($margin-element));
+    transition: $time;
     opacity: 0;
 
     &.active-transition {
-        opacity: 1; 
+        opacity: 1;
         transition: $time-transition;
     }
 
@@ -365,7 +274,7 @@ h1,h3 {
     }
 
     &.tutorial:before {
-        content: '';
+        content: "";
         width: 1px;
         height: 15px;
         background: #fff;
@@ -375,7 +284,7 @@ h1,h3 {
     }
 
     &.tutorial:after {
-        content: 'This is the current element to counter';
+        content: "This is the current element to counter";
         color: $light;
         font-size: 10px;
         position: absolute;
@@ -386,18 +295,18 @@ h1,h3 {
 
     li {
         display: block;
-        width: $size-enemy;
-        height: $size-enemy;
+        width: $size-element;
+        height: $size-element;
         border-radius: 50%;
         position: relative;
         color: $light;
-        font-size: $size-enemy/2;
+        font-size: $size-element/2;
         transition: $time;
-		margin: $margin-enemy auto 0 auto;
+        margin: $margin-element auto 0 auto;
 
         &.remove-element {
             transition: $time-transition;
-            margin-top: $size-enemy;
+            margin-top: $size-element;
             opacity: 0;
             font-size: 0px;
             width: 0;
@@ -425,7 +334,6 @@ h1,h3 {
 .water-radiance.mistake-element {
     box-shadow: 0 0 20px 6px $water;
 }
-
 
 // Buttons
 button {
@@ -494,7 +402,6 @@ button {
     }
 }
 
-
 // Results
 .results-content {
     color: $light;
@@ -509,8 +416,8 @@ button {
     &.active {
         opacity: 1;
     }
-    
-    h3 {
+
+    h2 {
         bottom: inherit;
         top: 60px;
         width: auto;
@@ -527,18 +434,17 @@ button {
         position: absolute;
         top: 120px;
         font-size: 14px;
-    }    
+    }
 
     p {
         margin-bottom: 12px;
 
-        &:before{
+        &:before {
             content: "- ";
             letter-spacing: 3px;
         }
     }
 }
-
 
 // Media Queries
 @media only screen and (max-width: 425px) {
@@ -556,7 +462,7 @@ button {
 
 @media only screen and (max-width: 340px) {
     .game-buttons {
-         button {
+        button {
             margin-right: 20px;
         }
     }
