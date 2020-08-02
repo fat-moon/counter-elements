@@ -1,0 +1,36 @@
+// Icons
+@font-face {
+    font-family: "icomoon";
+    src: url("../fonts/icomoon.eot") format("embedded-opentype"),
+        url("../fonts/icomoon.ttf") format("truetype"),
+        url("../fonts/icomoon.woff") format("woff"),
+        url("../fonts/icomoon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: "icomoon" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.icon-water:before {
+    content: "\e900";
+}
+
+.icon-earth:before {
+    content: "\e901";
+}
+
+.icon-fire:before {
+    content: "\e902";
+}
+
+.icon-time:before {
+    content: "\e903";
+}

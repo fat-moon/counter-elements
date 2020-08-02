@@ -1,0 +1,79 @@
+// Element
+
+.element {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.2s;
+    margin: 25px auto 0;
+
+    &__symbol {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.5;
+
+        &--fire:before {
+            content: "\e902";
+        }
+
+        &--earth:before {
+            content: "\e901";
+        }
+
+        &--water:before {
+            content: "\e900";
+        }
+    }
+
+    &--fire {
+        background-color: $fire;
+        box-shadow: 0 0 7px 3px $fire;
+
+        &.element--mistake {
+            box-shadow: 0 0 20px 6px $fire;
+        }
+    }
+
+    &--earth {
+        background-color: $earth;
+        box-shadow: 0 0 7px 3px $earth;
+
+        &.element--mistake {
+            box-shadow: 0 0 20px 6px $earth;
+        }
+    }
+
+    &--water {
+        background-color: water;
+        box-shadow: 0 0 7px 3px $water;
+
+        &.element--mistake {
+            box-shadow: 0 0 20px 6px $water;
+        }
+    }
+
+    &--tutorial:after {
+        width: 70px;
+        position: absolute;
+        top: -75px;
+        left: 0;
+        color: $light;
+        font-size: 10px;
+        text-align: left;
+    }
+
+    &--tutorial:after {
+        content: "";
+        width: 1px;
+        height: 15px;
+        background: $light;
+        position: absolute;
+        top: -25px;
+    }
+}
