@@ -373,37 +373,62 @@ button {
   top: calc(100% + 80px);
 }
 
-.hidden {
-  display: none !important;
-}
-
-.transparent {
-  opacity: 0 !important;
-}
-
 .start-buttons {
   position: absolute;
   bottom: 60px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.start-buttons.active {
-  opacity: 1;
+.results {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  height: calc(100% - 70px);
+  width: calc(100% - 70px);
+  padding: 35px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
-.game-content {
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.results h2 {
+  bottom: inherit;
+  top: 60px;
+  width: auto;
 }
 
-.game-content.active {
-  opacity: 1;
+.results button {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.results .info-results {
+  position: absolute;
+  top: 120px;
+  font-size: 14px;
+}
+
+.results p {
+  margin-bottom: 12px;
+}
+
+.results p:before {
+  content: "- ";
+  letter-spacing: 3px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.transparent {
+  opacity: 0 !important;
 }
 
 .countdown-start {
@@ -748,51 +773,6 @@ button {
   box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
 }
 
-.results-content {
-  color: #fff;
-  position: absolute;
-  top: 0;
-  height: calc(100% - 70px);
-  width: calc(100% - 70px);
-  padding: 35px;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.results-content.active {
-  opacity: 1;
-}
-
-.results-content h2 {
-  bottom: inherit;
-  top: 60px;
-  width: auto;
-}
-
-.results-content button {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.results-content .info-results {
-  position: absolute;
-  top: 120px;
-  font-size: 14px;
-}
-
-.results-content p {
-  margin-bottom: 12px;
-}
-
-.results-content p:before {
-  content: "- ";
-  letter-spacing: 3px;
-}
-
 @media only screen and (max-width: 425px) {
   body {
     background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%);
@@ -813,8 +793,11 @@ button {
     background-color: transparent;
   }
 
+  .button--back {
+    top: 20px;
+  }
+
   .enemy-elements,
-  .back-button,
   .container-countdown-timer {
     top: 20px;
   }

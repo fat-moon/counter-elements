@@ -1,0 +1,39 @@
+// Results
+
+.results {
+    color: $light;
+    position: absolute;
+    top: 0;
+    height: calc(100% - 70px);
+    width: calc(100% - 70px);
+    padding: 35px;
+    transition: $time-transition;
+
+    h2 {
+        bottom: inherit;
+        top: 60px;
+        width: auto;
+    }
+
+    button {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info-results {
+        position: absolute;
+        top: 120px;
+        font-size: 14px;
+    }
+
+    p {
+        margin-bottom: 12px;
+
+        &:before {
+            content: "- ";
+            letter-spacing: 3px;
+        }
+    }
+}

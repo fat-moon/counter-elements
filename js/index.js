@@ -1,8 +1,8 @@
 // Variables
 const header = document.getElementById('header');
-const gameContent = document.getElementById('game-content');
+const game = document.getElementById('game');
 const startButtons = document.getElementById('start-buttons');
-const resultsContent = document.getElementById('results-content')
+const results = document.getElementById('results')
 
 const enemyElementsList = document.getElementById('enemy-elements');
 let marginTopEnemyElementsList = -14725;
@@ -48,9 +48,8 @@ playButton.addEventListener('click', () => {
 	setTimeout(() => {
 
 		header.classList.add('transparent');
-		startButtons.classList.remove('active');
-		gameContent.classList.remove('hidden');
-		gameContent.classList.add('active');
+		startButtons.classList.add('transparent');
+		game.classList.remove('hidden', 'transparent');
 
 		setTimeout(() => {
 			header.classList.add('hidden');
@@ -90,7 +89,7 @@ const countdown = () => {
 	if (time === 0) {
 		clearInterval(countdownInterval);
 		gameActive = false;
-		results();
+		gameResults();
 	}
 
 }
@@ -217,10 +216,10 @@ tutorialButton.addEventListener('click', () => {
 })
 
 
-// Results
-const results = () => {
+// Game results
+const gameResults = () => {
 
-	gameContent.classList.remove('active');
+	game.classList.add('transparent');
 	backButton.classList.add('transparent');
 	containerCountdownTimer.classList.remove('active');
 	enemyElementsList.classList.remove('active');
@@ -236,8 +235,7 @@ const results = () => {
 			hitPercentage.textContent = '0.00%';
 		}
 
-		resultsContent.classList.remove('hidden');
-		resultsContent.classList.add('active');
+		results.classList.remove('hidden', 'transparent');
 	}, 400);
 
 }
@@ -249,11 +247,9 @@ const reset = () => {
 	clearInterval(countdownInterval);
 	gameActive = false;
 
-	gameContent.classList.remove('active');
-	gameContent.classList.add('hidden');
+	game.classList.add('transparent', 'hidden');
 
-	resultsContent.classList.remove('active');
-	resultsContent.classList.add('hidden');
+	results.classList.add('transparent', 'hidden');
 
 	header.classList.remove('hidden');
 	startButtons.classList.remove('hidden');
@@ -287,7 +283,7 @@ const reset = () => {
 
 	setTimeout(() => {
 		header.classList.remove('transparent');
-		startButtons.classList.add('active');
+		startButtons.classList.remove('transparent');
 	}, 150);
 
 }
@@ -303,7 +299,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 // ServiceWorker
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('https://juan-antonio-ledesma.github.io/counter-elements/sw.js').then( registration => {
+		navigator.serviceWorker.register('https://juan-antonio-ledesma.github.io/counter-elements/sw.js').then(registration => {
 			// Registration was successful
 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		}, err => {
