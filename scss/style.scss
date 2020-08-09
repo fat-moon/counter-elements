@@ -8,7 +8,8 @@
 
 @import "./partials/components/wrapper";
 @import "./partials/components/element";
-@import "./partials/components/title";
+@import "./partials/components/buttons";
+@import "./partials/components/title"; // Delete
 @import "./partials/components/header";
 
 @import "./partials/utilities/utilities";
@@ -27,60 +28,6 @@
     }
 }
 
-.standard-button {
-    width: 200px;
-    height: 40px;
-    border-radius: 30px;
-    border: solid $light 2px;
-    background-color: transparent;
-    margin: 25px auto 0 auto;
-    display: block;
-    color: $light;
-    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    letter-spacing: 3px;
-    transition: $quick-time-transition;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-    font-size: 12px;
-
-    &:focus {
-        font-size: 16px;
-    }
-}
-
-.play-button {
-    animation: buttonRadiance 3s infinite;
-
-    @keyframes buttonRadiance {
-        0%,
-        100% {
-            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-        }
-
-        50% {
-            box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-        }
-    }
-}
-
-// Back button
-.back-button {
-    background: transparent;
-    color: $light;
-    border: none;
-    position: absolute;
-    top: 23px;
-    left: 20px;
-    font-size: 13px;
-    opacity: 0;
-    transition: $time-transition;
-    z-index: 1;
-
-    &.active {
-        opacity: 1;
-    }
-}
 
 // Game content
 .game-content {
@@ -329,11 +276,6 @@
 }
 
 // Buttons
-button {
-    outline: 0;
-    cursor: pointer;
-    touch-action: manipulation;
-}
 
 .game-buttons {
     width: 100%;

@@ -47,7 +47,7 @@ playButton.addEventListener('click', () => {
 
 	setTimeout(() => {
 
-		header.classList.remove('header--active');
+		header.classList.add('transparent');
 		startButtons.classList.remove('active');
 		gameContent.classList.remove('hidden');
 		gameContent.classList.add('active');
@@ -58,7 +58,7 @@ playButton.addEventListener('click', () => {
 			gameButtons.classList.add('active');
 			enemyElementsList.classList.add('active-transition');
 			containerCountdownTimer.classList.add('active');
-			backButton.classList.add('active');
+			backButton.classList.remove('transparent');
 		}, 400);
 
 		setTimeout(() => {
@@ -221,7 +221,7 @@ tutorialButton.addEventListener('click', () => {
 const results = () => {
 
 	gameContent.classList.remove('active');
-	backButton.classList.remove('active');
+	backButton.classList.add('transparent');
 	containerCountdownTimer.classList.remove('active');
 	enemyElementsList.classList.remove('active');
 	gameButtons.classList.remove('active');
@@ -264,7 +264,7 @@ const reset = () => {
 	waterButton.classList.remove('tutorial');
 	enemyElementsList.classList.remove('active', 'active-transition');
 	containerCountdownTimer.classList.remove('active');
-	backButton.classList.remove('active');
+	backButton.classList.add('transparent');
 
 	enemyElementsList.innerHTML = '';
 	enemyElementsList.style.marginTop = '-14725px';
@@ -286,7 +286,7 @@ const reset = () => {
 	tutorialActive = false;
 
 	setTimeout(() => {
-		header.classList.add('header--active');
+		header.classList.remove('transparent');
 		startButtons.classList.add('active');
 	}, 150);
 

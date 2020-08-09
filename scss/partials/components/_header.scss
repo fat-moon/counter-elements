@@ -7,7 +7,6 @@
     margin: 60px auto 0 auto;
     text-align: center;
     color: $light;
-    opacity: 0;
     transition: $quick-time-transition;
     display: flex;
     flex-direction: column;
@@ -57,9 +56,5 @@
         left: 50%;
         transform: translateX(-50%);
         top: calc(100% + 80px);
-    }
-
-    &--active {
-        opacity: 1;
     }
 }
