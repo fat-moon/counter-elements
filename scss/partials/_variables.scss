@@ -1,20 +1,20 @@
 // Variables
 
-$fire: #e02125;
-$earth: #f6c82e;
-$water: #2a9ddb;
+$fire: #e02125 !default;
+$earth: #f6c82e !default;
+$water: #2a9ddb !default;
 
-$dark: #0a0a0a;
-$light: #fff;
-$grey: #535353;
+$dark: #0a0a0a !default;
+$light: #fff !default;
+$grey: #535353 !default;
 
-$size-element-header: 36px;
-$time-intro: 2s;
+$size-element-header: 36px !default;
+$time-intro: 2s !default;
 
-$size-element: 50px;
-$margin-element: 25px;
-$number-elements: 196;
+$size-element: 50px !default;
+$margin-element: 25px !default;
+$number-elements: 196 !default;
 
-$time: 0.2s;
-$time-transition: 0.5s;
-$quick-time-transition: 0.3s;
+$time: 0.2s !default;
+$time-transition: 0.5s !default;
+$quick-time-transition: 0.3s !default;

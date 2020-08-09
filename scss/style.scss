@@ -11,6 +11,8 @@
 @import "./partials/components/title";
 @import "./partials/components/header";
 
+@import "./partials/utilities/utilities";
+
 // Start Buttons
 .start-buttons {
     position: absolute;
@@ -60,15 +62,6 @@
             box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
         }
     }
-}
-
-// Hide content
-.hidden {
-    display: none;
-}
-
-.transparent {
-    opacity: 0;
 }
 
 // Back button

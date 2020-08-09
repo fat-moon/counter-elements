@@ -305,6 +305,14 @@ body:before {
   opacity: 1;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.transparent {
+  opacity: 0 !important;
+}
+
 .start-buttons {
   position: absolute;
   bottom: 60px;
@@ -371,14 +379,6 @@ body:before {
     -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
     box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
   }
-}
-
-.hidden {
-  display: none;
-}
-
-.transparent {
-  opacity: 0;
 }
 
 .back-button {
