@@ -109,7 +109,7 @@ body:before {
   content: " --";
 }
 
-.title--result {
+.title--results {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -379,6 +379,83 @@ button {
   transition: 0.3s;
 }
 
+.countdown {
+  width: 360px;
+  height: 520px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 0 0 10px #0a0a0a;
+}
+
+.countdown__item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  font-size: 150px;
+  -webkit-animation: countdown 1s forwards;
+  animation: countdown 1s forwards;
+  opacity: 0;
+}
+
+.countdown__item:nth-child(1) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.countdown__item:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.countdown__item:nth-child(3) {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.countdown__item:nth-child(4) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+@-webkit-keyframes countdown {
+  0% {
+    opacity: 0;
+    font-size: 150px;
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 80px;
+  }
+
+  100% {
+    opacity: 0;
+    font-size: 80px;
+  }
+}
+
+@keyframes countdown {
+  0% {
+    opacity: 0;
+    font-size: 150px;
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 80px;
+  }
+
+  100% {
+    opacity: 0;
+    font-size: 80px;
+  }
+}
+
 .results {
   color: #fff;
   position: absolute;
@@ -396,11 +473,11 @@ button {
   font-size: 14px;
 }
 
-.results__result {
+.results__info-item {
   margin-bottom: 12px;
 }
 
-.results__result:before {
+.results__info-item:before {
   content: "- ";
   letter-spacing: 3px;
 }
@@ -411,83 +488,6 @@ button {
 
 .transparent {
   opacity: 0 !important;
-}
-
-.countdown-start {
-  width: 360px;
-  height: 520px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-shadow: 0 0 10px #000000;
-}
-
-.countdown-start span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  color: #fff;
-  font-size: 150px;
-  -webkit-animation: countdown-start 1s forwards;
-  animation: countdown-start 1s forwards;
-  opacity: 0;
-}
-
-.countdown-start span:nth-child(1) {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-.countdown-start span:nth-child(2) {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
-.countdown-start span:nth-child(3) {
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.countdown-start span:nth-child(4) {
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-}
-
-@-webkit-keyframes countdown-start {
-  0% {
-    opacity: 0;
-    font-size: 150px;
-  }
-
-  50% {
-    opacity: 1;
-    font-size: 80px;
-  }
-
-  100% {
-    opacity: 0;
-    font-size: 80px;
-  }
-}
-
-@keyframes countdown-start {
-  0% {
-    opacity: 0;
-    font-size: 150px;
-  }
-
-  50% {
-    opacity: 1;
-    font-size: 80px;
-  }
-
-  100% {
-    opacity: 0;
-    font-size: 80px;
-  }
 }
 
 .container-countdown-timer {
@@ -779,14 +779,14 @@ button {
     top: 20px;
   }
 
+  .countdown {
+    width: 100%;
+    height: 100vh;
+  }
+
   .enemy-elements,
   .container-countdown-timer {
     top: 20px;
-  }
-
-  .countdown-start {
-    width: 100%;
-    height: 100vh;
   }
 }
 

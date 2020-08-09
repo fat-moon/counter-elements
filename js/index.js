@@ -12,7 +12,7 @@ let numberEnemyElements = 199;
 let currentEnemyElement;
 let valueCurrentEnemyElement;
 
-const countdownStart = document.getElementById('countdown-start');
+const countdown = document.getElementById('countdown');
 
 let gameActive = false;
 const playButton = document.getElementById('play-button');
@@ -65,15 +65,15 @@ playButton.addEventListener('click', () => {
 			enemyElementsList.classList.add('active');
 		}, 900);
 
-		if (!tutorialActive) countdownInterval = setInterval(countdown, 1000);
+		if (!tutorialActive) countdownInterval = setInterval(countdownGame, 1000);
 
 	}, 400);
 
 }, false);
 
 
-// Countdown
-const countdown = () => {
+// Countdown game
+const countdownGame = () => {
 
 	time -= 1000;
 	showTime = time / 1000;
@@ -189,7 +189,7 @@ waterButton.addEventListener('mousedown', () => chooseElement(waterButton), fals
 // Tutorial
 tutorialButton.addEventListener('click', () => {
 
-	countdownStart.classList.add('hidden');
+	countdown.classList.add('hidden');
 	containerCountdownTimer.classList.add('tutorial');
 	enemyElementsList.classList.add('tutorial');
 	gameButtons.classList.add('tutorial');
@@ -276,7 +276,7 @@ const reset = () => {
 	pulsationCounter = 0;
 	winCounter = 0;
 
-	countdownStart.classList.remove('hidden');
+	countdown.classList.remove('hidden');
 	containerCountdownTimer.classList.remove('tutorial');
 	enemyElementsList.classList.remove('tutorial');
 	tutorialActive = false;
