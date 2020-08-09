@@ -17,22 +17,6 @@
         justify-content: space-between;
     }
 
-    &__title {
-        font-family: "Montserrat Light", sans-serif;
-        color: $light;
-        letter-spacing: 3px;
-        font-size: 12px;
-        width: 100%;
-
-        &:before {
-            content: "-- ";
-        }
-
-        &:after {
-            content: " --";
-        }
-    }
-
     &:before {
         content: "";
         display: block;

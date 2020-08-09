@@ -93,6 +93,112 @@ body:before {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.title {
+  font-family: "Montserrat Light", sans-serif;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.title:before {
+  content: "-- ";
+}
+
+.title:after {
+  content: " --";
+}
+
+.title--result {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 60px;
+  width: auto;
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.button--default {
+  width: 200px;
+  height: 40px;
+  border-radius: 30px;
+  border: solid #fff 2px;
+  background-color: transparent;
+  margin: 25px auto 0 auto;
+  display: block;
+  color: #fff;
+  -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.button--default:focus {
+  font-size: 16px;
+}
+
+.button--play {
+  -webkit-animation: buttonRadiance 3s infinite;
+  animation: buttonRadiance 3s infinite;
+}
+
+@-webkit-keyframes buttonRadiance {
+  0%, 100% {
+    -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@keyframes buttonRadiance {
+  0%, 100% {
+    -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.button--back {
+  background: transparent;
+  color: #fff;
+  border: none;
+  position: absolute;
+  top: 23px;
+  left: 20px;
+  font-size: 13px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.button--return {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 .element {
   display: block;
   width: 50px;
@@ -206,100 +312,6 @@ body:before {
   box-shadow: 0 0 20px 6px #2a9ddb;
 }
 
-button {
-  outline: 0;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
-
-.button--default {
-  width: 200px;
-  height: 40px;
-  border-radius: 30px;
-  border: solid #fff 2px;
-  background-color: transparent;
-  margin: 25px auto 0 auto;
-  display: block;
-  color: #fff;
-  -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
-  letter-spacing: 3px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-  font-size: 12px;
-}
-
-.button--default:focus {
-  font-size: 16px;
-}
-
-.button--play {
-  -webkit-animation: buttonRadiance 3s infinite;
-  animation: buttonRadiance 3s infinite;
-}
-
-@-webkit-keyframes buttonRadiance {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  }
-
-  50% {
-    -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  }
-}
-
-@keyframes buttonRadiance {
-  0%, 100% {
-    -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  }
-
-  50% {
-    -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-  }
-}
-
-.button--back {
-  background: transparent;
-  color: #fff;
-  border: none;
-  position: absolute;
-  top: 23px;
-  left: 20px;
-  font-size: 13px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  z-index: 1;
-}
-
-.title {
-  font-family: 'Montserrat Light', sans-serif;
-  position: absolute;
-  color: #fff;
-  letter-spacing: 3px;
-  font-size: 12px;
-  bottom: 0px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: 100%;
-}
-
-.title:before {
-  content: "-- ";
-}
-
-.title:after {
-  content: " --";
-}
-
 .header {
   width: 250px;
   height: 90px;
@@ -328,22 +340,6 @@ button {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.header__title {
-  font-family: "Montserrat Light", sans-serif;
-  color: #fff;
-  letter-spacing: 3px;
-  font-size: 12px;
-  width: 100%;
-}
-
-.header__title:before {
-  content: "-- ";
-}
-
-.header__title:after {
-  content: " --";
 }
 
 .header:before {
@@ -394,31 +390,17 @@ button {
   transition: 0.5s;
 }
 
-.results h2 {
-  bottom: inherit;
-  top: 60px;
-  width: auto;
-}
-
-.results button {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.results .info-results {
+.results__info {
   position: absolute;
   top: 120px;
   font-size: 14px;
 }
 
-.results p {
+.results__result {
   margin-bottom: 12px;
 }
 
-.results p:before {
+.results__result:before {
   content: "- ";
   letter-spacing: 3px;
 }

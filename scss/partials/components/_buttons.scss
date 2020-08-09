@@ -59,4 +59,11 @@ button {
             top: 20px;
         }
     }
+
+    &--return {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

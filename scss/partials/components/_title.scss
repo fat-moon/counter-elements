@@ -1,12 +1,8 @@
 .title {
-    font-family: 'Montserrat Light', sans-serif;
-    position: absolute;
+    font-family: "Montserrat Light", sans-serif;
     color: $light;
     letter-spacing: 3px;
     font-size: 12px;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
 
     &:before{
@@ -15,5 +11,13 @@
 
     &:after{
         content:" --";
+    }
+
+    &--result {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60px;
+        width: auto;
     }
 }
