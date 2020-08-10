@@ -1,0 +1,44 @@
+// Header
+
+.header {
+    width: 250px;
+    height: 90px;
+    position: relative;
+    margin: 60px auto 0 auto;
+    text-align: center;
+    color: $light;
+    transition: $quick-time-transition;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__decoration-elements {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 70px;
+        background-color: $light;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 10px);
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 100%;
+        background-color: $light;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 80px);
+    }
+}

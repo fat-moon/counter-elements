@@ -1,0 +1,26 @@
+// Results
+
+.results {
+    color: $light;
+    position: absolute;
+    top: 0;
+    height: calc(100% - 70px);
+    width: calc(100% - 70px);
+    padding: 35px;
+    transition: $time-transition;
+
+    &__info {
+        position: absolute;
+        top: 120px;
+        font-size: 14px;
+    }
+
+    &__info-item {
+        margin-bottom: 12px;
+
+        &:before {
+            content: "- ";
+            letter-spacing: 3px;
+        }
+    }
+}

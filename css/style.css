@@ -1,45 +1,36 @@
 @font-face {
-  font-family: 'Montserrat Light';
+  font-family: "Montserrat Light";
   src: url("../fonts/Montserrat-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
-  font-display: swap; }
+  font-display: swap;
+}
 
 @font-face {
-  font-family: 'icomoon';
+  font-family: "icomoon";
   src: url("../fonts/icomoon.eot") format("embedded-opentype"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
   font-weight: normal;
-  font-style: normal; }
-
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: 'icomoon' !important;
-  speak: none;
   font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none; }
-
-.icon-water:before {
-  content: "\e900"; }
-
-.icon-earth:before {
-  content: "\e901"; }
-
-.icon-fire:before {
-  content: "\e902"; }
-
-.icon-time:before {
-  content: "\e903"; }
+}
 
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 body {
   font-family: sans-serif;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,125 +38,68 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, black 100%); }
-  body:before {
-    content: "";
-    background-image: url("../images/background.jpg");
-    background-position: center;
-    background-size: 640px 320px;
-    opacity: 0.8;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    height: 100vh; }
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, black 100%);
+}
 
-.container {
-  position: absolute;
+body:before {
+  content: "";
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-size: 640px 320px;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
   overflow: hidden;
   width: 360px;
   height: 520px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   border: solid #535353 3px;
   -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-          box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-.header-content {
-  width: 250px;
-  height: 100px;
-  position: relative;
-  margin: 60px auto;
-  text-align: center;
-  color: #fff;
-  line-height: 36px;
-  font-size: 18px;
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-  .header-content.active {
-    opacity: 1; }
-  .header-content div {
-    width: 36px;
-    height: 36px;
-    display: block;
-    border-radius: 100%;
-    position: absolute;
-    top: 0; }
-    .header-content div.fire {
-      left: 0;
-      -webkit-box-shadow: 0 0 30px 6px #E02125;
-              box-shadow: 0 0 30px 6px #E02125; }
-    .header-content div.earth {
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      -webkit-box-shadow: 0 0 30px 6px #F6C82E;
-              box-shadow: 0 0 30px 6px #F6C82E; }
-    .header-content div.water {
-      right: 0;
-      -webkit-box-shadow: 0 0 30px 6px #2A9DDB;
-              box-shadow: 0 0 30px 6px #2A9DDB; }
-  .header-content span {
-    opacity: 0.5; }
-  .header-content:before {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 70px;
-    background: #fff;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    top: 100%; }
-  .header-content:after {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 5px;
-    border-radius: 100%;
-    background: #fff;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    top: calc(100% + 70px); }
-
-h1, h3 {
-  font-family: 'Montserrat Light', sans-serif;
-  position: absolute;
+.title {
+  font-family: "Montserrat Light", sans-serif;
   color: #fff;
   letter-spacing: 3px;
   font-size: 12px;
-  bottom: 0px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 100%; }
-  h1:before, h3:before {
-    content: "-- "; }
-  h1:after, h3:after {
-    content: " --"; }
+  width: 100%;
+}
 
-.start-buttons {
+.title:before {
+  content: "-- ";
+}
+
+.title:after {
+  content: " --";
+}
+
+.title--results {
   position: absolute;
-  bottom: 60px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-  .start-buttons.active {
-    opacity: 1; }
+  transform: translateX(-50%);
+  top: 60px;
+  width: auto;
+}
 
-.standard-button {
+button {
+  outline: 0;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.button--default {
   width: 200px;
   height: 40px;
   border-radius: 30px;
@@ -175,46 +109,50 @@ h1, h3 {
   display: block;
   color: #fff;
   -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-          box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.5);
   letter-spacing: 3px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-  font-size: 12px; }
-  .standard-button:focus {
-    font-size: 16px; }
+  font-size: 12px;
+}
 
-.play-button {
+.button--default:focus {
+  font-size: 16px;
+}
+
+.button--play {
   -webkit-animation: buttonRadiance 3s infinite;
-          animation: buttonRadiance 3s infinite; }
+  animation: buttonRadiance 3s infinite;
+}
 
 @-webkit-keyframes buttonRadiance {
-  0%,
-  100% {
+  0%, 100% {
     -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45); }
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+
   50% {
     -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45); } }
+    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+}
 
 @keyframes buttonRadiance {
-  0%,
-  100% {
+  0%, 100% {
     -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45); }
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.9), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+
   50% {
     -webkit-box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45); } }
+    box-shadow: 0 0 30px 3px rgba(255, 255, 255, 0.5), inset 0 0 60px 1px rgba(0, 0, 0, 0.45);
+  }
+}
 
-.hidden {
-  display: none; }
-
-.transparent {
-  opacity: 0; }
-
-.back-button {
+.button--back {
   background: transparent;
   color: #fff;
   border: none;
@@ -222,81 +160,391 @@ h1, h3 {
   top: 23px;
   left: 20px;
   font-size: 13px;
-  opacity: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  z-index: 1; }
-  .back-button.active {
-    opacity: 1; }
+  z-index: 1;
+}
 
-.game-content {
+.button--return {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.button--game {
+  border: 3px solid #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 35px;
+  font-size: 35px;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.button--game:last-child {
+  margin-right: 0;
+}
+
+.button--fire {
+  background: #e02125;
+}
+
+.button--fire.button--tutorial:after {
+  content: "Fire button: counteracts the earth -moz-element, the yellow one";
+  content: "Fire button: counteracts the earth element, the yellow one";
+}
+
+.button--earth {
+  background: #f6c82e;
+}
+
+.button--earth.button--tutorial:after {
+  content: "Earth button: counteracts the water -moz-element, the blue one";
+  content: "Earth button: counteracts the water element, the blue one";
+}
+
+.button--water {
+  background: #2a9ddb;
+}
+
+.button--water.button--tutorial:after {
+  content: "Water button: counteracts the fire -moz-element, the red one";
+  content: "Water button: counteracts the fire element, the red one";
+}
+
+.button__game-symbol {
+  font-family: "icomoon";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button__game-symbol--fire:before {
+  content: "\e902";
+}
+
+.button__game-symbol--earth:before {
+  content: "\e901";
+}
+
+.button__game-symbol--water:before {
+  content: "\e900";
+}
+
+.button--game-pressed {
+  background: #fff;
+  color: #0a0a0a;
+  -webkit-box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
+}
+
+.button--tutorial {
+  cursor: inherit;
+}
+
+.button--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: -25px;
+}
+
+.button--tutorial:after {
+  width: 70px;
+  position: absolute;
+  top: -75px;
+  left: 0;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+}
+
+.element {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin: 25px auto 0 auto;
+}
+
+.element__symbol {
+  font-family: "icomoon";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.element__symbol--header {
+  font-size: 18px;
+}
+
+.element__symbol--fire:before {
+  content: "\e902";
+}
+
+.element__symbol--earth:before {
+  content: "\e901";
+}
+
+.element__symbol--water:before {
+  content: "\e900";
+}
+
+.element--header {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+}
+
+.element--remove {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 50px;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-  .game-content.active {
-    opacity: 1; }
+  font-size: 0px;
+  width: 0;
+  height: 0;
+}
 
-.countdown-start {
+.element--tutorial:after {
+  width: 70px;
+  position: absolute;
+  top: -75px;
+  left: 0;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+}
+
+.element--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: -25px;
+}
+
+.element--fire {
+  background-color: #e02125;
+  -webkit-box-shadow: 0 0 7px 3px #e02125;
+  box-shadow: 0 0 7px 3px #e02125;
+}
+
+.element--fire.element--header {
+  -webkit-box-shadow: 0 0 30px 6px #e02125;
+  box-shadow: 0 0 30px 6px #e02125;
+}
+
+.element--fire.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #e02125;
+  box-shadow: 0 0 20px 6px #e02125;
+}
+
+.element--earth {
+  background-color: #f6c82e;
+  -webkit-box-shadow: 0 0 7px 3px #f6c82e;
+  box-shadow: 0 0 7px 3px #f6c82e;
+}
+
+.element--earth.element--header {
+  -webkit-box-shadow: 0 0 30px 6px #f6c82e;
+  box-shadow: 0 0 30px 6px #f6c82e;
+}
+
+.element--earth.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #f6c82e;
+  box-shadow: 0 0 20px 6px #f6c82e;
+}
+
+.element--water {
+  background-color: #2a9ddb;
+  -webkit-box-shadow: 0 0 7px 3px #2a9ddb;
+  box-shadow: 0 0 7px 3px #2a9ddb;
+}
+
+.element--water.element--header {
+  right: 0;
+  -webkit-box-shadow: 0 0 30px 6px #2a9ddb;
+  box-shadow: 0 0 30px 6px #2a9ddb;
+}
+
+.element--water.element--mistake {
+  -webkit-box-shadow: 0 0 20px 6px #2a9ddb;
+  box-shadow: 0 0 20px 6px #2a9ddb;
+}
+
+.header {
+  width: 250px;
+  height: 90px;
+  position: relative;
+  margin: 60px auto 0 auto;
+  text-align: center;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header__decoration-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 70px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: calc(100% + 10px);
+}
+
+.header:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: calc(100% + 80px);
+}
+
+.start-buttons {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.countdown {
   width: 360px;
   height: 520px;
   position: absolute;
   top: 0;
   left: 0;
-  text-shadow: 0 0 10px #000000; }
-  .countdown-start span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    z-index: 1;
-    color: #fff;
+  text-shadow: 0 0 10px #0a0a0a;
+}
+
+.countdown__item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  font-size: 150px;
+  -webkit-animation: countdown 1s forwards;
+  animation: countdown 1s forwards;
+  opacity: 0;
+}
+
+.countdown__item:nth-child(1) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.countdown__item:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.countdown__item:nth-child(3) {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.countdown__item:nth-child(4) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+@-webkit-keyframes countdown {
+  0% {
+    opacity: 0;
     font-size: 150px;
-    -webkit-animation: countdown-start 1s forwards;
-            animation: countdown-start 1s forwards;
-    opacity: 0; }
-    .countdown-start span:nth-child(1) {
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
-    .countdown-start span:nth-child(2) {
-      -webkit-animation-delay: 2s;
-              animation-delay: 2s; }
-    .countdown-start span:nth-child(3) {
-      -webkit-animation-delay: 3s;
-              animation-delay: 3s; }
-    .countdown-start span:nth-child(4) {
-      -webkit-animation-delay: 4s;
-              animation-delay: 4s; }
+  }
 
-@-webkit-keyframes countdown-start {
-  0% {
-    opacity: 0;
-    font-size: 150px; }
   50% {
     opacity: 1;
-    font-size: 80px; }
+    font-size: 80px;
+  }
+
   100% {
     opacity: 0;
-    font-size: 80px; } }
+    font-size: 80px;
+  }
+}
 
-@keyframes countdown-start {
+@keyframes countdown {
   0% {
     opacity: 0;
-    font-size: 150px; }
+    font-size: 150px;
+  }
+
   50% {
     opacity: 1;
-    font-size: 80px; }
+    font-size: 80px;
+  }
+
   100% {
     opacity: 0;
-    font-size: 80px; } }
+    font-size: 80px;
+  }
+}
 
-.container-countdown-timer {
+.timer {
   font-family: sans-serif;
   color: #fff;
   position: absolute;
   right: 20px;
   top: 20px;
-  opacity: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 14px;
@@ -304,78 +552,37 @@ h1, h3 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  .container-countdown-timer.active {
-    opacity: 1; }
-  .container-countdown-timer .icon-time {
-    margin-right: 3px; }
-  .container-countdown-timer.tutorial:before {
-    content: '';
-    width: 1px;
-    height: 15px;
-    background: #fff;
-    position: absolute;
-    top: 20px;
-    left: 50%; }
-  .container-countdown-timer.tutorial:after {
-    content: 'You have a minute to try to counteract as many elements as possible';
-    color: #fff;
-    font-size: 10px;
-    position: absolute;
-    left: 0;
-    top: 40px; }
+  -ms-flex-align: center;
+  align-items: center;
+}
 
-.fire {
-  background: #E02125; }
-  .fire.tutorial:after {
-    content: 'Fire button: counteracts the earth -moz-element, the yellow one';
-    content: 'Fire button: counteracts the earth element, the yellow one'; }
+.timer__icon {
+  font-family: "icomoon";
+  margin-right: 3px;
+}
 
-.earth {
-  background: #F6C82E; }
-  .earth.tutorial:after {
-    content: 'Earth button: counteracts the water -moz-element, the blue one';
-    content: 'Earth button: counteracts the water element, the blue one'; }
+.timer__icon:before {
+  content: "\e903";
+}
 
-.water {
-  background: #2A9DDB; }
-  .water.tutorial:after {
-    content: 'Water button: counteracts the fire -moz-element, the red one';
-    content: 'Water button: counteracts the fire element, the red one'; }
-
-.fire.tutorial:after,
-.earth.tutorial:after,
-.water.tutorial:after {
-  width: 70px;
-  position: absolute;
-  top: -75px;
-  left: 0;
-  color: #fff;
-  font-size: 10px;
-  text-align: left; }
-
-.fire.tutorial:before,
-.earth.tutorial:before,
-.water.tutorial:before {
-  content: '';
+.timer--tutorial:before {
+  content: "";
   width: 1px;
   height: 15px;
   background: #fff;
   position: absolute;
-  top: -25px; }
+  top: 20px;
+  left: 50%;
+}
 
-.fire-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #E02125;
-          box-shadow: 0 0 7px 3px #E02125; }
-
-.earth-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #F6C82E;
-          box-shadow: 0 0 7px 3px #F6C82E; }
-
-.water-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #2A9DDB;
-          box-shadow: 0 0 7px 3px #2A9DDB; }
+.timer--tutorial:after {
+  content: "You have a minute to try to counteract as many elements as possible";
+  color: #fff;
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
 
 .enemy-elements {
   position: relative;
@@ -383,184 +590,142 @@ h1, h3 {
   margin-top: -14725px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  opacity: 0; }
-  .enemy-elements.active-transition {
-    opacity: 1;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
-  .enemy-elements.active {
-    opacity: 1;
-    -webkit-transition: 0.2s;
-    transition: 0.2s; }
-  .enemy-elements.tutorial:before {
-    content: '';
-    width: 1px;
-    height: 15px;
-    background: #fff;
-    position: absolute;
-    bottom: -25px;
-    left: 50%; }
-  .enemy-elements.tutorial:after {
-    content: 'This is the current -moz-element to counter';
-    content: 'This is the current element to counter';
-    color: #fff;
-    font-size: 10px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: -40px; }
-  .enemy-elements li {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: relative;
-    color: #fff;
-    font-size: 25px;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    margin: 25px auto 0 auto; }
-    .enemy-elements li.remove-element {
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-      margin-top: 50px;
-      opacity: 0;
-      font-size: 0px;
-      width: 0;
-      height: 0; }
-  .enemy-elements span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    opacity: 0.5; }
+  opacity: 0;
+}
 
-.fire-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #E02125;
-          box-shadow: 0 0 20px 6px #E02125; }
+.enemy-elements--active-transition {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 
-.earth-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #F6C82E;
-          box-shadow: 0 0 20px 6px #F6C82E; }
+.enemy-elements--active {
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
 
-.water-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #2A9DDB;
-          box-shadow: 0 0 20px 6px #2A9DDB; }
+.enemy-elements--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+}
 
-button {
-  outline: 0;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation; }
+.enemy-elements--tutorial:after {
+  content: "This is the current -moz-element to counter";
+  content: "This is the current element to counter";
+  color: #fff;
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -40px;
+}
 
 .game-buttons {
   width: 100%;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   bottom: -100px;
   display: block;
   text-align: center;
   -webkit-transition: 0.5s;
-  transition: 0.5s; }
-  .game-buttons.active {
-    bottom: 20px; }
-  .game-buttons.tutorial {
-    bottom: 20px;
-    opacity: 0; }
-    .game-buttons.tutorial button {
-      cursor: inherit; }
-  .game-buttons.tutorial-active {
-    opacity: 1; }
-  .game-buttons button {
-    border: 3px solid white;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 35px;
-    font-size: 35px;
-    color: #fff;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    position: relative;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3); }
-    .game-buttons button:last-child {
-      margin-right: 0; }
-  .game-buttons span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-  .game-buttons .press-button {
-    background: #fff;
-    color: #0a0a0a;
-    -webkit-box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5); }
+  transition: 0.5s;
+}
 
-.results-content {
+.game-buttons--active {
+  bottom: 20px;
+}
+
+.game-buttons--tutorial {
+  bottom: 20px;
+  opacity: 0;
+}
+
+.game-buttons--tutorial-active {
+  opacity: 1;
+}
+
+.results {
   color: #fff;
   position: absolute;
   top: 0;
   height: calc(100% - 70px);
   width: calc(100% - 70px);
   padding: 35px;
-  opacity: 0;
   -webkit-transition: 0.5s;
-  transition: 0.5s; }
-  .results-content.active {
-    opacity: 1; }
-  .results-content h3 {
-    bottom: inherit;
-    top: 60px;
-    width: auto; }
-  .results-content button {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); }
-  .results-content .info-results {
-    position: absolute;
-    top: 120px;
-    font-size: 14px; }
-  .results-content p {
-    margin-bottom: 12px; }
-    .results-content p:before {
-      content: "- ";
-      letter-spacing: 3px; }
+  transition: 0.5s;
+}
+
+.results__info {
+  position: absolute;
+  top: 120px;
+  font-size: 14px;
+}
+
+.results__info-item {
+  margin-bottom: 12px;
+}
+
+.results__info-item:before {
+  content: "- ";
+  letter-spacing: 3px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.transparent {
+  opacity: 0 !important;
+}
 
 @media only screen and (max-width: 425px) {
   body {
-    background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%); }
-    body:before {
-      opacity: .9; }
-  .container {
+    background: radial-gradient(ellipse at center, 0%, #0a0a0a, rgba(255, 255, 255, 0.1) 100%);
+  }
+
+  body:before {
+    opacity: 0.9;
+  }
+
+  .wrapper {
     width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     border: none;
     border-radius: 0;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     background-color: transparent;
-    top: inherit;
-    bottom: 0;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
-  .enemy-elements,
-  .back-button,
-  .container-countdown-timer {
-    top: 20px; }
-  .countdown-start {
+  }
+
+  .button--back {
+    top: 20px;
+  }
+
+  .countdown {
     width: 100%;
-    height: 100vh; } }
+    height: 100vh;
+  }
+
+  .timer {
+    top: 20px;
+  }
+
+  .enemy-elements {
+    top: 20px;
+  }
+}
 
 @media only screen and (max-width: 340px) {
-  .game-buttons button {
-    margin-right: 20px; } }
+  .button--game {
+    margin-right: 20px;
+  }
+}

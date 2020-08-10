@@ -44,51 +44,66 @@
 
 <body>
 
-	<section class="container">
+	<section class="wrapper">
 
-		<header id="header-content" class="header-content active">
-			<h1>COUNTER ELEMENTS</h1>
-			<div class="fire fire-radiance"><span class="icon-fire"></span></div>
-			<div class="earth earth-radiance"><span class="icon-earth"></span></div>
-			<div class="water water-radiance"><span class="icon-water"></span></div>
-		</header>
-
-		<div id="start-buttons" class="start-buttons active">
-			<button id="play-button" class="play-button standard-button">PLAY</button>
-			<button id="tutorial-button" class="standard-button">HOW TO PLAY</button>
-		</div>
-
-		<div id="game-content" class="hidden game-content active">
-			<div id="countdown-start" class="countdown-start">
-				<span>3</span>
-				<span>2</span>
-				<span>1</span>
-				<span>GO!</span>
+		<header id="header" class="header">
+			<div class="header__decoration-elements">
+				<div class="element element--header element--fire">
+					<span class="element__symbol element__symbol--header element__symbol--fire"></span>
+				</div>
+				<div class="element element--header element--earth">
+					<span class="element__symbol element__symbol--header element__symbol--earth"></span>
+				</div>
+				<div class="element element--header element--water">
+					<span class="element__symbol element__symbol--header element__symbol--water"></span>
+				</div>
 			</div>
 
-			<button id="back-button" class="back-button">BACK</button>
+			<h1 class="title">COUNTER ELEMENTS</h1>
+		</header>
 
-			<div id="container-countdown-timer" class="container-countdown-timer">
-				<span class="icon-time"></span> <span id="countdown-timer">01:00</span>
+		<div id="start-buttons" class="start-buttons">
+			<button id="play-button" class="button button--default button--play">PLAY</button>
+			<button id="tutorial-button" class="button button--default">HOW TO PLAY</button>
+		</div>
+
+		<div id="game" class="transparent hidden">
+			<div id="countdown" class="countdown">
+				<span class="countdown__item">3</span>
+				<span class="countdown__item">2</span>
+				<span class="countdown__item">1</span>
+				<span class="countdown__item">GO!</span>
+			</div>
+
+			<button id="back-button" class="button button--back transparent">BACK</button>
+
+			<div id="timer" class="timer transparent">
+				<span class="timer__icon"></span> <span id="timer-clock" class="timer__clock">01:00</span>
 			</div>
 
 			<ul id="enemy-elements" class="enemy-elements"></ul>
 
 			<div id="game-buttons" class="game-buttons">
-				<button id="fire-button" class="fire" aria-label="fire"><span class="icon-fire"></span></button>
-				<button id="earth-button" class="earth" aria-label="earth"><span class="icon-earth"></span></button>
-				<button id="water-button" class="water" aria-label="water"><span class="icon-water"></span></button>	
+				<button id="fire-button" class="button button--game button--fire" aria-label="fire">
+					<span class="button__game-symbol button__game-symbol--fire"></span>
+				</button>
+				<button id="earth-button" class="button button--game button--earth" aria-label="earth">
+					<span class="button__game-symbol button__game-symbol--earth"></span>
+				</button>
+				<button id="water-button" class="button button--game button--water" aria-label="water">
+					<span class="button__game-symbol button__game-symbol--water"></span>
+				</button>	
 			</div>
 		</div>
 
-		<div id="results-content" class="results-content hidden">
-			<h3>RESULTS</h3>
-			<div class="info-results">
-				<p>Nº of pulsations: <strong id="number-pulsations">0</strong></p>
-				<p>Nº of counteracted elements: <strong id="counteracted-elements">0</strong></p>
-				<p>Hit percentage: <strong id="hit-percentage">0.00%</strong></p>
+		<div id="results" class="results transparent hidden">
+			<h2 class="title title--results">RESULTS</h2>
+			<div class="results__info">
+				<p class="results__info-item">Nº of pulsations: <strong id="number-pulsations">0</strong></p>
+				<p class="results__info-item">Nº of counteracted elements: <strong id="counteracted-elements">0</strong></p>
+				<p class="results__info-item">Hit percentage: <strong id="hit-percentage">0.00%</strong></p>
 			</div>
-			<button id="return-button" class="standard-button">RETURN</button>
+			<button id="return-button" class="button button--default button--return">RETURN</button>
 		</div>
 	</section>
 
