@@ -556,12 +556,12 @@ button {
   align-items: center;
 }
 
-.timer .timer__icon {
+.timer__icon {
   font-family: "icomoon";
   margin-right: 3px;
 }
 
-.timer .timer__icon:before {
+.timer__icon:before {
   content: "\e903";
 }
 
