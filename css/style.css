@@ -13,28 +13,6 @@
   font-style: normal;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: "icomoon" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-}
-
-.icon-water:before {
-  content: "\e900";
-}
-
-.icon-earth:before {
-  content: "\e901";
-}
-
-.icon-fire:before {
-  content: "\e902";
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -195,6 +173,105 @@ button {
   transform: translateX(-50%);
 }
 
+.button--game {
+  border: 3px solid #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 35px;
+  font-size: 35px;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.button--game:last-child {
+  margin-right: 0;
+}
+
+.button--fire {
+  background: #e02125;
+}
+
+.button--fire.button--tutorial:after {
+  content: "Fire button: counteracts the earth -moz-element, the yellow one";
+  content: "Fire button: counteracts the earth element, the yellow one";
+}
+
+.button--earth {
+  background: #f6c82e;
+}
+
+.button--earth.button--tutorial:after {
+  content: "Earth button: counteracts the water -moz-element, the blue one";
+  content: "Earth button: counteracts the water element, the blue one";
+}
+
+.button--water {
+  background: #2a9ddb;
+}
+
+.button--water.button--tutorial:after {
+  content: "Water button: counteracts the fire -moz-element, the red one";
+  content: "Water button: counteracts the fire element, the red one";
+}
+
+.button__game-symbol {
+  font-family: "icomoon";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button__game-symbol--fire:before {
+  content: "\e902";
+}
+
+.button__game-symbol--earth:before {
+  content: "\e901";
+}
+
+.button__game-symbol--water:before {
+  content: "\e900";
+}
+
+.button--game-pressed {
+  background: #fff;
+  color: #0a0a0a;
+  -webkit-box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
+}
+
+.button--tutorial {
+  cursor: inherit;
+}
+
+.button--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: -25px;
+}
+
+.button--tutorial:after {
+  width: 70px;
+  position: absolute;
+  top: -75px;
+  left: 0;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+}
+
 .element {
   display: block;
   width: 50px;
@@ -240,6 +317,16 @@ button {
   margin: 0;
 }
 
+.element--remove {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 50px;
+  opacity: 0;
+  font-size: 0px;
+  width: 0;
+  height: 0;
+}
+
 .element--tutorial:after {
   width: 70px;
   position: absolute;
@@ -250,7 +337,7 @@ button {
   text-align: left;
 }
 
-.element--tutorial:after {
+.element--tutorial:before {
   content: "";
   width: 1px;
   height: 15px;
@@ -497,6 +584,74 @@ button {
   top: 40px;
 }
 
+.enemy-elements {
+  position: relative;
+  top: 20px;
+  margin-top: -14725px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.enemy-elements--active-transition {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.enemy-elements--active {
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.enemy-elements--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+}
+
+.enemy-elements--tutorial:after {
+  content: "This is the current -moz-element to counter";
+  content: "This is the current element to counter";
+  color: #fff;
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -40px;
+}
+
+.game-buttons {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: -100px;
+  display: block;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.game-buttons--active {
+  bottom: 20px;
+}
+
+.game-buttons--tutorial {
+  bottom: 20px;
+  opacity: 0;
+}
+
+.game-buttons--tutorial-active {
+  opacity: 1;
+}
+
 .results {
   color: #fff;
   position: absolute;
@@ -531,229 +686,9 @@ button {
   opacity: 0 !important;
 }
 
-.fire {
-  background: #e02125;
-}
-
-.fire.tutorial:after {
-  content: "Fire button: counteracts the earth -moz-element, the yellow one";
-  content: "Fire button: counteracts the earth element, the yellow one";
-}
-
-.earth {
-  background: #f6c82e;
-}
-
-.earth.tutorial:after {
-  content: "Earth button: counteracts the water -moz-element, the blue one";
-  content: "Earth button: counteracts the water element, the blue one";
-}
-
-.water {
-  background: #2a9ddb;
-}
-
-.water.tutorial:after {
-  content: "Water button: counteracts the fire -moz-element, the red one";
-  content: "Water button: counteracts the fire element, the red one";
-}
-
-.fire.tutorial:after,
-.earth.tutorial:after,
-.water.tutorial:after {
-  width: 70px;
-  position: absolute;
-  top: -75px;
-  left: 0;
-  color: #fff;
-  font-size: 10px;
-  text-align: left;
-}
-
-.fire.tutorial:before,
-.earth.tutorial:before,
-.water.tutorial:before {
-  content: "";
-  width: 1px;
-  height: 15px;
-  background: #fff;
-  position: absolute;
-  top: -25px;
-}
-
-.fire-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #e02125;
-  box-shadow: 0 0 7px 3px #e02125;
-}
-
-.earth-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #f6c82e;
-  box-shadow: 0 0 7px 3px #f6c82e;
-}
-
-.water-radiance {
-  -webkit-box-shadow: 0 0 7px 3px #2a9ddb;
-  box-shadow: 0 0 7px 3px #2a9ddb;
-}
-
-.enemy-elements {
-  position: relative;
-  top: 20px;
-  margin-top: -14725px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  opacity: 0;
-}
-
-.enemy-elements.active-transition {
-  opacity: 1;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.enemy-elements.active {
-  opacity: 1;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.enemy-elements.tutorial:before {
-  content: "";
-  width: 1px;
-  height: 15px;
-  background: #fff;
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-}
-
-.enemy-elements.tutorial:after {
-  content: "This is the current -moz-element to counter";
-  content: "This is the current element to counter";
-  color: #fff;
-  font-size: 10px;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: -40px;
-}
-
-.enemy-elements li {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  position: relative;
-  color: #fff;
-  font-size: 25px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  margin: 25px auto 0 auto;
-}
-
-.enemy-elements li.remove-element {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  margin-top: 50px;
-  opacity: 0;
-  font-size: 0px;
-  width: 0;
-  height: 0;
-}
-
-.enemy-elements span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0.5;
-}
-
-.fire-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #e02125;
-  box-shadow: 0 0 20px 6px #e02125;
-}
-
-.earth-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #f6c82e;
-  box-shadow: 0 0 20px 6px #f6c82e;
-}
-
-.water-radiance.mistake-element {
-  -webkit-box-shadow: 0 0 20px 6px #2a9ddb;
-  box-shadow: 0 0 20px 6px #2a9ddb;
-}
-
-.game-buttons {
-  width: 100%;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -100px;
-  display: block;
-  text-align: center;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.game-buttons.active {
-  bottom: 20px;
-}
-
-.game-buttons.tutorial {
-  bottom: 20px;
-  opacity: 0;
-}
-
-.game-buttons.tutorial button {
-  cursor: inherit;
-}
-
-.game-buttons.tutorial-active {
-  opacity: 1;
-}
-
-.game-buttons button {
-  border: 3px solid white;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 35px;
-  font-size: 35px;
-  color: #fff;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  position: relative;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.game-buttons button:last-child {
-  margin-right: 0;
-}
-
-.game-buttons span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.game-buttons .press-button {
-  background: #fff;
-  color: #0a0a0a;
-  -webkit-box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 300px 5px rgba(255, 255, 255, 0.5);
-}
-
 @media only screen and (max-width: 425px) {
   body {
-    background: radial-gradient(ellipse at center, 0%, black, rgba(255, 255, 255, 0.1) 100%);
+    background: radial-gradient(ellipse at center, 0%, #0a0a0a, rgba(255, 255, 255, 0.1) 100%);
   }
 
   body:before {
@@ -780,14 +715,17 @@ button {
     height: 100vh;
   }
 
-  .enemy-elements,
-  .container-countdown-timer {
+  .timer {
+    top: 20px;
+  }
+
+  .enemy-elements {
     top: 20px;
   }
 }
 
 @media only screen and (max-width: 340px) {
-  .game-buttons button {
+  .button--game {
     margin-right: 20px;
   }
 }

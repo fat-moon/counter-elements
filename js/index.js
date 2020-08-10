@@ -4,8 +4,8 @@ const game = document.getElementById('game');
 const startButtons = document.getElementById('start-buttons');
 const results = document.getElementById('results')
 
-const enemyElementsList = document.getElementById('enemy-elements');
-let marginTopEnemyElementsList = -14725;
+const enemyElements = document.getElementById('enemy-elements');
+let marginTopEnemyElements = -14725;
 const enemyElementsArray = ['fire', 'earth', 'water'];
 const numberKindsEnemyElements = enemyElementsArray.length;
 let numberEnemyElements = 199;
@@ -54,15 +54,15 @@ playButton.addEventListener('click', () => {
 		setTimeout(() => {
 			header.classList.add('hidden');
 			startButtons.classList.add('hidden');
-			gameButtons.classList.add('active');
-			enemyElementsList.classList.add('active-transition');
+			gameButtons.classList.add('game-buttons--active');
+			enemyElements.classList.add('enemy-elements--active-transition');
 			timer.classList.remove('transparent');
 			backButton.classList.remove('transparent');
 		}, 400);
 
 		setTimeout(() => {
-			enemyElementsList.classList.remove('active-transition');
-			enemyElementsList.classList.add('active');
+			enemyElements.classList.remove('enemy-elements--active-transition');
+			enemyElements.classList.add('enemy-elements--active');
 		}, 900);
 
 		if (!tutorialActive) countdownInterval = setInterval(countdownGame, 1000);
@@ -102,12 +102,13 @@ const createNewElement = () => {
 	const chosenEnemyElement = enemyElementsArray[randomEnemyElement];
 
 	newEnemyElement = document.createElement('li');
-	newEnemyElement.className += `${chosenEnemyElement} ${chosenEnemyElement}-radiance`;
+	newEnemyElement.className += `element element--${chosenEnemyElement}`;
+	newEnemyElement.setAttribute('data-element', chosenEnemyElement);
 
 	const newIconEnemyElement = document.createElement('span');
-	newIconEnemyElement.className += `icon-${chosenEnemyElement}`;
+	newIconEnemyElement.className += `element__symbol element__symbol--${chosenEnemyElement}`;
 
-	enemyElementsList.prepend(newEnemyElement);
+	enemyElements.prepend(newEnemyElement);
 	newEnemyElement.appendChild(newIconEnemyElement);
 
 }
@@ -118,7 +119,7 @@ const assignIdElement = number => {
 
 	enemyElement[number].id = 'current-enemy-element';
 	currentEnemyElement = document.getElementById('current-enemy-element');
-	valueCurrentEnemyElement = currentEnemyElement.className.split(' ')[0];
+	valueCurrentEnemyElement = currentEnemyElement.getAttribute('data-element');
 
 }
 
@@ -132,15 +133,15 @@ const startEnemyElements = () => {
 
 }
 startEnemyElements();
-let enemyElement = enemyElementsList.querySelectorAll('li');
+let enemyElement = enemyElements.querySelectorAll('li');
 assignIdElement(numberEnemyElements);
 
 
 // Move elements
 const moveElements = () => {
 
-	marginTopEnemyElementsList += 75;
-	enemyElementsList.style.marginTop = `${marginTopEnemyElementsList}px`;
+	marginTopEnemyElements += 75;
+	enemyElements.style.marginTop = `${marginTopEnemyElements}px`;
 
 }
 
@@ -152,6 +153,8 @@ const chooseElement = elementObject => {
 		pulsationCounter++;
 		const chosenElement = elementObject.getAttribute('aria-label');
 
+		console.log(chooseElement, valueCurrentEnemyElement);
+
 		if (chosenElement === 'fire' && valueCurrentEnemyElement === 'earth' ||
 			chosenElement === 'earth' && valueCurrentEnemyElement === 'water' ||
 			chosenElement === 'water' && valueCurrentEnemyElement === 'fire') {
@@ -159,8 +162,8 @@ const chooseElement = elementObject => {
 			winCounter++;
 
 			// Remove the element
-			currentEnemyElement.classList.remove('mistake-element');
-			currentEnemyElement.classList.add('remove-element');
+			currentEnemyElement.classList.remove('element--mistake');
+			currentEnemyElement.classList.add('element--remove');
 			currentEnemyElement.removeAttribute('id');
 			numberEnemyElements--;
 
@@ -172,12 +175,12 @@ const chooseElement = elementObject => {
 
 		} else {
 			// Animation mistake
-			currentEnemyElement.classList.add('mistake-element');
-			setTimeout(() => currentEnemyElement.classList.remove('mistake-element'), 100);
+			currentEnemyElement.classList.add('element--mistake');
+			setTimeout(() => currentEnemyElement.classList.remove('element--mistake'), 100);
 		}
 
-		elementObject.classList.add('press-button');
-		setTimeout(() => elementObject.classList.remove('press-button'), 100);
+		elementObject.classList.add('button--game-pressed');
+		setTimeout(() => elementObject.classList.remove('button--game-pressed'), 100);
 	}
 
 }
@@ -191,25 +194,25 @@ tutorialButton.addEventListener('click', () => {
 
 	countdown.classList.add('hidden');
 	timer.classList.add('timer--tutorial');
-	enemyElementsList.classList.add('tutorial');
-	gameButtons.classList.add('tutorial');
-	fireButton.classList.add('tutorial');
-	earthButton.classList.add('tutorial');
-	waterButton.classList.add('tutorial');
+	enemyElements.classList.add('enemy-elements--tutorial');
+	gameButtons.classList.add('game-buttons--tutorial');
+	fireButton.classList.add('button--tutorial');
+	earthButton.classList.add('button--tutorial');
+	waterButton.classList.add('button--tutorial');
 
 	tutorialActive = true;
 
 	const tutorialElements = `
-	<li class="water water-radiance"><span class="icon-water"></span></li>
-	<li class="earth earth-radiance"><span class="icon-earth"></span></li>
-	<li class="fire fire-radiance"><span class="icon-fire"></span></li>
-	<li class="earth earth-radiance"><span class="icon-earth"></span></li>
-	<li class="water water-radiance"><span class="icon-water"></span></li>`;
+	<li class="element element--water"><span class="element__symbol element__symbol--water"></span></li>
+	<li class="element element--earth"><span class="element__symbol element__symbol--earth"></span></li>
+	<li class="element element--fire"><span class="element__symbol element__symbol--fire"></span></li>
+	<li class="element element--earth"><span class="element__symbol element__symbol--earth"></span></li>
+	<li class="element element--water"><span class="element__symbol element__symbol--water"></span></li>`;
 
-	enemyElementsList.innerHTML = tutorialElements;
-	enemyElementsList.style.marginTop = '-100px';
+	enemyElements.innerHTML = tutorialElements;
+	enemyElements.style.marginTop = '-100px';
 
-	setTimeout(() => gameButtons.classList.add('tutorial-active'), 800);
+	setTimeout(() => gameButtons.classList.add('game-buttons--tutorial-active'), 800);
 
 	playButton.click();
 
@@ -222,8 +225,8 @@ const gameResults = () => {
 	game.classList.add('transparent');
 	backButton.classList.add('transparent');
 	timer.classList.add('transparent');
-	enemyElementsList.classList.remove('active');
-	gameButtons.classList.remove('active');
+	enemyElements.classList.remove('enemy-elements--active');
+	gameButtons.classList.remove('game-buttons--active');
 
 	setTimeout(() => {
 		numberPulsations.textContent = pulsationCounter;
@@ -254,20 +257,20 @@ const reset = () => {
 	header.classList.remove('hidden');
 	startButtons.classList.remove('hidden');
 
-	gameButtons.classList.remove('active', 'tutorial', 'tutorial-active');
-	fireButton.classList.remove('tutorial');
-	earthButton.classList.remove('tutorial');
-	waterButton.classList.remove('tutorial');
-	enemyElementsList.classList.remove('active', 'active-transition');
+	gameButtons.classList.remove('game-buttons--active', 'game-buttons--tutorial', 'game-buttons--tutorial-active');
+	fireButton.classList.remove('button--tutorial');
+	earthButton.classList.remove('button--tutorial');
+	waterButton.classList.remove('button--tutorial');
+	enemyElements.classList.remove('enemy-elements--active', 'enemy-elements--active-transition');
 	timer.classList.add('transparent');
 	backButton.classList.add('transparent');
 
-	enemyElementsList.innerHTML = '';
-	enemyElementsList.style.marginTop = '-14725px';
-	marginTopEnemyElementsList = -14725;
+	enemyElements.innerHTML = '';
+	enemyElements.style.marginTop = '-14725px';
+	marginTopEnemyElements = -14725;
 	startEnemyElements();
 	numberEnemyElements = 199;
-	enemyElement = enemyElementsList.querySelectorAll('li');
+	enemyElement = enemyElements.querySelectorAll('li');
 	assignIdElement(numberEnemyElements);
 
 	time = 64000;
@@ -278,7 +281,7 @@ const reset = () => {
 
 	countdown.classList.remove('hidden');
 	timer.classList.remove('timer--tutorial');
-	enemyElementsList.classList.remove('tutorial');
+	enemyElements.classList.remove('enemy-elements--tutorial');
 	tutorialActive = false;
 
 	setTimeout(() => {

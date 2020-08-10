@@ -1,0 +1,45 @@
+// Enemy elements
+
+.enemy-elements {
+    position: relative;
+    top: 20px;
+    margin-top: (($size-element + $margin-element) * (-$number-elements))+ (-1 * ($margin-element));
+    transition: $time;
+    opacity: 0;
+
+    &--active-transition {
+        opacity: 1;
+        transition: $time-transition;
+    }
+
+    &--active {
+        opacity: 1;
+        transition: $time;
+    }
+
+    &--tutorial {
+        &:before {
+            content: "";
+            width: 1px;
+            height: 15px;
+            background: $light;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+        }
+
+        &:after {
+            content: "This is the current element to counter";
+            color: $light;
+            font-size: 10px;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: -40px;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        top: 20px;
+    }
+}

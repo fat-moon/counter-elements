@@ -7,25 +7,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-[class^="icon-"],
-[class*=" icon-"] {
-    font-family: "icomoon" !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-}
-
-.icon-water:before {
-    content: "\e900";
-}
-
-.icon-earth:before {
-    content: "\e901";
-}
-
-.icon-fire:before {
-    content: "\e902";
-}
