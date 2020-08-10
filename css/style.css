@@ -35,10 +35,6 @@
   content: "\e902";
 }
 
-.icon-time:before {
-  content: "\e903";
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -456,6 +452,51 @@ button {
   }
 }
 
+.timer {
+  font-family: sans-serif;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.timer .timer__icon {
+  font-family: "icomoon";
+  margin-right: 3px;
+}
+
+.timer .timer__icon:before {
+  content: "\e903";
+}
+
+.timer--tutorial:before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+}
+
+.timer--tutorial:after {
+  content: "You have a minute to try to counteract as many elements as possible";
+  color: #fff;
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
+
 .results {
   color: #fff;
   position: absolute;
@@ -488,51 +529,6 @@ button {
 
 .transparent {
   opacity: 0 !important;
-}
-
-.container-countdown-timer {
-  font-family: sans-serif;
-  color: #fff;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  font-size: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.container-countdown-timer.active {
-  opacity: 1;
-}
-
-.container-countdown-timer .icon-time {
-  margin-right: 3px;
-}
-
-.container-countdown-timer.tutorial:before {
-  content: "";
-  width: 1px;
-  height: 15px;
-  background: #fff;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-}
-
-.container-countdown-timer.tutorial:after {
-  content: "You have a minute to try to counteract as many elements as possible";
-  color: #fff;
-  font-size: 10px;
-  position: absolute;
-  left: 0;
-  top: 40px;
 }
 
 .fire {

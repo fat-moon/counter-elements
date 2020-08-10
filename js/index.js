@@ -25,8 +25,8 @@ const fireButton = document.getElementById('fire-button');
 const earthButton = document.getElementById('earth-button');
 const waterButton = document.getElementById('water-button');
 
-const containerCountdownTimer = document.getElementById('container-countdown-timer');
-const countdownTimer = document.getElementById('countdown-timer');
+const timer = document.getElementById('timer');
+const timerClock = document.getElementById('timer-clock');
 let time = 64000;
 let showTime;
 let countdownInterval;
@@ -56,7 +56,7 @@ playButton.addEventListener('click', () => {
 			startButtons.classList.add('hidden');
 			gameButtons.classList.add('active');
 			enemyElementsList.classList.add('active-transition');
-			containerCountdownTimer.classList.add('active');
+			timer.classList.remove('transparent');
 			backButton.classList.remove('transparent');
 		}, 400);
 
@@ -78,13 +78,13 @@ const countdownGame = () => {
 	time -= 1000;
 	showTime = time / 1000;
 
-	countdownTimer.textContent = `00:${showTime}`;
+	timerClock.textContent = `00:${showTime}`;
 
-	if (time > 59000) countdownTimer.textContent = '01:00';
+	if (time > 59000) timerClock.textContent = '01:00';
 
 	if (time === 60000) gameActive = true;
 
-	if (time <= 9000) countdownTimer.textContent = `00:0${showTime}`;
+	if (time <= 9000) timerClock.textContent = `00:0${showTime}`;
 
 	if (time === 0) {
 		clearInterval(countdownInterval);
@@ -190,7 +190,7 @@ waterButton.addEventListener('mousedown', () => chooseElement(waterButton), fals
 tutorialButton.addEventListener('click', () => {
 
 	countdown.classList.add('hidden');
-	containerCountdownTimer.classList.add('tutorial');
+	timer.classList.add('timer--tutorial');
 	enemyElementsList.classList.add('tutorial');
 	gameButtons.classList.add('tutorial');
 	fireButton.classList.add('tutorial');
@@ -221,7 +221,7 @@ const gameResults = () => {
 
 	game.classList.add('transparent');
 	backButton.classList.add('transparent');
-	containerCountdownTimer.classList.remove('active');
+	timer.classList.add('transparent');
 	enemyElementsList.classList.remove('active');
 	gameButtons.classList.remove('active');
 
@@ -259,7 +259,7 @@ const reset = () => {
 	earthButton.classList.remove('tutorial');
 	waterButton.classList.remove('tutorial');
 	enemyElementsList.classList.remove('active', 'active-transition');
-	containerCountdownTimer.classList.remove('active');
+	timer.classList.add('transparent');
 	backButton.classList.add('transparent');
 
 	enemyElementsList.innerHTML = '';
@@ -271,13 +271,13 @@ const reset = () => {
 	assignIdElement(numberEnemyElements);
 
 	time = 64000;
-	countdownTimer.textContent = '01:00';
+	timerClock.textContent = '01:00';
 
 	pulsationCounter = 0;
 	winCounter = 0;
 
 	countdown.classList.remove('hidden');
-	containerCountdownTimer.classList.remove('tutorial');
+	timer.classList.remove('timer--tutorial');
 	enemyElementsList.classList.remove('tutorial');
 	tutorialActive = false;
 

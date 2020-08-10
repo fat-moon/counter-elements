@@ -13,53 +13,12 @@
 @import "./partials/components/header";
 @import "./partials/components/start-buttons";
 @import "./partials/components/countdown";
+@import "./partials/components/timer";
 @import "./partials//components/results";
 
 @import "./partials/utilities/utilities";
 
 
-
-
-// Countdown timer
-.container-countdown-timer {
-    font-family: sans-serif;
-    color: $light;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    opacity: 0;
-    transition: $time-transition;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-
-    &.active {
-        opacity: 1;
-    }
-
-    .icon-time {
-        margin-right: 3px;
-    }
-
-    &.tutorial:before {
-        content: "";
-        width: 1px;
-        height: 15px;
-        background: $light;
-        position: absolute;
-        top: 20px;
-        left: 50%;
-    }
-
-    &.tutorial:after {
-        content: "You have a minute to try to counteract as many elements as possible";
-        color: $light;
-        font-size: 10px;
-        position: absolute;
-        left: 0;
-        top: 40px;
-    }
-}
 
 // Elements
 .fire {
